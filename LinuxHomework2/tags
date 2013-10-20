@@ -1,0 +1,110 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CSTATUS_H	CStatus.h	2;"	d
+CStatus	CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus	CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus	CStatus.h	/^class CStatus$/;"	c
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus::CStatus	CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus::GetErrorMsg	CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+CStatus::GetErrorMsg	CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::InitializeMemberVars	CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::IsSuccess	CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+CStatus::IsSuccess	CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::m_ciErrorCode	CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciReturnCode	CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+CStatus::m_iErrorCode	CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iReturnCode	CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+CStatus::m_pErrorMsg	CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+CStatus::~CStatus	CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+CStatus::~CStatus	CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+FILEMANIPULATOR_BUFFER_SIZE	FileManipulator.cpp	30;"	d	file:
+FILE_MANIPULATOR_H	FileManipulator.h	3;"	d
+FileManipulator	FileManipulator.cpp	/^FileManipulator::FileManipulator()$/;"	f	class:FileManipulator	signature:()
+FileManipulator	FileManipulator.cpp	/^FileManipulator::FileManipulator(const char * pFileName)$/;"	f	class:FileManipulator	signature:(const char * pFileName)
+FileManipulator	FileManipulator.h	/^	FileManipulator(const char * filename);$/;"	p	class:FileManipulator	access:private	signature:(const char * filename)
+FileManipulator	FileManipulator.h	/^    FileManipulator();$/;"	p	class:FileManipulator	access:private	signature:()
+FileManipulator	FileManipulator.h	/^class FileManipulator$/;"	c
+FileManipulator::FileManipulator	FileManipulator.cpp	/^FileManipulator::FileManipulator()$/;"	f	class:FileManipulator	signature:()
+FileManipulator::FileManipulator	FileManipulator.cpp	/^FileManipulator::FileManipulator(const char * pFileName)$/;"	f	class:FileManipulator	signature:(const char * pFileName)
+FileManipulator::FileManipulator	FileManipulator.h	/^	FileManipulator(const char * filename);$/;"	p	class:FileManipulator	access:private	signature:(const char * filename)
+FileManipulator::FileManipulator	FileManipulator.h	/^    FileManipulator();$/;"	p	class:FileManipulator	access:private	signature:()
+FileManipulator::Flush	FileManipulator.cpp	/^CStatus FileManipulator::Flush()$/;"	f	class:FileManipulator	signature:()
+FileManipulator::Flush	FileManipulator.h	/^	CStatus Flush();$/;"	p	class:FileManipulator	access:public	signature:()
+FileManipulator::GetFileName	FileManipulator.cpp	/^char * FileManipulator::GetFileName()$/;"	f	class:FileManipulator	signature:()
+FileManipulator::GetFileName	FileManipulator.h	/^	char * GetFileName();$/;"	p	class:FileManipulator	access:public	signature:()
+FileManipulator::GetInstance	FileManipulator.cpp	/^FileManipulator * FileManipulator::GetInstance()$/;"	f	class:FileManipulator	signature:()
+FileManipulator::GetInstance	FileManipulator.cpp	/^FileManipulator * FileManipulator::GetInstance(const char * pFileName)$/;"	f	class:FileManipulator	signature:(const char * pFileName)
+FileManipulator::GetInstance	FileManipulator.h	/^	static FileManipulator * GetInstance();	$/;"	p	class:FileManipulator	access:public	signature:()
+FileManipulator::GetInstance	FileManipulator.h	/^	static FileManipulator * GetInstance(const char * filename);	$/;"	p	class:FileManipulator	access:public	signature:(const char * filename)
+FileManipulator::OnProcessExit	FileManipulator.cpp	/^void FileManipulator::OnProcessExit()$/;"	f	class:FileManipulator	signature:()
+FileManipulator::OnProcessExit	FileManipulator.h	/^	static void OnProcessExit();$/;"	p	class:FileManipulator	access:private	signature:()
+FileManipulator::ReadFile	FileManipulator.cpp	/^CStatus FileManipulator::ReadFile(int nBytes,char * &pData)$/;"	f	class:FileManipulator	signature:(int nBytes,char * &pData)
+FileManipulator::ReadFile	FileManipulator.h	/^	CStatus ReadFile(int nBytes,char * &pData);$/;"	p	class:FileManipulator	access:public	signature:(int nBytes,char * &pData)
+FileManipulator::SetFileOperatePosition	FileManipulator.cpp	/^CStatus FileManipulator::SetFileOperatePosition(off_t offset, int whence)$/;"	f	class:FileManipulator	signature:(off_t offset, int whence)
+FileManipulator::SetFileOperatePosition	FileManipulator.h	/^ 	CStatus SetFileOperatePosition(off_t offset, int whence);$/;"	p	class:FileManipulator	access:public	signature:(off_t offset, int whence)
+FileManipulator::WriteToFile	FileManipulator.cpp	/^CStatus FileManipulator::WriteToFile(const char * pContent)$/;"	f	class:FileManipulator	signature:(const char * pContent)
+FileManipulator::WriteToFile	FileManipulator.h	/^    CStatus WriteToFile(const char * pContent);$/;"	p	class:FileManipulator	access:public	signature:(const char * pContent)
+FileManipulator::m_bProcessIsExit	FileManipulator.h	/^	bool m_bProcessIsExit; 	$/;"	m	class:FileManipulator	access:private
+FileManipulator::m_iFd	FileManipulator.h	/^    int m_iFd;$/;"	m	class:FileManipulator	access:private
+FileManipulator::m_pFM	FileManipulator.cpp	/^FileManipulator * FileManipulator::m_pFM = NULL;$/;"	m	class:FileManipulator	file:
+FileManipulator::m_pFM	FileManipulator.h	/^	static FileManipulator * m_pFM;$/;"	m	class:FileManipulator	access:private
+FileManipulator::m_pFileBuffer	FileManipulator.h	/^	char * m_pFileBuffer;$/;"	m	class:FileManipulator	access:private
+FileManipulator::m_pFileName	FileManipulator.cpp	/^char * FileManipulator::m_pFileName = NULL;$/;"	m	class:FileManipulator	file:
+FileManipulator::m_pFileName	FileManipulator.h	/^ 	static char * m_pFileName; 	$/;"	m	class:FileManipulator	access:private
+FileManipulator::m_uiUsedBytesOfBuffer	FileManipulator.h	/^	unsigned int m_uiUsedBytesOfBuffer;$/;"	m	class:FileManipulator	access:private
+FileManipulator::~FileManipulator	FileManipulator.cpp	/^FileManipulator::~FileManipulator()$/;"	f	class:FileManipulator	signature:()
+FileManipulator::~FileManipulator	FileManipulator.h	/^    virtual ~FileManipulator();$/;"	p	class:FileManipulator	access:private	signature:()
+Flush	FileManipulator.cpp	/^CStatus FileManipulator::Flush()$/;"	f	class:FileManipulator	signature:()
+Flush	FileManipulator.h	/^	CStatus Flush();$/;"	p	class:FileManipulator	access:public	signature:()
+GetErrorMsg	CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+GetErrorMsg	CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+GetFileName	FileManipulator.cpp	/^char * FileManipulator::GetFileName()$/;"	f	class:FileManipulator	signature:()
+GetFileName	FileManipulator.h	/^	char * GetFileName();$/;"	p	class:FileManipulator	access:public	signature:()
+GetInstance	FileManipulator.cpp	/^FileManipulator * FileManipulator::GetInstance()$/;"	f	class:FileManipulator	signature:()
+GetInstance	FileManipulator.cpp	/^FileManipulator * FileManipulator::GetInstance(const char * pFileName)$/;"	f	class:FileManipulator	signature:(const char * pFileName)
+GetInstance	FileManipulator.h	/^	static FileManipulator * GetInstance();	$/;"	p	class:FileManipulator	access:public	signature:()
+GetInstance	FileManipulator.h	/^	static FileManipulator * GetInstance(const char * filename);	$/;"	p	class:FileManipulator	access:public	signature:(const char * filename)
+InitializeMemberVars	CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+IsSuccess	CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+IsSuccess	CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+OnProcessExit	FileManipulator.cpp	/^void FileManipulator::OnProcessExit()$/;"	f	class:FileManipulator	signature:()
+OnProcessExit	FileManipulator.h	/^	static void OnProcessExit();$/;"	p	class:FileManipulator	access:private	signature:()
+ReadFile	FileManipulator.cpp	/^CStatus FileManipulator::ReadFile(int nBytes,char * &pData)$/;"	f	class:FileManipulator	signature:(int nBytes,char * &pData)
+ReadFile	FileManipulator.h	/^	CStatus ReadFile(int nBytes,char * &pData);$/;"	p	class:FileManipulator	access:public	signature:(int nBytes,char * &pData)
+SetFileOperatePosition	FileManipulator.cpp	/^CStatus FileManipulator::SetFileOperatePosition(off_t offset, int whence)$/;"	f	class:FileManipulator	signature:(off_t offset, int whence)
+SetFileOperatePosition	FileManipulator.h	/^ 	CStatus SetFileOperatePosition(off_t offset, int whence);$/;"	p	class:FileManipulator	access:public	signature:(off_t offset, int whence)
+WriteToFile	FileManipulator.cpp	/^CStatus FileManipulator::WriteToFile(const char * pContent)$/;"	f	class:FileManipulator	signature:(const char * pContent)
+WriteToFile	FileManipulator.h	/^    CStatus WriteToFile(const char * pContent);$/;"	p	class:FileManipulator	access:public	signature:(const char * pContent)
+m_bProcessIsExit	FileManipulator.h	/^	bool m_bProcessIsExit; 	$/;"	m	class:FileManipulator	access:private
+m_ciErrorCode	CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+m_ciReturnCode	CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+m_iErrorCode	CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+m_iFd	FileManipulator.h	/^    int m_iFd;$/;"	m	class:FileManipulator	access:private
+m_iReturnCode	CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+m_pErrorMsg	CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+m_pFM	FileManipulator.cpp	/^FileManipulator * FileManipulator::m_pFM = NULL;$/;"	m	class:FileManipulator	file:
+m_pFM	FileManipulator.h	/^	static FileManipulator * m_pFM;$/;"	m	class:FileManipulator	access:private
+m_pFileBuffer	FileManipulator.h	/^	char * m_pFileBuffer;$/;"	m	class:FileManipulator	access:private
+m_pFileName	FileManipulator.cpp	/^char * FileManipulator::m_pFileName = NULL;$/;"	m	class:FileManipulator	file:
+m_pFileName	FileManipulator.h	/^ 	static char * m_pFileName; 	$/;"	m	class:FileManipulator	access:private
+m_uiUsedBytesOfBuffer	FileManipulator.h	/^	unsigned int m_uiUsedBytesOfBuffer;$/;"	m	class:FileManipulator	access:private
+main	Client.cpp	/^int main()$/;"	f	signature:()
+~CStatus	CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+~CStatus	CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+~FileManipulator	FileManipulator.cpp	/^FileManipulator::~FileManipulator()$/;"	f	class:FileManipulator	signature:()
+~FileManipulator	FileManipulator.h	/^    virtual ~FileManipulator();$/;"	p	class:FileManipulator	access:private	signature:()

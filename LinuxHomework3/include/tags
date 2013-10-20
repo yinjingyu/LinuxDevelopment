@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CCLIENTBUSINESSFOREXECUTIVE_H	CClientBusinessForExecObj.h	4;"	d
+CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^	CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^class CClientBusinessForExecObj$/;"	c
+CClientBusinessForExecObj::CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^	CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+CClientBusinessForExecObj::RunClientBusiness	CClientBusinessForExecObj.h	/^	virtual CStatus RunClientBusiness(void * pContext) = 0;$/;"	p	class:CClientBusinessForExecObj	access:public	signature:(void * pContext)
+CClientBusinessForExecObj::~CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^	virtual ~CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+CEXECUTIVE_H	CExecutiveObject.h	4;"	d
+CExecutiveObject	CExecutiveObject.h	/^	explicit CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CExecutiveObject	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CExecutiveObject	CExecutiveObject.h	/^class CExecutiveObject$/;"	c
+CExecutiveObject::CExecutiveObject	CExecutiveObject.h	/^	explicit CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CExecutiveObject	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CExecutiveObject::Run	CExecutiveObject.h	/^	virtual CStatus Run(void * pContext) = 0;$/;"	p	class:CExecutiveObject	access:public	signature:(void * pContext)
+CExecutiveObject::WaitForDeath	CExecutiveObject.h	/^	virtual CStatus WaitForDeath() = 0;$/;"	p	class:CExecutiveObject	access:public	signature:()
+CExecutiveObject::m_pClientBusinessForExecObj	CExecutiveObject.h	/^	CClientBusinessForExecObj * m_pClientBusinessForExecObj;$/;"	m	class:CExecutiveObject	access:private
+CExecutiveObject::~CExecutiveObject	CExecutiveObject.h	/^	virtual ~CExecutiveObject();$/;"	p	class:CExecutiveObject	access:public	signature:()
+CTHREAD_H	CThread.h	3;"	d
+CThread	CThread.h	/^	explicit CThread(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CThread	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread	CThread.h	/^class CThread : public CExecutiveObject$/;"	c	inherits:CExecutiveObject
+CThread::CThread	CThread.h	/^	explicit CThread(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CThread	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread::Run	CThread.h	/^	virtual CStatus Run(void * pContext) = 0;$/;"	p	class:CThread	access:public	signature:(void * pContext)
+CThread::StartFunctionOfThread	CThread.h	/^	static void * StartFunctionOfThread(void * pContext);$/;"	p	class:CThread	access:private	signature:(void * pContext)
+CThread::WaitForDeath	CThread.h	/^	virtual CStatus WaitForDeath();$/;"	p	class:CThread	access:public	signature:()
+CThread::m_ThreadID	CThread.h	/^	pthread_t m_ThreadID;$/;"	m	class:CThread	access:private
+CThread::m_pContext	CThread.h	/^	void * m_pContext;$/;"	m	class:CThread	access:private
+CThread::~CThread	CThread.h	/^	virtual ~CThread();$/;"	p	class:CThread	access:public	signature:()
+Run	CExecutiveObject.h	/^	virtual CStatus Run(void * pContext) = 0;$/;"	p	class:CExecutiveObject	access:public	signature:(void * pContext)
+Run	CThread.h	/^	virtual CStatus Run(void * pContext) = 0;$/;"	p	class:CThread	access:public	signature:(void * pContext)
+RunClientBusiness	CClientBusinessForExecObj.h	/^	virtual CStatus RunClientBusiness(void * pContext) = 0;$/;"	p	class:CClientBusinessForExecObj	access:public	signature:(void * pContext)
+StartFunctionOfThread	CThread.h	/^	static void * StartFunctionOfThread(void * pContext);$/;"	p	class:CThread	access:private	signature:(void * pContext)
+WaitForDeath	CExecutiveObject.h	/^	virtual CStatus WaitForDeath() = 0;$/;"	p	class:CExecutiveObject	access:public	signature:()
+WaitForDeath	CThread.h	/^	virtual CStatus WaitForDeath();$/;"	p	class:CThread	access:public	signature:()
+m_ThreadID	CThread.h	/^	pthread_t m_ThreadID;$/;"	m	class:CThread	access:private
+m_pClientBusinessForExecObj	CExecutiveObject.h	/^	CClientBusinessForExecObj * m_pClientBusinessForExecObj;$/;"	m	class:CExecutiveObject	access:private
+m_pContext	CThread.h	/^	void * m_pContext;$/;"	m	class:CThread	access:private
+~CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^	virtual ~CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+~CExecutiveObject	CExecutiveObject.h	/^	virtual ~CExecutiveObject();$/;"	p	class:CExecutiveObject	access:public	signature:()
+~CThread	CThread.h	/^	virtual ~CThread();$/;"	p	class:CThread	access:public	signature:()

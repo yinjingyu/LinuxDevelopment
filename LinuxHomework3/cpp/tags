@@ -1,0 +1,32 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CExecutive::~CExecutive	CExecutiveObject.cpp	/^CExecutive::~CExecutive()$/;"	f	class:CExecutive	signature:()
+CExecutiveObject	CExecutiveObject.cpp	/^CExecutiveObject::CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj)$/;"	f	class:CExecutiveObject	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CExecutiveObject::CExecutiveObject	CExecutiveObject.cpp	/^CExecutiveObject::CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj)$/;"	f	class:CExecutiveObject	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CStatus	CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::GetErrorMsg	CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+CStatus::InitializeMemberVars	CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::IsSuccess	CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+CStatus::~CStatus	CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+CThread	CThread.cpp	/^CThread::CThread(CClientBusinessForExecObj * pClientBusinessForExecObj):CExecutiveObject(pClientBusinessForExecObj)$/;"	f	class:CThread	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread::CThread	CThread.cpp	/^CThread::CThread(CClientBusinessForExecObj * pClientBusinessForExecObj):CExecutiveObject(pClientBusinessForExecObj)$/;"	f	class:CThread	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread::Run	CThread.cpp	/^CStatus CThread::Run(void * pContext)$/;"	f	class:CThread	signature:(void * pContext)
+CThread::StartFunctionOfThread	CThread.cpp	/^void * CThread::StartFunctionOfThread(void * pThis)$/;"	f	class:CThread	signature:(void * pThis)
+CThread::WaitForDeath	CThread.cpp	/^CStatus CThread::WaitForDeath()$/;"	f	class:CThread	signature:()
+GetErrorMsg	CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+InitializeMemberVars	CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+IsSuccess	CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+Run	CThread.cpp	/^CStatus CThread::Run(void * pContext)$/;"	f	class:CThread	signature:(void * pContext)
+StartFunctionOfThread	CThread.cpp	/^void * CThread::StartFunctionOfThread(void * pThis)$/;"	f	class:CThread	signature:(void * pThis)
+WaitForDeath	CThread.cpp	/^CStatus CThread::WaitForDeath()$/;"	f	class:CThread	signature:()
+~CExecutive	CExecutiveObject.cpp	/^CExecutive::~CExecutive()$/;"	f	class:CExecutive	signature:()
+~CStatus	CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()

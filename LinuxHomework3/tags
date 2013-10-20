@@ -1,0 +1,102 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CCLIENTBUSINESSFOREXECUTIVE_H	include/CClientBusinessForExecObj.h	4;"	d
+CClientBusinessForExecObj	include/CClientBusinessForExecObj.h	/^	CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+CClientBusinessForExecObj	include/CClientBusinessForExecObj.h	/^class CClientBusinessForExecObj$/;"	c
+CClientBusinessForExecObj::CClientBusinessForExecObj	include/CClientBusinessForExecObj.h	/^	CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+CClientBusinessForExecObj::RunClientBusiness	include/CClientBusinessForExecObj.h	/^	virtual CStatus RunClientBusiness(void * pContext) = 0;$/;"	p	class:CClientBusinessForExecObj	access:public	signature:(void * pContext)
+CClientBusinessForExecObj::~CClientBusinessForExecObj	include/CClientBusinessForExecObj.h	/^	virtual ~CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+CEXECUTIVE_H	include/CExecutiveObject.h	4;"	d
+CExecutive::~CExecutive	cpp/CExecutiveObject.cpp	/^CExecutive::~CExecutive()$/;"	f	class:CExecutive	signature:()
+CExecutiveObject	cpp/CExecutiveObject.cpp	/^CExecutiveObject::CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj)$/;"	f	class:CExecutiveObject	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CExecutiveObject	include/CExecutiveObject.h	/^	explicit CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CExecutiveObject	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CExecutiveObject	include/CExecutiveObject.h	/^class CExecutiveObject$/;"	c
+CExecutiveObject::CExecutiveObject	cpp/CExecutiveObject.cpp	/^CExecutiveObject::CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj)$/;"	f	class:CExecutiveObject	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CExecutiveObject::CExecutiveObject	include/CExecutiveObject.h	/^	explicit CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CExecutiveObject	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CExecutiveObject::Run	include/CExecutiveObject.h	/^	virtual CStatus Run(void * pContext) = 0;$/;"	p	class:CExecutiveObject	access:public	signature:(void * pContext)
+CExecutiveObject::WaitForDeath	include/CExecutiveObject.h	/^	virtual CStatus WaitForDeath() = 0;$/;"	p	class:CExecutiveObject	access:public	signature:()
+CExecutiveObject::m_pClientBusinessForExecObj	include/CExecutiveObject.h	/^	CClientBusinessForExecObj * m_pClientBusinessForExecObj;$/;"	m	class:CExecutiveObject	access:private
+CExecutiveObject::~CExecutiveObject	include/CExecutiveObject.h	/^	virtual ~CExecutiveObject();$/;"	p	class:CExecutiveObject	access:public	signature:()
+CSTATUS_H	include/CStatus.h	2;"	d
+CStatus	cpp/CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus	cpp/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus	cpp/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus	include/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus	include/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus	include/CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus	include/CStatus.h	/^class CStatus$/;"	c
+CStatus::CStatus	cpp/CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus::CStatus	cpp/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	cpp/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::CStatus	include/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	include/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus::CStatus	include/CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus::GetErrorMsg	cpp/CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+CStatus::GetErrorMsg	include/CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::InitializeMemberVars	cpp/CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	include/CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::IsSuccess	cpp/CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+CStatus::IsSuccess	include/CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::m_ciErrorCode	include/CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciReturnCode	include/CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+CStatus::m_iErrorCode	include/CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iReturnCode	include/CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+CStatus::m_pErrorMsg	include/CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+CStatus::~CStatus	cpp/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+CStatus::~CStatus	include/CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+CTHREAD_H	include/CThread.h	3;"	d
+CThread	cpp/CThread.cpp	/^CThread::CThread(CClientBusinessForExecObj * pClientBusinessForExecObj):CExecutiveObject(pClientBusinessForExecObj)$/;"	f	class:CThread	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread	include/CThread.h	/^	explicit CThread(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CThread	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread	include/CThread.h	/^class CThread : public CExecutiveObject$/;"	c	inherits:CExecutiveObject
+CThread::CThread	cpp/CThread.cpp	/^CThread::CThread(CClientBusinessForExecObj * pClientBusinessForExecObj):CExecutiveObject(pClientBusinessForExecObj)$/;"	f	class:CThread	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread::CThread	include/CThread.h	/^	explicit CThread(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CThread	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread::Run	cpp/CThread.cpp	/^CStatus CThread::Run(void * pContext)$/;"	f	class:CThread	signature:(void * pContext)
+CThread::Run	include/CThread.h	/^	virtual CStatus Run(void * pContext);$/;"	p	class:CThread	access:public	signature:(void * pContext)
+CThread::StartFunctionOfThread	cpp/CThread.cpp	/^void * CThread::StartFunctionOfThread(void * pThis)$/;"	f	class:CThread	signature:(void * pThis)
+CThread::StartFunctionOfThread	include/CThread.h	/^	static void * StartFunctionOfThread(void * pContext);$/;"	p	class:CThread	access:private	signature:(void * pContext)
+CThread::WaitForDeath	cpp/CThread.cpp	/^CStatus CThread::WaitForDeath()$/;"	f	class:CThread	signature:()
+CThread::WaitForDeath	include/CThread.h	/^	virtual CStatus WaitForDeath();$/;"	p	class:CThread	access:public	signature:()
+CThread::m_ThreadID	include/CThread.h	/^	pthread_t m_ThreadID;$/;"	m	class:CThread	access:private
+CThread::m_pContext	include/CThread.h	/^	void * m_pContext;$/;"	m	class:CThread	access:private
+CThread::~CThread	include/CThread.h	/^	virtual ~CThread();$/;"	p	class:CThread	access:public	signature:()
+Client	CClient.cpp	/^	Client();$/;"	p	class:Client	file:	access:public	signature:()
+Client	CClient.cpp	/^class Client : public CClientBusinessForExecObj$/;"	c	file:	inherits:CClientBusinessForExecObj
+Client::Client	CClient.cpp	/^	Client();$/;"	p	class:Client	file:	access:public	signature:()
+Client::RunClientBusiness	CClient.cpp	/^	virtual CStatus RunClientBusiness(void * pContext)$/;"	f	class:Client	access:public	signature:(void * pContext)
+Client::~Client	CClient.cpp	/^	virtual ~Client();$/;"	p	class:Client	file:	access:public	signature:()
+GetErrorMsg	cpp/CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+GetErrorMsg	include/CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+InitializeMemberVars	cpp/CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	include/CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+IsSuccess	cpp/CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+IsSuccess	include/CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+Run	cpp/CThread.cpp	/^CStatus CThread::Run(void * pContext)$/;"	f	class:CThread	signature:(void * pContext)
+Run	include/CExecutiveObject.h	/^	virtual CStatus Run(void * pContext) = 0;$/;"	p	class:CExecutiveObject	access:public	signature:(void * pContext)
+Run	include/CThread.h	/^	virtual CStatus Run(void * pContext);$/;"	p	class:CThread	access:public	signature:(void * pContext)
+RunClientBusiness	CClient.cpp	/^	virtual CStatus RunClientBusiness(void * pContext)$/;"	f	class:Client	access:public	signature:(void * pContext)
+RunClientBusiness	include/CClientBusinessForExecObj.h	/^	virtual CStatus RunClientBusiness(void * pContext) = 0;$/;"	p	class:CClientBusinessForExecObj	access:public	signature:(void * pContext)
+StartFunctionOfThread	cpp/CThread.cpp	/^void * CThread::StartFunctionOfThread(void * pThis)$/;"	f	class:CThread	signature:(void * pThis)
+StartFunctionOfThread	include/CThread.h	/^	static void * StartFunctionOfThread(void * pContext);$/;"	p	class:CThread	access:private	signature:(void * pContext)
+WaitForDeath	cpp/CThread.cpp	/^CStatus CThread::WaitForDeath()$/;"	f	class:CThread	signature:()
+WaitForDeath	include/CExecutiveObject.h	/^	virtual CStatus WaitForDeath() = 0;$/;"	p	class:CExecutiveObject	access:public	signature:()
+WaitForDeath	include/CThread.h	/^	virtual CStatus WaitForDeath();$/;"	p	class:CThread	access:public	signature:()
+m_ThreadID	include/CThread.h	/^	pthread_t m_ThreadID;$/;"	m	class:CThread	access:private
+m_ciErrorCode	include/CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+m_ciReturnCode	include/CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+m_iErrorCode	include/CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+m_iReturnCode	include/CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+m_pClientBusinessForExecObj	include/CExecutiveObject.h	/^	CClientBusinessForExecObj * m_pClientBusinessForExecObj;$/;"	m	class:CExecutiveObject	access:private
+m_pContext	include/CThread.h	/^	void * m_pContext;$/;"	m	class:CThread	access:private
+m_pErrorMsg	include/CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+main	CClient.cpp	/^int main()$/;"	f	signature:()
+~CClientBusinessForExecObj	include/CClientBusinessForExecObj.h	/^	virtual ~CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+~CExecutive	cpp/CExecutiveObject.cpp	/^CExecutive::~CExecutive()$/;"	f	class:CExecutive	signature:()
+~CExecutiveObject	include/CExecutiveObject.h	/^	virtual ~CExecutiveObject();$/;"	p	class:CExecutiveObject	access:public	signature:()
+~CStatus	cpp/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+~CStatus	include/CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+~CThread	include/CThread.h	/^	virtual ~CThread();$/;"	p	class:CThread	access:public	signature:()
+~Client	CClient.cpp	/^	virtual ~Client();$/;"	p	class:Client	file:	access:public	signature:()
