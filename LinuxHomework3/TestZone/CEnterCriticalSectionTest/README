@@ -1,0 +1,3 @@
+g++ mutexTest.cpp ./cpp/CStatus.cpp ./cpp/CMutex.cpp ./cpp/CEnterCriticalSection.cpp -lpthread
+
+使用此测试类时要把该类文件放到include 和cpp的父目录下
