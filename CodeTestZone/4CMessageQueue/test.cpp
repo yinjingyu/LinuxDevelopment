@@ -18,39 +18,35 @@
 
 #include <iostream>
 #include <stdio.h>
+#include <unistd.h>
+#include <pthread.h>
+
 #include "CMessage.h"
 #include "CMessageQueueByUserDefined.h"
 #include "CStatus.h"
 
 using namespace std;
 
+void * StartFunction(void * pContext)
+{
+	CMessageQueueByUserDefined * queue = (CMessageQueueByUserDefined *)pContext;
+	cout << "child thread is going to sleep " << endl;
+	sleep(5);
+	queue->PushMessage(new CMessage(1));
+	cout << "child already have sent the msg" << endl;
+	return 0;
+}
+
 int main()
 {
 	CMessageQueueByUserDefined * queue = new CMessageQueueByUserDefined();
+	
+	pthread_t pthreadID;
+	pthread_create(&pthreadID,0,StartFunction,queue);
+	
+	cout << "main thread start to invoke GetMessage()" << endl;
+	CMessage * pMsg = queue->GetMessage();
+	cout << "msg from the child thread is : " << pMsg->m_clMsgID << endl;
 
-	int c;
-	while((cin >> c,c) != 0)
-	{
-		if(c < 0)
-		{
-			CMessage * temp	= queue->Pop();
-			cout << "pop out from the queue is : " << temp->m_clMsgID << endl;
-		}
-		else
-			queue->Push(new CMessage(c));
-	}
-
-	cout << "======" << endl;
-	cout << "the numbers of the msg in the queue is" << endl;
-	while(!queue->IsEmpty())
- 	{
- 		CMessage * pm = queue->Pop();
-		if(NULL == pm)
- 		{
-			cout <<"pop failed!" << endl;
- 			return 0;
- 		}
-  		cout <<  pm->m_clMsgID << endl;
-  	}
 	return 0;
 }
