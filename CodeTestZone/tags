@@ -1,0 +1,503 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CCONDITIONVARIABLE_H	4CMessageQueue/CConditionVariable.h	5;"	d
+CCONDITIONVARIABLE_H	CConditionVariable/CConditionVariable.h	5;"	d
+CConditionVariable	4CMessageQueue/CConditionVariable.cpp	/^CConditionVariable::CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable	4CMessageQueue/CConditionVariable.h	/^	CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable	4CMessageQueue/CConditionVariable.h	/^class CConditionVariable$/;"	c
+CConditionVariable	CConditionVariable/CConditionVariable.cpp	/^CConditionVariable::CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable	CConditionVariable/CConditionVariable.h	/^	CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable	CConditionVariable/CConditionVariable.h	/^class CConditionVariable$/;"	c
+CConditionVariable::CConditionVariable	4CMessageQueue/CConditionVariable.cpp	/^CConditionVariable::CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::CConditionVariable	4CMessageQueue/CConditionVariable.h	/^	CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable::CConditionVariable	CConditionVariable/CConditionVariable.cpp	/^CConditionVariable::CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::CConditionVariable	CConditionVariable/CConditionVariable.h	/^	CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable::Wait	4CMessageQueue/CConditionVariable.cpp	/^CStatus CConditionVariable::Wait(CMutex * pMutex)$/;"	f	class:CConditionVariable	signature:(CMutex * pMutex)
+CConditionVariable::Wait	4CMessageQueue/CConditionVariable.h	/^	CStatus Wait(CMutex * pMutex);$/;"	p	class:CConditionVariable	access:public	signature:(CMutex * pMutex)
+CConditionVariable::Wait	CConditionVariable/CConditionVariable.cpp	/^CStatus CConditionVariable::Wait(CMutex * pMutex)$/;"	f	class:CConditionVariable	signature:(CMutex * pMutex)
+CConditionVariable::Wait	CConditionVariable/CConditionVariable.h	/^	CStatus Wait(CMutex * pMutex);$/;"	p	class:CConditionVariable	access:public	signature:(CMutex * pMutex)
+CConditionVariable::Wakeup	4CMessageQueue/CConditionVariable.cpp	/^CStatus CConditionVariable::Wakeup()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::Wakeup	4CMessageQueue/CConditionVariable.h	/^	CStatus Wakeup();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable::Wakeup	CConditionVariable/CConditionVariable.cpp	/^CStatus CConditionVariable::Wakeup()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::Wakeup	CConditionVariable/CConditionVariable.h	/^	CStatus Wakeup();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable::WakeupAll	4CMessageQueue/CConditionVariable.cpp	/^CStatus CConditionVariable::WakeupAll()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::WakeupAll	4CMessageQueue/CConditionVariable.h	/^	CStatus WakeupAll();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable::WakeupAll	CConditionVariable/CConditionVariable.cpp	/^CStatus CConditionVariable::WakeupAll()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::WakeupAll	CConditionVariable/CConditionVariable.h	/^	CStatus WakeupAll();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable::m_Cond	4CMessageQueue/CConditionVariable.h	/^	pthread_cond_t m_Cond;$/;"	m	class:CConditionVariable	access:private
+CConditionVariable::m_Cond	CConditionVariable/CConditionVariable.h	/^	pthread_cond_t m_Cond;$/;"	m	class:CConditionVariable	access:private
+CConditionVariable::~CConditionVariable	4CMessageQueue/CConditionVariable.cpp	/^CConditionVariable::~CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::~CConditionVariable	4CMessageQueue/CConditionVariable.h	/^	virtual ~CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable::~CConditionVariable	CConditionVariable/CConditionVariable.cpp	/^CConditionVariable::~CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::~CConditionVariable	CConditionVariable/CConditionVariable.h	/^	virtual ~CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+CENTERCRITICALSECTION_H	4CMessageQueue/CEnterCriticalSection.h	3;"	d
+CENTERCRITICALSECTION_H	CConditionVariable/CEnterCriticalSection.h	3;"	d
+CENTERCRITICALSECTION_H	CEnterCriticalSectionTest/CEnterCriticalSection.h	3;"	d
+CEVENT_H	4CMessageQueue/CEvent.h	3;"	d
+CEVENT_H	CConditionVariable/CEvent.h	3;"	d
+CEnterCriticalSection	4CMessageQueue/CEnterCriticalSection.cpp	/^CEnterCriticalSection::CEnterCriticalSection(CMutex * pMutex)$/;"	f	class:CEnterCriticalSection	signature:(CMutex * pMutex)
+CEnterCriticalSection	4CMessageQueue/CEnterCriticalSection.h	/^	CEnterCriticalSection(CMutex * m_pMutex);$/;"	p	class:CEnterCriticalSection	access:public	signature:(CMutex * m_pMutex)
+CEnterCriticalSection	4CMessageQueue/CEnterCriticalSection.h	/^class CEnterCriticalSection$/;"	c
+CEnterCriticalSection	CConditionVariable/CEnterCriticalSection.cpp	/^CEnterCriticalSection::CEnterCriticalSection(CMutex * pMutex)$/;"	f	class:CEnterCriticalSection	signature:(CMutex * pMutex)
+CEnterCriticalSection	CConditionVariable/CEnterCriticalSection.h	/^	CEnterCriticalSection(CMutex * m_pMutex);$/;"	p	class:CEnterCriticalSection	access:public	signature:(CMutex * m_pMutex)
+CEnterCriticalSection	CConditionVariable/CEnterCriticalSection.h	/^class CEnterCriticalSection$/;"	c
+CEnterCriticalSection	CEnterCriticalSectionTest/CEnterCriticalSection.cpp	/^CEnterCriticalSection::CEnterCriticalSection(CMutex * pMutex)$/;"	f	class:CEnterCriticalSection	signature:(CMutex * pMutex)
+CEnterCriticalSection	CEnterCriticalSectionTest/CEnterCriticalSection.h	/^	CEnterCriticalSection(CMutex * m_pMutex);$/;"	p	class:CEnterCriticalSection	access:public	signature:(CMutex * m_pMutex)
+CEnterCriticalSection	CEnterCriticalSectionTest/CEnterCriticalSection.h	/^class CEnterCriticalSection$/;"	c
+CEnterCriticalSection::CEnterCriticalSection	4CMessageQueue/CEnterCriticalSection.cpp	/^CEnterCriticalSection::CEnterCriticalSection(CMutex * pMutex)$/;"	f	class:CEnterCriticalSection	signature:(CMutex * pMutex)
+CEnterCriticalSection::CEnterCriticalSection	4CMessageQueue/CEnterCriticalSection.h	/^	CEnterCriticalSection(CMutex * m_pMutex);$/;"	p	class:CEnterCriticalSection	access:public	signature:(CMutex * m_pMutex)
+CEnterCriticalSection::CEnterCriticalSection	CConditionVariable/CEnterCriticalSection.cpp	/^CEnterCriticalSection::CEnterCriticalSection(CMutex * pMutex)$/;"	f	class:CEnterCriticalSection	signature:(CMutex * pMutex)
+CEnterCriticalSection::CEnterCriticalSection	CConditionVariable/CEnterCriticalSection.h	/^	CEnterCriticalSection(CMutex * m_pMutex);$/;"	p	class:CEnterCriticalSection	access:public	signature:(CMutex * m_pMutex)
+CEnterCriticalSection::CEnterCriticalSection	CEnterCriticalSectionTest/CEnterCriticalSection.cpp	/^CEnterCriticalSection::CEnterCriticalSection(CMutex * pMutex)$/;"	f	class:CEnterCriticalSection	signature:(CMutex * pMutex)
+CEnterCriticalSection::CEnterCriticalSection	CEnterCriticalSectionTest/CEnterCriticalSection.h	/^	CEnterCriticalSection(CMutex * m_pMutex);$/;"	p	class:CEnterCriticalSection	access:public	signature:(CMutex * m_pMutex)
+CEnterCriticalSection::m_pMutex	4CMessageQueue/CEnterCriticalSection.h	/^	CMutex * m_pMutex;$/;"	m	class:CEnterCriticalSection	access:private
+CEnterCriticalSection::m_pMutex	CConditionVariable/CEnterCriticalSection.h	/^	CMutex * m_pMutex;$/;"	m	class:CEnterCriticalSection	access:private
+CEnterCriticalSection::m_pMutex	CEnterCriticalSectionTest/CEnterCriticalSection.h	/^	CMutex * m_pMutex;$/;"	m	class:CEnterCriticalSection	access:private
+CEnterCriticalSection::~CEnterCriticalSection	4CMessageQueue/CEnterCriticalSection.cpp	/^CEnterCriticalSection::~CEnterCriticalSection()$/;"	f	class:CEnterCriticalSection	signature:()
+CEnterCriticalSection::~CEnterCriticalSection	4CMessageQueue/CEnterCriticalSection.h	/^	virtual ~CEnterCriticalSection();$/;"	p	class:CEnterCriticalSection	access:public	signature:()
+CEnterCriticalSection::~CEnterCriticalSection	CConditionVariable/CEnterCriticalSection.cpp	/^CEnterCriticalSection::~CEnterCriticalSection()$/;"	f	class:CEnterCriticalSection	signature:()
+CEnterCriticalSection::~CEnterCriticalSection	CConditionVariable/CEnterCriticalSection.h	/^	virtual ~CEnterCriticalSection();$/;"	p	class:CEnterCriticalSection	access:public	signature:()
+CEnterCriticalSection::~CEnterCriticalSection	CEnterCriticalSectionTest/CEnterCriticalSection.cpp	/^CEnterCriticalSection::~CEnterCriticalSection()$/;"	f	class:CEnterCriticalSection	signature:()
+CEnterCriticalSection::~CEnterCriticalSection	CEnterCriticalSectionTest/CEnterCriticalSection.h	/^	virtual ~CEnterCriticalSection();$/;"	p	class:CEnterCriticalSection	access:public	signature:()
+CEvent	4CMessageQueue/CEvent.cpp	/^CEvent::CEvent()$/;"	f	class:CEvent	signature:()
+CEvent	4CMessageQueue/CEvent.h	/^	CEvent();$/;"	p	class:CEvent	access:public	signature:()
+CEvent	4CMessageQueue/CEvent.h	/^class CEvent$/;"	c
+CEvent	CConditionVariable/CEvent.cpp	/^CEvent::CEvent()$/;"	f	class:CEvent	signature:()
+CEvent	CConditionVariable/CEvent.h	/^	CEvent();$/;"	p	class:CEvent	access:public	signature:()
+CEvent	CConditionVariable/CEvent.h	/^class CEvent$/;"	c
+CEvent::CEvent	4CMessageQueue/CEvent.cpp	/^CEvent::CEvent()$/;"	f	class:CEvent	signature:()
+CEvent::CEvent	4CMessageQueue/CEvent.h	/^	CEvent();$/;"	p	class:CEvent	access:public	signature:()
+CEvent::CEvent	CConditionVariable/CEvent.cpp	/^CEvent::CEvent()$/;"	f	class:CEvent	signature:()
+CEvent::CEvent	CConditionVariable/CEvent.h	/^	CEvent();$/;"	p	class:CEvent	access:public	signature:()
+CEvent::Set	4CMessageQueue/CEvent.cpp	/^CStatus CEvent::Set()$/;"	f	class:CEvent	signature:()
+CEvent::Set	4CMessageQueue/CEvent.h	/^	CStatus Set();$/;"	p	class:CEvent	access:public	signature:()
+CEvent::Set	CConditionVariable/CEvent.cpp	/^CStatus CEvent::Set()$/;"	f	class:CEvent	signature:()
+CEvent::Set	CConditionVariable/CEvent.h	/^	CStatus Set();$/;"	p	class:CEvent	access:public	signature:()
+CEvent::UseAsRecordCondVar	4CMessageQueue/CEvent.cpp	/^CStatus CEvent::UseAsRecordCondVar(bool b)$/;"	f	class:CEvent	signature:(bool b)
+CEvent::UseAsRecordCondVar	4CMessageQueue/CEvent.h	/^	CStatus UseAsRecordCondVar(bool b);$/;"	p	class:CEvent	access:public	signature:(bool b)
+CEvent::UseAsRecordCondVar	CConditionVariable/CEvent.cpp	/^CStatus CEvent::UseAsRecordCondVar(bool b)$/;"	f	class:CEvent	signature:(bool b)
+CEvent::UseAsRecordCondVar	CConditionVariable/CEvent.h	/^	CStatus UseAsRecordCondVar(bool b);$/;"	p	class:CEvent	access:public	signature:(bool b)
+CEvent::Wait	4CMessageQueue/CEvent.cpp	/^CStatus CEvent::Wait()$/;"	f	class:CEvent	signature:()
+CEvent::Wait	4CMessageQueue/CEvent.h	/^	CStatus Wait();$/;"	p	class:CEvent	access:public	signature:()
+CEvent::Wait	CConditionVariable/CEvent.cpp	/^CStatus CEvent::Wait()$/;"	f	class:CEvent	signature:()
+CEvent::Wait	CConditionVariable/CEvent.h	/^	CStatus Wait();$/;"	p	class:CEvent	access:public	signature:()
+CEvent::m_Cond	4CMessageQueue/CEvent.h	/^	CConditionVariable m_Cond;$/;"	m	class:CEvent	access:private
+CEvent::m_Cond	CConditionVariable/CEvent.h	/^	CConditionVariable m_Cond;$/;"	m	class:CEvent	access:private
+CEvent::m_Mutex	4CMessageQueue/CEvent.h	/^	CMutex m_Mutex;$/;"	m	class:CEvent	access:private
+CEvent::m_Mutex	CConditionVariable/CEvent.h	/^	CMutex m_Mutex;$/;"	m	class:CEvent	access:private
+CEvent::m_bIsRecordCondVar	4CMessageQueue/CEvent.h	/^	bool m_bIsRecordCondVar;$/;"	m	class:CEvent	access:private
+CEvent::m_bIsRecordCondVar	CConditionVariable/CEvent.h	/^	bool m_bIsRecordCondVar;$/;"	m	class:CEvent	access:private
+CEvent::m_iEventCounter	4CMessageQueue/CEvent.h	/^	int  m_iEventCounter;$/;"	m	class:CEvent	access:private
+CEvent::m_iEventCounter	CConditionVariable/CEvent.h	/^	int  m_iEventCounter;$/;"	m	class:CEvent	access:private
+CEvent::~CEvent	4CMessageQueue/CEvent.cpp	/^CEvent::~CEvent()$/;"	f	class:CEvent	signature:()
+CEvent::~CEvent	4CMessageQueue/CEvent.h	/^	~CEvent();$/;"	p	class:CEvent	access:public	signature:()
+CEvent::~CEvent	CConditionVariable/CEvent.cpp	/^CEvent::~CEvent()$/;"	f	class:CEvent	signature:()
+CEvent::~CEvent	CConditionVariable/CEvent.h	/^	~CEvent();$/;"	p	class:CEvent	access:public	signature:()
+CMESSAGE_H	4CMessageQueue/CMessage.h	4;"	d
+CMUTEX_H	4CMessageQueue/CMutex.h	3;"	d
+CMUTEX_H	CConditionVariable/CMutex.h	3;"	d
+CMUTEX_H	CEnterCriticalSectionTest/CMutex.h	3;"	d
+CMUTEX_H	CMutexTest/CMutex.h	3;"	d
+CMessage	4CMessageQueue/CMessage.cpp	/^CMessage:: CMessage(const CMessage &cm):m_clMsgID(m_lMsgID)$/;"	f	class:CMessage	signature:(const CMessage &cm)
+CMessage	4CMessageQueue/CMessage.cpp	/^CMessage::CMessage(unsigned long lMsgID):m_clMsgID(m_lMsgID)$/;"	f	class:CMessage	signature:(unsigned long lMsgID)
+CMessage	4CMessageQueue/CMessage.h	/^	CMessage(const CMessage & cm);$/;"	p	class:CMessage	access:public	signature:(const CMessage & cm)
+CMessage	4CMessageQueue/CMessage.h	/^	CMessage(unsigned long lMsgID);$/;"	p	class:CMessage	access:public	signature:(unsigned long lMsgID)
+CMessage	4CMessageQueue/CMessage.h	/^class CMessage$/;"	c
+CMessage	test.cpp	/^	CMessage(int id)$/;"	f	class:CMessage	access:public	signature:(int id)
+CMessage	test.cpp	/^class CMessage$/;"	c	file:
+CMessage::CMessage	4CMessageQueue/CMessage.cpp	/^CMessage:: CMessage(const CMessage &cm):m_clMsgID(m_lMsgID)$/;"	f	class:CMessage	signature:(const CMessage &cm)
+CMessage::CMessage	4CMessageQueue/CMessage.cpp	/^CMessage::CMessage(unsigned long lMsgID):m_clMsgID(m_lMsgID)$/;"	f	class:CMessage	signature:(unsigned long lMsgID)
+CMessage::CMessage	4CMessageQueue/CMessage.h	/^	CMessage(const CMessage & cm);$/;"	p	class:CMessage	access:public	signature:(const CMessage & cm)
+CMessage::CMessage	4CMessageQueue/CMessage.h	/^	CMessage(unsigned long lMsgID);$/;"	p	class:CMessage	access:public	signature:(unsigned long lMsgID)
+CMessage::CMessage	test.cpp	/^	CMessage(int id)$/;"	f	class:CMessage	access:public	signature:(int id)
+CMessage::m_clMsgID	4CMessageQueue/CMessage.h	/^	const unsigned long & m_clMsgID;$/;"	m	class:CMessage	access:public
+CMessage::m_id	test.cpp	/^	int m_id;$/;"	m	class:CMessage	file:	access:public
+CMessage::m_lMsgID	4CMessageQueue/CMessage.h	/^	unsigned long m_lMsgID;$/;"	m	class:CMessage	access:protected
+CMessage::operator =	4CMessageQueue/CMessage.h	/^	CMessage & operator=(const CMessage & cm);$/;"	p	class:CMessage	access:public	signature:(const CMessage & cm)
+CMessage::~CMessage	4CMessageQueue/CMessage.cpp	/^CMessage:: ~CMessage()$/;"	f	class:CMessage	signature:()
+CMessage::~CMessage	4CMessageQueue/CMessage.h	/^	virtual ~CMessage();$/;"	p	class:CMessage	access:public	signature:()
+CMessageQueueByUserDefined	test.cpp	/^	CMessageQueueByUserDefined()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+CMessageQueueByUserDefined	test.cpp	/^class CMessageQueueByUserDefined$/;"	c	file:
+CMessageQueueByUserDefined::CMessageQueueByUserDefined	test.cpp	/^	CMessageQueueByUserDefined()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+CMessageQueueByUserDefined::EnlargeQueue	test.cpp	/^	CStatus EnlargeQueue()$/;"	f	class:CMessageQueueByUserDefined	file:	access:private	signature:()
+CMessageQueueByUserDefined::GetTotalNum	test.cpp	/^	int GetTotalNum()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+CMessageQueueByUserDefined::IsEmpty	test.cpp	/^	bool IsEmpty()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+CMessageQueueByUserDefined::IsFull	test.cpp	/^ 	bool IsFull()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+CMessageQueueByUserDefined::Pop	test.cpp	/^	CMessage * Pop()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+CMessageQueueByUserDefined::Push	test.cpp	/^	CStatus Push(CMessage * pMsg)$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:(CMessage * pMsg)
+CMessageQueueByUserDefined::m_iQueueHead	test.cpp	/^	int m_iQueueHead;$/;"	m	class:CMessageQueueByUserDefined	file:	access:private
+CMessageQueueByUserDefined::m_iQueueTail	test.cpp	/^	int m_iQueueTail;$/;"	m	class:CMessageQueueByUserDefined	file:	access:private
+CMessageQueueByUserDefined::m_iTotalRoom	test.cpp	/^	int m_iTotalRoom;$/;"	m	class:CMessageQueueByUserDefined	file:	access:private
+CMessageQueueByUserDefined::m_pQueueSpace	test.cpp	/^	CMessage ** m_pQueueSpace;$/;"	m	class:CMessageQueueByUserDefined	file:	access:private
+CMessageQueueByUserDefined::~CMessageQueueByUserDefined	test.cpp	/^	virtual ~CMessageQueueByUserDefined()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+CMutex	4CMessageQueue/CMutex.cpp	/^CMutex::CMutex()$/;"	f	class:CMutex	signature:()
+CMutex	4CMessageQueue/CMutex.h	/^	CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex	4CMessageQueue/CMutex.h	/^class CMutex$/;"	c
+CMutex	CConditionVariable/CMutex.cpp	/^CMutex::CMutex()$/;"	f	class:CMutex	signature:()
+CMutex	CConditionVariable/CMutex.h	/^	CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex	CConditionVariable/CMutex.h	/^class CMutex$/;"	c
+CMutex	CEnterCriticalSectionTest/CMutex.cpp	/^CMutex::CMutex()$/;"	f	class:CMutex	signature:()
+CMutex	CEnterCriticalSectionTest/CMutex.h	/^	CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex	CEnterCriticalSectionTest/CMutex.h	/^class CMutex$/;"	c
+CMutex	CMutexTest/CMutex.cpp	/^CMutex::CMutex()$/;"	f	class:CMutex	signature:()
+CMutex	CMutexTest/CMutex.h	/^	CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex	CMutexTest/CMutex.h	/^class CMutex$/;"	c
+CMutex::CMutex	4CMessageQueue/CMutex.cpp	/^CMutex::CMutex()$/;"	f	class:CMutex	signature:()
+CMutex::CMutex	4CMessageQueue/CMutex.h	/^	CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::CMutex	CConditionVariable/CMutex.cpp	/^CMutex::CMutex()$/;"	f	class:CMutex	signature:()
+CMutex::CMutex	CConditionVariable/CMutex.h	/^	CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::CMutex	CEnterCriticalSectionTest/CMutex.cpp	/^CMutex::CMutex()$/;"	f	class:CMutex	signature:()
+CMutex::CMutex	CEnterCriticalSectionTest/CMutex.h	/^	CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::CMutex	CMutexTest/CMutex.cpp	/^CMutex::CMutex()$/;"	f	class:CMutex	signature:()
+CMutex::CMutex	CMutexTest/CMutex.h	/^	CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Lock	4CMessageQueue/CMutex.cpp	/^CStatus CMutex::Lock()$/;"	f	class:CMutex	signature:()
+CMutex::Lock	4CMessageQueue/CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Lock	CConditionVariable/CMutex.cpp	/^CStatus CMutex::Lock()$/;"	f	class:CMutex	signature:()
+CMutex::Lock	CConditionVariable/CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Lock	CEnterCriticalSectionTest/CMutex.cpp	/^CStatus CMutex::Lock()$/;"	f	class:CMutex	signature:()
+CMutex::Lock	CEnterCriticalSectionTest/CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Lock	CMutexTest/CMutex.cpp	/^CStatus CMutex::Lock()$/;"	f	class:CMutex	signature:()
+CMutex::Lock	CMutexTest/CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Trylock	4CMessageQueue/CMutex.h	/^	CStatus Trylock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Trylock	CConditionVariable/CMutex.h	/^	CStatus Trylock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Trylock	CEnterCriticalSectionTest/CMutex.h	/^	CStatus Trylock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Trylock	CMutexTest/CMutex.h	/^	CStatus Trylock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Unlock	4CMessageQueue/CMutex.cpp	/^CStatus CMutex::Unlock()$/;"	f	class:CMutex	signature:()
+CMutex::Unlock	4CMessageQueue/CMutex.h	/^	CStatus Unlock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Unlock	CConditionVariable/CMutex.cpp	/^CStatus CMutex::Unlock()$/;"	f	class:CMutex	signature:()
+CMutex::Unlock	CConditionVariable/CMutex.h	/^	CStatus Unlock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Unlock	CEnterCriticalSectionTest/CMutex.cpp	/^CStatus CMutex::Unlock()$/;"	f	class:CMutex	signature:()
+CMutex::Unlock	CEnterCriticalSectionTest/CMutex.h	/^	CStatus Unlock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Unlock	CMutexTest/CMutex.cpp	/^CStatus CMutex::Unlock()$/;"	f	class:CMutex	signature:()
+CMutex::Unlock	CMutexTest/CMutex.h	/^	CStatus Unlock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::m_Mutex	4CMessageQueue/CMutex.h	/^	pthread_mutex_t m_Mutex;$/;"	m	class:CMutex	access:public
+CMutex::m_Mutex	CConditionVariable/CMutex.h	/^	pthread_mutex_t m_Mutex;$/;"	m	class:CMutex	access:public
+CMutex::m_Mutex	CEnterCriticalSectionTest/CMutex.h	/^	pthread_mutex_t m_Mutex;$/;"	m	class:CMutex	access:private
+CMutex::m_Mutex	CMutexTest/CMutex.h	/^	pthread_mutex_t m_Mutex;$/;"	m	class:CMutex	access:private
+CMutex::~CMutex	4CMessageQueue/CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
+CMutex::~CMutex	4CMessageQueue/CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::~CMutex	CConditionVariable/CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
+CMutex::~CMutex	CConditionVariable/CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::~CMutex	CEnterCriticalSectionTest/CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
+CMutex::~CMutex	CEnterCriticalSectionTest/CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::~CMutex	CMutexTest/CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
+CMutex::~CMutex	CMutexTest/CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CSTATUS_H	4CMessageQueue/CStatus.h	2;"	d
+CSTATUS_H	CConditionVariable/CStatus.h	2;"	d
+CSTATUS_H	CEnterCriticalSectionTest/CStatus.h	2;"	d
+CSTATUS_H	CMutexTest/CStatus.h	2;"	d
+CSTATUS_H	CStatus.h	2;"	d
+CStatus	4CMessageQueue/CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus	4CMessageQueue/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus	4CMessageQueue/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus	4CMessageQueue/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus	4CMessageQueue/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus	4CMessageQueue/CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus	4CMessageQueue/CStatus.h	/^class CStatus$/;"	c
+CStatus	CConditionVariable/CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus	CConditionVariable/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus	CConditionVariable/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus	CConditionVariable/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus	CConditionVariable/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus	CConditionVariable/CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus	CConditionVariable/CStatus.h	/^class CStatus$/;"	c
+CStatus	CEnterCriticalSectionTest/CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus	CEnterCriticalSectionTest/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus	CEnterCriticalSectionTest/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus	CEnterCriticalSectionTest/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus	CEnterCriticalSectionTest/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus	CEnterCriticalSectionTest/CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus	CEnterCriticalSectionTest/CStatus.h	/^class CStatus$/;"	c
+CStatus	CMutexTest/CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus	CMutexTest/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus	CMutexTest/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus	CMutexTest/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus	CMutexTest/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus	CMutexTest/CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus	CMutexTest/CStatus.h	/^class CStatus$/;"	c
+CStatus	CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus	CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus	CStatus.h	/^class CStatus$/;"	c
+CStatus::CStatus	4CMessageQueue/CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus::CStatus	4CMessageQueue/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	4CMessageQueue/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::CStatus	4CMessageQueue/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	4CMessageQueue/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus::CStatus	4CMessageQueue/CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus::CStatus	CConditionVariable/CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus::CStatus	CConditionVariable/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CConditionVariable/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::CStatus	CConditionVariable/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CConditionVariable/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus::CStatus	CConditionVariable/CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus::CStatus	CEnterCriticalSectionTest/CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus::CStatus	CEnterCriticalSectionTest/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CEnterCriticalSectionTest/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::CStatus	CEnterCriticalSectionTest/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CEnterCriticalSectionTest/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus::CStatus	CEnterCriticalSectionTest/CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus::CStatus	CMutexTest/CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus::CStatus	CMutexTest/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CMutexTest/CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::CStatus	CMutexTest/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CMutexTest/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus::CStatus	CMutexTest/CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus::CStatus	CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus::GetErrorMsg	4CMessageQueue/CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+CStatus::GetErrorMsg	4CMessageQueue/CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::GetErrorMsg	CConditionVariable/CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+CStatus::GetErrorMsg	CConditionVariable/CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::GetErrorMsg	CEnterCriticalSectionTest/CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+CStatus::GetErrorMsg	CEnterCriticalSectionTest/CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::GetErrorMsg	CMutexTest/CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+CStatus::GetErrorMsg	CMutexTest/CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::GetErrorMsg	CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+CStatus::GetErrorMsg	CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::InitializeMemberVars	4CMessageQueue/CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	4CMessageQueue/CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	CConditionVariable/CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	CConditionVariable/CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	CEnterCriticalSectionTest/CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	CEnterCriticalSectionTest/CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	CMutexTest/CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	CMutexTest/CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::IsSuccess	4CMessageQueue/CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+CStatus::IsSuccess	4CMessageQueue/CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::IsSuccess	CConditionVariable/CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+CStatus::IsSuccess	CConditionVariable/CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::IsSuccess	CEnterCriticalSectionTest/CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+CStatus::IsSuccess	CEnterCriticalSectionTest/CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::IsSuccess	CMutexTest/CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+CStatus::IsSuccess	CMutexTest/CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::IsSuccess	CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+CStatus::IsSuccess	CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::m_ciErrorCode	4CMessageQueue/CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciErrorCode	CConditionVariable/CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciErrorCode	CEnterCriticalSectionTest/CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciErrorCode	CMutexTest/CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciErrorCode	CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciReturnCode	4CMessageQueue/CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciReturnCode	CConditionVariable/CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciReturnCode	CEnterCriticalSectionTest/CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciReturnCode	CMutexTest/CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciReturnCode	CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+CStatus::m_iErrorCode	4CMessageQueue/CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iErrorCode	CConditionVariable/CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iErrorCode	CEnterCriticalSectionTest/CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iErrorCode	CMutexTest/CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iErrorCode	CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iReturnCode	4CMessageQueue/CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iReturnCode	CConditionVariable/CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iReturnCode	CEnterCriticalSectionTest/CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iReturnCode	CMutexTest/CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iReturnCode	CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+CStatus::m_pErrorMsg	4CMessageQueue/CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+CStatus::m_pErrorMsg	CConditionVariable/CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+CStatus::m_pErrorMsg	CEnterCriticalSectionTest/CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+CStatus::m_pErrorMsg	CMutexTest/CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+CStatus::m_pErrorMsg	CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+CStatus::~CStatus	4CMessageQueue/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+CStatus::~CStatus	4CMessageQueue/CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::~CStatus	CConditionVariable/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+CStatus::~CStatus	CConditionVariable/CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::~CStatus	CEnterCriticalSectionTest/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+CStatus::~CStatus	CEnterCriticalSectionTest/CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::~CStatus	CMutexTest/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+CStatus::~CStatus	CMutexTest/CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::~CStatus	CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+CStatus::~CStatus	CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+EnlargeQueue	test.cpp	/^	CStatus EnlargeQueue()$/;"	f	class:CMessageQueueByUserDefined	file:	access:private	signature:()
+GetErrorMsg	4CMessageQueue/CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+GetErrorMsg	4CMessageQueue/CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+GetErrorMsg	CConditionVariable/CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+GetErrorMsg	CConditionVariable/CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+GetErrorMsg	CEnterCriticalSectionTest/CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+GetErrorMsg	CEnterCriticalSectionTest/CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+GetErrorMsg	CMutexTest/CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+GetErrorMsg	CMutexTest/CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+GetErrorMsg	CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+GetErrorMsg	CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+GetTotalNum	test.cpp	/^	int GetTotalNum()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+InitializeMemberVars	4CMessageQueue/CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	4CMessageQueue/CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	CConditionVariable/CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	CConditionVariable/CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	CEnterCriticalSectionTest/CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	CEnterCriticalSectionTest/CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	CMutexTest/CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	CMutexTest/CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+IsEmpty	test.cpp	/^	bool IsEmpty()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+IsFull	test.cpp	/^ 	bool IsFull()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+IsSuccess	4CMessageQueue/CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+IsSuccess	4CMessageQueue/CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+IsSuccess	CConditionVariable/CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+IsSuccess	CConditionVariable/CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+IsSuccess	CEnterCriticalSectionTest/CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+IsSuccess	CEnterCriticalSectionTest/CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+IsSuccess	CMutexTest/CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+IsSuccess	CMutexTest/CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+IsSuccess	CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+IsSuccess	CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+Lock	4CMessageQueue/CMutex.cpp	/^CStatus CMutex::Lock()$/;"	f	class:CMutex	signature:()
+Lock	4CMessageQueue/CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
+Lock	CConditionVariable/CMutex.cpp	/^CStatus CMutex::Lock()$/;"	f	class:CMutex	signature:()
+Lock	CConditionVariable/CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
+Lock	CEnterCriticalSectionTest/CMutex.cpp	/^CStatus CMutex::Lock()$/;"	f	class:CMutex	signature:()
+Lock	CEnterCriticalSectionTest/CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
+Lock	CMutexTest/CMutex.cpp	/^CStatus CMutex::Lock()$/;"	f	class:CMutex	signature:()
+Lock	CMutexTest/CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
+Pop	test.cpp	/^	CMessage * Pop()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+Push	test.cpp	/^	CStatus Push(CMessage * pMsg)$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:(CMessage * pMsg)
+QUEUE_AUTO_INCREMENT_SIZE	test.cpp	26;"	d	file:
+QUEUE_INITIAL_SIZE	test.cpp	27;"	d	file:
+Set	4CMessageQueue/CEvent.cpp	/^CStatus CEvent::Set()$/;"	f	class:CEvent	signature:()
+Set	4CMessageQueue/CEvent.h	/^	CStatus Set();$/;"	p	class:CEvent	access:public	signature:()
+Set	CConditionVariable/CEvent.cpp	/^CStatus CEvent::Set()$/;"	f	class:CEvent	signature:()
+Set	CConditionVariable/CEvent.h	/^	CStatus Set();$/;"	p	class:CEvent	access:public	signature:()
+StartFunction	4CMessageQueue/mutexTest.cpp	/^void * StartFunction(void * pContext)$/;"	f	signature:(void * pContext)
+StartFunction	CConditionVariable/mutexTest.cpp	/^void * StartFunction(void * pContext)$/;"	f	signature:(void * pContext)
+StartFunction	CEnterCriticalSectionTest/mutexTest.cpp	/^void * StartFunction(void * pContext)$/;"	f	signature:(void * pContext)
+StartFunction	CMutexTest/mutexTest.cpp	/^void * StartFunction(void * pContext)$/;"	f	signature:(void * pContext)
+Trylock	4CMessageQueue/CMutex.h	/^	CStatus Trylock();$/;"	p	class:CMutex	access:public	signature:()
+Trylock	CConditionVariable/CMutex.h	/^	CStatus Trylock();$/;"	p	class:CMutex	access:public	signature:()
+Trylock	CEnterCriticalSectionTest/CMutex.h	/^	CStatus Trylock();$/;"	p	class:CMutex	access:public	signature:()
+Trylock	CMutexTest/CMutex.h	/^	CStatus Trylock();$/;"	p	class:CMutex	access:public	signature:()
+Unlock	4CMessageQueue/CMutex.cpp	/^CStatus CMutex::Unlock()$/;"	f	class:CMutex	signature:()
+Unlock	4CMessageQueue/CMutex.h	/^	CStatus Unlock();$/;"	p	class:CMutex	access:public	signature:()
+Unlock	CConditionVariable/CMutex.cpp	/^CStatus CMutex::Unlock()$/;"	f	class:CMutex	signature:()
+Unlock	CConditionVariable/CMutex.h	/^	CStatus Unlock();$/;"	p	class:CMutex	access:public	signature:()
+Unlock	CEnterCriticalSectionTest/CMutex.cpp	/^CStatus CMutex::Unlock()$/;"	f	class:CMutex	signature:()
+Unlock	CEnterCriticalSectionTest/CMutex.h	/^	CStatus Unlock();$/;"	p	class:CMutex	access:public	signature:()
+Unlock	CMutexTest/CMutex.cpp	/^CStatus CMutex::Unlock()$/;"	f	class:CMutex	signature:()
+Unlock	CMutexTest/CMutex.h	/^	CStatus Unlock();$/;"	p	class:CMutex	access:public	signature:()
+UseAsRecordCondVar	4CMessageQueue/CEvent.cpp	/^CStatus CEvent::UseAsRecordCondVar(bool b)$/;"	f	class:CEvent	signature:(bool b)
+UseAsRecordCondVar	4CMessageQueue/CEvent.h	/^	CStatus UseAsRecordCondVar(bool b);$/;"	p	class:CEvent	access:public	signature:(bool b)
+UseAsRecordCondVar	CConditionVariable/CEvent.cpp	/^CStatus CEvent::UseAsRecordCondVar(bool b)$/;"	f	class:CEvent	signature:(bool b)
+UseAsRecordCondVar	CConditionVariable/CEvent.h	/^	CStatus UseAsRecordCondVar(bool b);$/;"	p	class:CEvent	access:public	signature:(bool b)
+Wait	4CMessageQueue/CConditionVariable.cpp	/^CStatus CConditionVariable::Wait(CMutex * pMutex)$/;"	f	class:CConditionVariable	signature:(CMutex * pMutex)
+Wait	4CMessageQueue/CConditionVariable.h	/^	CStatus Wait(CMutex * pMutex);$/;"	p	class:CConditionVariable	access:public	signature:(CMutex * pMutex)
+Wait	4CMessageQueue/CEvent.cpp	/^CStatus CEvent::Wait()$/;"	f	class:CEvent	signature:()
+Wait	4CMessageQueue/CEvent.h	/^	CStatus Wait();$/;"	p	class:CEvent	access:public	signature:()
+Wait	CConditionVariable/CConditionVariable.cpp	/^CStatus CConditionVariable::Wait(CMutex * pMutex)$/;"	f	class:CConditionVariable	signature:(CMutex * pMutex)
+Wait	CConditionVariable/CConditionVariable.h	/^	CStatus Wait(CMutex * pMutex);$/;"	p	class:CConditionVariable	access:public	signature:(CMutex * pMutex)
+Wait	CConditionVariable/CEvent.cpp	/^CStatus CEvent::Wait()$/;"	f	class:CEvent	signature:()
+Wait	CConditionVariable/CEvent.h	/^	CStatus Wait();$/;"	p	class:CEvent	access:public	signature:()
+Wakeup	4CMessageQueue/CConditionVariable.cpp	/^CStatus CConditionVariable::Wakeup()$/;"	f	class:CConditionVariable	signature:()
+Wakeup	4CMessageQueue/CConditionVariable.h	/^	CStatus Wakeup();$/;"	p	class:CConditionVariable	access:public	signature:()
+Wakeup	CConditionVariable/CConditionVariable.cpp	/^CStatus CConditionVariable::Wakeup()$/;"	f	class:CConditionVariable	signature:()
+Wakeup	CConditionVariable/CConditionVariable.h	/^	CStatus Wakeup();$/;"	p	class:CConditionVariable	access:public	signature:()
+WakeupAll	4CMessageQueue/CConditionVariable.cpp	/^CStatus CConditionVariable::WakeupAll()$/;"	f	class:CConditionVariable	signature:()
+WakeupAll	4CMessageQueue/CConditionVariable.h	/^	CStatus WakeupAll();$/;"	p	class:CConditionVariable	access:public	signature:()
+WakeupAll	CConditionVariable/CConditionVariable.cpp	/^CStatus CConditionVariable::WakeupAll()$/;"	f	class:CConditionVariable	signature:()
+WakeupAll	CConditionVariable/CConditionVariable.h	/^	CStatus WakeupAll();$/;"	p	class:CConditionVariable	access:public	signature:()
+globalInt	4CMessageQueue/mutexTest.cpp	/^int globalInt = 0;$/;"	v
+globalInt	CConditionVariable/mutexTest.cpp	/^int globalInt = 0;$/;"	v
+globalInt	CEnterCriticalSectionTest/mutexTest.cpp	/^int globalInt = 0;$/;"	v
+globalInt	CMutexTest/mutexTest.cpp	/^int globalInt = 0;$/;"	v
+m_Cond	4CMessageQueue/CConditionVariable.h	/^	pthread_cond_t m_Cond;$/;"	m	class:CConditionVariable	access:private
+m_Cond	4CMessageQueue/CEvent.h	/^	CConditionVariable m_Cond;$/;"	m	class:CEvent	access:private
+m_Cond	CConditionVariable/CConditionVariable.h	/^	pthread_cond_t m_Cond;$/;"	m	class:CConditionVariable	access:private
+m_Cond	CConditionVariable/CEvent.h	/^	CConditionVariable m_Cond;$/;"	m	class:CEvent	access:private
+m_Mutex	4CMessageQueue/CEvent.h	/^	CMutex m_Mutex;$/;"	m	class:CEvent	access:private
+m_Mutex	4CMessageQueue/CMutex.h	/^	pthread_mutex_t m_Mutex;$/;"	m	class:CMutex	access:public
+m_Mutex	CConditionVariable/CEvent.h	/^	CMutex m_Mutex;$/;"	m	class:CEvent	access:private
+m_Mutex	CConditionVariable/CMutex.h	/^	pthread_mutex_t m_Mutex;$/;"	m	class:CMutex	access:public
+m_Mutex	CEnterCriticalSectionTest/CMutex.h	/^	pthread_mutex_t m_Mutex;$/;"	m	class:CMutex	access:private
+m_Mutex	CMutexTest/CMutex.h	/^	pthread_mutex_t m_Mutex;$/;"	m	class:CMutex	access:private
+m_bIsRecordCondVar	4CMessageQueue/CEvent.h	/^	bool m_bIsRecordCondVar;$/;"	m	class:CEvent	access:private
+m_bIsRecordCondVar	CConditionVariable/CEvent.h	/^	bool m_bIsRecordCondVar;$/;"	m	class:CEvent	access:private
+m_ciErrorCode	4CMessageQueue/CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+m_ciErrorCode	CConditionVariable/CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+m_ciErrorCode	CEnterCriticalSectionTest/CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+m_ciErrorCode	CMutexTest/CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+m_ciErrorCode	CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+m_ciReturnCode	4CMessageQueue/CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+m_ciReturnCode	CConditionVariable/CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+m_ciReturnCode	CEnterCriticalSectionTest/CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+m_ciReturnCode	CMutexTest/CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+m_ciReturnCode	CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+m_clMsgID	4CMessageQueue/CMessage.h	/^	const unsigned long & m_clMsgID;$/;"	m	class:CMessage	access:public
+m_iErrorCode	4CMessageQueue/CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+m_iErrorCode	CConditionVariable/CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+m_iErrorCode	CEnterCriticalSectionTest/CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+m_iErrorCode	CMutexTest/CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+m_iErrorCode	CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+m_iEventCounter	4CMessageQueue/CEvent.h	/^	int  m_iEventCounter;$/;"	m	class:CEvent	access:private
+m_iEventCounter	CConditionVariable/CEvent.h	/^	int  m_iEventCounter;$/;"	m	class:CEvent	access:private
+m_iQueueHead	test.cpp	/^	int m_iQueueHead;$/;"	m	class:CMessageQueueByUserDefined	file:	access:private
+m_iQueueTail	test.cpp	/^	int m_iQueueTail;$/;"	m	class:CMessageQueueByUserDefined	file:	access:private
+m_iReturnCode	4CMessageQueue/CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+m_iReturnCode	CConditionVariable/CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+m_iReturnCode	CEnterCriticalSectionTest/CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+m_iReturnCode	CMutexTest/CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+m_iReturnCode	CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+m_iTotalRoom	test.cpp	/^	int m_iTotalRoom;$/;"	m	class:CMessageQueueByUserDefined	file:	access:private
+m_id	test.cpp	/^	int m_id;$/;"	m	class:CMessage	file:	access:public
+m_lMsgID	4CMessageQueue/CMessage.h	/^	unsigned long m_lMsgID;$/;"	m	class:CMessage	access:protected
+m_pErrorMsg	4CMessageQueue/CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+m_pErrorMsg	CConditionVariable/CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+m_pErrorMsg	CEnterCriticalSectionTest/CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+m_pErrorMsg	CMutexTest/CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+m_pErrorMsg	CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+m_pMutex	4CMessageQueue/CEnterCriticalSection.h	/^	CMutex * m_pMutex;$/;"	m	class:CEnterCriticalSection	access:private
+m_pMutex	CConditionVariable/CEnterCriticalSection.h	/^	CMutex * m_pMutex;$/;"	m	class:CEnterCriticalSection	access:private
+m_pMutex	CEnterCriticalSectionTest/CEnterCriticalSection.h	/^	CMutex * m_pMutex;$/;"	m	class:CEnterCriticalSection	access:private
+m_pQueueSpace	test.cpp	/^	CMessage ** m_pQueueSpace;$/;"	m	class:CMessageQueueByUserDefined	file:	access:private
+main	4CMessageQueue/mutexTest.cpp	/^int main()$/;"	f	signature:()
+main	CConditionVariable/mutexTest.cpp	/^int main()$/;"	f	signature:()
+main	CEnterCriticalSectionTest/mutexTest.cpp	/^int main()$/;"	f	signature:()
+main	CMutexTest/mutexTest.cpp	/^int main()$/;"	f	signature:()
+main	test.cpp	/^int main()$/;"	f	signature:()
+operator =	4CMessageQueue/CMessage.h	/^	CMessage & operator=(const CMessage & cm);$/;"	p	class:CMessage	access:public	signature:(const CMessage & cm)
+~CConditionVariable	4CMessageQueue/CConditionVariable.cpp	/^CConditionVariable::~CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+~CConditionVariable	4CMessageQueue/CConditionVariable.h	/^	virtual ~CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+~CConditionVariable	CConditionVariable/CConditionVariable.cpp	/^CConditionVariable::~CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+~CConditionVariable	CConditionVariable/CConditionVariable.h	/^	virtual ~CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+~CEnterCriticalSection	4CMessageQueue/CEnterCriticalSection.cpp	/^CEnterCriticalSection::~CEnterCriticalSection()$/;"	f	class:CEnterCriticalSection	signature:()
+~CEnterCriticalSection	4CMessageQueue/CEnterCriticalSection.h	/^	virtual ~CEnterCriticalSection();$/;"	p	class:CEnterCriticalSection	access:public	signature:()
+~CEnterCriticalSection	CConditionVariable/CEnterCriticalSection.cpp	/^CEnterCriticalSection::~CEnterCriticalSection()$/;"	f	class:CEnterCriticalSection	signature:()
+~CEnterCriticalSection	CConditionVariable/CEnterCriticalSection.h	/^	virtual ~CEnterCriticalSection();$/;"	p	class:CEnterCriticalSection	access:public	signature:()
+~CEnterCriticalSection	CEnterCriticalSectionTest/CEnterCriticalSection.cpp	/^CEnterCriticalSection::~CEnterCriticalSection()$/;"	f	class:CEnterCriticalSection	signature:()
+~CEnterCriticalSection	CEnterCriticalSectionTest/CEnterCriticalSection.h	/^	virtual ~CEnterCriticalSection();$/;"	p	class:CEnterCriticalSection	access:public	signature:()
+~CEvent	4CMessageQueue/CEvent.cpp	/^CEvent::~CEvent()$/;"	f	class:CEvent	signature:()
+~CEvent	4CMessageQueue/CEvent.h	/^	~CEvent();$/;"	p	class:CEvent	access:public	signature:()
+~CEvent	CConditionVariable/CEvent.cpp	/^CEvent::~CEvent()$/;"	f	class:CEvent	signature:()
+~CEvent	CConditionVariable/CEvent.h	/^	~CEvent();$/;"	p	class:CEvent	access:public	signature:()
+~CMessage	4CMessageQueue/CMessage.cpp	/^CMessage:: ~CMessage()$/;"	f	class:CMessage	signature:()
+~CMessage	4CMessageQueue/CMessage.h	/^	virtual ~CMessage();$/;"	p	class:CMessage	access:public	signature:()
+~CMessageQueueByUserDefined	test.cpp	/^	virtual ~CMessageQueueByUserDefined()$/;"	f	class:CMessageQueueByUserDefined	access:public	signature:()
+~CMutex	4CMessageQueue/CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
+~CMutex	4CMessageQueue/CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
+~CMutex	CConditionVariable/CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
+~CMutex	CConditionVariable/CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
+~CMutex	CEnterCriticalSectionTest/CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
+~CMutex	CEnterCriticalSectionTest/CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
+~CMutex	CMutexTest/CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
+~CMutex	CMutexTest/CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
+~CStatus	4CMessageQueue/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+~CStatus	4CMessageQueue/CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+~CStatus	CConditionVariable/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+~CStatus	CConditionVariable/CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+~CStatus	CEnterCriticalSectionTest/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+~CStatus	CEnterCriticalSectionTest/CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+~CStatus	CMutexTest/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+~CStatus	CMutexTest/CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+~CStatus	CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+~CStatus	CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
