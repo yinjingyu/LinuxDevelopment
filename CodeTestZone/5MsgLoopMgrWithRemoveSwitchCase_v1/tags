@@ -1,0 +1,351 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADD_MESSAGE	MessageIDTable.h	8;"	d
+CAddMessage	test.cpp	/^	CAddMessage(int op1, int op2):CMessage(ADD_MESSAGE)$/;"	f	class:CAddMessage	access:public	signature:(int op1, int op2)
+CAddMessage	test.cpp	/^class CAddMessage : public CMessage$/;"	c	file:	inherits:CMessage
+CAddMessage::CAddMessage	test.cpp	/^	CAddMessage(int op1, int op2):CMessage(ADD_MESSAGE)$/;"	f	class:CAddMessage	access:public	signature:(int op1, int op2)
+CAddMessage::m_op1	test.cpp	/^	int m_op1;$/;"	m	class:CAddMessage	file:	access:public
+CAddMessage::m_op2	test.cpp	/^	int m_op2;$/;"	m	class:CAddMessage	file:	access:public
+CAddMsgProcessor	test.cpp	/^class CAddMsgProcessor : public CMessageObserver$/;"	c	file:	inherits:CMessageObserver
+CAddMsgProcessor::Initialize	test.cpp	/^	virtual CStatus Initialize(void * pContext)$/;"	f	class:CAddMsgProcessor	access:public	signature:(void * pContext)
+CAddMsgProcessor::Notify	test.cpp	/^	virtual CStatus Notify(CMessage * pMsg)$/;"	f	class:CAddMsgProcessor	access:public	signature:(CMessage * pMsg)
+CCLIENTBUSINESSFOREXECUTIVE_H	CClientBusinessForExecObj.h	4;"	d
+CCONDITIONVARIABLE_H	CConditionVariable.h	5;"	d
+CClientBusinessForExecObj	CClientBusinessForExecObj.cpp	/^CClientBusinessForExecObj::CClientBusinessForExecObj()$/;"	f	class:CClientBusinessForExecObj	signature:()
+CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^	CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^	CClientBusinessForExecObj(const CClientBusinessForExecObj &);$/;"	p	class:CClientBusinessForExecObj	access:private	signature:(const CClientBusinessForExecObj &)
+CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^class CClientBusinessForExecObj$/;"	c
+CClientBusinessForExecObj::CClientBusinessForExecObj	CClientBusinessForExecObj.cpp	/^CClientBusinessForExecObj::CClientBusinessForExecObj()$/;"	f	class:CClientBusinessForExecObj	signature:()
+CClientBusinessForExecObj::CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^	CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+CClientBusinessForExecObj::CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^	CClientBusinessForExecObj(const CClientBusinessForExecObj &);$/;"	p	class:CClientBusinessForExecObj	access:private	signature:(const CClientBusinessForExecObj &)
+CClientBusinessForExecObj::RunClientBusiness	CClientBusinessForExecObj.h	/^	virtual CStatus RunClientBusiness(void * pContext) = 0;$/;"	p	class:CClientBusinessForExecObj	access:public	signature:(void * pContext)
+CClientBusinessForExecObj::operator =	CClientBusinessForExecObj.h	/^	CClientBusinessForExecObj & operator = (const CClientBusinessForExecObj &);$/;"	p	class:CClientBusinessForExecObj	access:private	signature:(const CClientBusinessForExecObj &)
+CClientBusinessForExecObj::~CClientBusinessForExecObj	CClientBusinessForExecObj.cpp	/^CClientBusinessForExecObj::~CClientBusinessForExecObj()$/;"	f	class:CClientBusinessForExecObj	signature:()
+CClientBusinessForExecObj::~CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^	virtual ~CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+CConditionVariable	CConditionVariable.cpp	/^CConditionVariable::CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable	CConditionVariable.h	/^	CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable	CConditionVariable.h	/^class CConditionVariable$/;"	c
+CConditionVariable::CConditionVariable	CConditionVariable.cpp	/^CConditionVariable::CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::CConditionVariable	CConditionVariable.h	/^	CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable::Wait	CConditionVariable.cpp	/^CStatus CConditionVariable::Wait(CMutex * pMutex)$/;"	f	class:CConditionVariable	signature:(CMutex * pMutex)
+CConditionVariable::Wait	CConditionVariable.h	/^	CStatus Wait(CMutex * pMutex);$/;"	p	class:CConditionVariable	access:public	signature:(CMutex * pMutex)
+CConditionVariable::Wakeup	CConditionVariable.cpp	/^CStatus CConditionVariable::Wakeup()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::Wakeup	CConditionVariable.h	/^	CStatus Wakeup();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable::WakeupAll	CConditionVariable.cpp	/^CStatus CConditionVariable::WakeupAll()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::WakeupAll	CConditionVariable.h	/^	CStatus WakeupAll();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable::m_Cond	CConditionVariable.h	/^	pthread_cond_t m_Cond;$/;"	m	class:CConditionVariable	access:private
+CConditionVariable::~CConditionVariable	CConditionVariable.cpp	/^CConditionVariable::~CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+CConditionVariable::~CConditionVariable	CConditionVariable.h	/^	virtual ~CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+CENTERCRITICALSECTION_H	CEnterCriticalSection.h	3;"	d
+CEVENT_H	CEvent.h	3;"	d
+CEXECUTIVE_H	CExecutiveObject.h	4;"	d
+CEnterCriticalSection	CEnterCriticalSection.cpp	/^CEnterCriticalSection::CEnterCriticalSection(CMutex * pMutex)$/;"	f	class:CEnterCriticalSection	signature:(CMutex * pMutex)
+CEnterCriticalSection	CEnterCriticalSection.h	/^	CEnterCriticalSection(CMutex * m_pMutex);$/;"	p	class:CEnterCriticalSection	access:public	signature:(CMutex * m_pMutex)
+CEnterCriticalSection	CEnterCriticalSection.h	/^class CEnterCriticalSection$/;"	c
+CEnterCriticalSection::CEnterCriticalSection	CEnterCriticalSection.cpp	/^CEnterCriticalSection::CEnterCriticalSection(CMutex * pMutex)$/;"	f	class:CEnterCriticalSection	signature:(CMutex * pMutex)
+CEnterCriticalSection::CEnterCriticalSection	CEnterCriticalSection.h	/^	CEnterCriticalSection(CMutex * m_pMutex);$/;"	p	class:CEnterCriticalSection	access:public	signature:(CMutex * m_pMutex)
+CEnterCriticalSection::m_pMutex	CEnterCriticalSection.h	/^	CMutex * m_pMutex;$/;"	m	class:CEnterCriticalSection	access:private
+CEnterCriticalSection::~CEnterCriticalSection	CEnterCriticalSection.cpp	/^CEnterCriticalSection::~CEnterCriticalSection()$/;"	f	class:CEnterCriticalSection	signature:()
+CEnterCriticalSection::~CEnterCriticalSection	CEnterCriticalSection.h	/^	virtual ~CEnterCriticalSection();$/;"	p	class:CEnterCriticalSection	access:public	signature:()
+CEvent	CEvent.cpp	/^CEvent::CEvent()$/;"	f	class:CEvent	signature:()
+CEvent	CEvent.h	/^	CEvent();$/;"	p	class:CEvent	access:public	signature:()
+CEvent	CEvent.h	/^class CEvent$/;"	c
+CEvent::CEvent	CEvent.cpp	/^CEvent::CEvent()$/;"	f	class:CEvent	signature:()
+CEvent::CEvent	CEvent.h	/^	CEvent();$/;"	p	class:CEvent	access:public	signature:()
+CEvent::Set	CEvent.cpp	/^CStatus CEvent::Set()$/;"	f	class:CEvent	signature:()
+CEvent::Set	CEvent.h	/^	CStatus Set();$/;"	p	class:CEvent	access:public	signature:()
+CEvent::UseAsRecordCondVar	CEvent.cpp	/^CStatus CEvent::UseAsRecordCondVar(bool b)$/;"	f	class:CEvent	signature:(bool b)
+CEvent::UseAsRecordCondVar	CEvent.h	/^	CStatus UseAsRecordCondVar(bool b);$/;"	p	class:CEvent	access:public	signature:(bool b)
+CEvent::Wait	CEvent.cpp	/^CStatus CEvent::Wait()$/;"	f	class:CEvent	signature:()
+CEvent::Wait	CEvent.h	/^	CStatus Wait();$/;"	p	class:CEvent	access:public	signature:()
+CEvent::m_Cond	CEvent.h	/^	CConditionVariable m_Cond;$/;"	m	class:CEvent	access:private
+CEvent::m_Mutex	CEvent.h	/^	CMutex m_Mutex;$/;"	m	class:CEvent	access:private
+CEvent::m_bIsRecordCondVar	CEvent.h	/^	bool m_bIsRecordCondVar;$/;"	m	class:CEvent	access:private
+CEvent::m_iEventCounter	CEvent.h	/^	int  m_iEventCounter;$/;"	m	class:CEvent	access:private
+CEvent::~CEvent	CEvent.cpp	/^CEvent::~CEvent()$/;"	f	class:CEvent	signature:()
+CEvent::~CEvent	CEvent.h	/^	~CEvent();$/;"	p	class:CEvent	access:public	signature:()
+CExecutiveObject	CExecutiveObject.cpp	/^CExecutiveObject::CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj)$/;"	f	class:CExecutiveObject	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CExecutiveObject	CExecutiveObject.h	/^	explicit CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CExecutiveObject	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CExecutiveObject	CExecutiveObject.h	/^class CExecutiveObject$/;"	c
+CExecutiveObject::CExecutiveObject	CExecutiveObject.cpp	/^CExecutiveObject::CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj)$/;"	f	class:CExecutiveObject	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CExecutiveObject::CExecutiveObject	CExecutiveObject.h	/^	explicit CExecutiveObject(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CExecutiveObject	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CExecutiveObject::Run	CExecutiveObject.h	/^	virtual CStatus Run(void * pContext) = 0;$/;"	p	class:CExecutiveObject	access:public	signature:(void * pContext)
+CExecutiveObject::WaitForDeath	CExecutiveObject.h	/^	virtual CStatus WaitForDeath() = 0;$/;"	p	class:CExecutiveObject	access:public	signature:()
+CExecutiveObject::m_pClientBusinessForExecObj	CExecutiveObject.h	/^	CClientBusinessForExecObj * m_pClientBusinessForExecObj;$/;"	m	class:CExecutiveObject	access:protected
+CExecutiveObject::~CExecutiveObject	CExecutiveObject.cpp	/^CExecutiveObject::~CExecutiveObject()$/;"	f	class:CExecutiveObject	signature:()
+CExecutiveObject::~CExecutiveObject	CExecutiveObject.h	/^	virtual ~CExecutiveObject();$/;"	p	class:CExecutiveObject	access:public	signature:()
+CMESSAGELOOPMANAGER_H	CMessageLoopManager.h	3;"	d
+CMESSAGEOBSERVER_H	CMessageObserver.h	4;"	d
+CMESSAGEQUEUEBYUSERDEFINED_H	CMessageQueueByUserDefined.h	3;"	d
+CMESSAGE_H	CMessage.h	4;"	d
+CMSGLOOPMGRFORUSERDEFINEDQUEUE_H	CMsgLoopMgrForUserDefinedQueue.h	5;"	d
+CMUTEX_H	CMutex.h	3;"	d
+CMessage	CMessage.cpp	/^CMessage:: CMessage(const CMessage &cm):m_clMsgID(m_lMsgID)$/;"	f	class:CMessage	signature:(const CMessage &cm)
+CMessage	CMessage.cpp	/^CMessage::CMessage(unsigned long lMsgID):m_clMsgID(m_lMsgID)$/;"	f	class:CMessage	signature:(unsigned long lMsgID)
+CMessage	CMessage.h	/^	CMessage(const CMessage & cm);$/;"	p	class:CMessage	access:public	signature:(const CMessage & cm)
+CMessage	CMessage.h	/^	CMessage(unsigned long lMsgID);$/;"	p	class:CMessage	access:public	signature:(unsigned long lMsgID)
+CMessage	CMessage.h	/^class CMessage$/;"	c
+CMessage::CMessage	CMessage.cpp	/^CMessage:: CMessage(const CMessage &cm):m_clMsgID(m_lMsgID)$/;"	f	class:CMessage	signature:(const CMessage &cm)
+CMessage::CMessage	CMessage.cpp	/^CMessage::CMessage(unsigned long lMsgID):m_clMsgID(m_lMsgID)$/;"	f	class:CMessage	signature:(unsigned long lMsgID)
+CMessage::CMessage	CMessage.h	/^	CMessage(const CMessage & cm);$/;"	p	class:CMessage	access:public	signature:(const CMessage & cm)
+CMessage::CMessage	CMessage.h	/^	CMessage(unsigned long lMsgID);$/;"	p	class:CMessage	access:public	signature:(unsigned long lMsgID)
+CMessage::m_clMsgID	CMessage.h	/^	const unsigned long & m_clMsgID;$/;"	m	class:CMessage	access:public
+CMessage::m_lMsgID	CMessage.h	/^	unsigned long m_lMsgID;$/;"	m	class:CMessage	access:protected
+CMessage::operator =	CMessage.h	/^	CMessage & operator=(const CMessage & cm);$/;"	p	class:CMessage	access:public	signature:(const CMessage & cm)
+CMessage::~CMessage	CMessage.cpp	/^CMessage:: ~CMessage()$/;"	f	class:CMessage	signature:()
+CMessage::~CMessage	CMessage.h	/^	virtual ~CMessage();$/;"	p	class:CMessage	access:public	signature:()
+CMessageLoopManager	CMessageLoopManager.h	/^class CMessageLoopManager$/;"	c
+CMessageLoopManager::DispatchMessage	CMessageLoopManager.cpp	/^CStatus CMessageLoopManager::DispatchMessage(CMessage * pMsg)$/;"	f	class:CMessageLoopManager	signature:(CMessage * pMsg)
+CMessageLoopManager::DispatchMessage	CMessageLoopManager.h	/^	virtual CStatus DispatchMessage(CMessage * pMsg) = 0;$/;"	p	class:CMessageLoopManager	access:protected	signature:(CMessage * pMsg)
+CMessageLoopManager::EnterMessageLoop	CMessageLoopManager.cpp	/^CStatus CMessageLoopManager::EnterMessageLoop(void * pContext)$/;"	f	class:CMessageLoopManager	signature:(void * pContext)
+CMessageLoopManager::EnterMessageLoop	CMessageLoopManager.h	/^	virtual CStatus EnterMessageLoop(void * pContext);$/;"	p	class:CMessageLoopManager	access:public	signature:(void * pContext)
+CMessageLoopManager::Initialize	CMessageLoopManager.h	/^	virtual CStatus Initialize()=0;$/;"	p	class:CMessageLoopManager	access:protected	signature:()
+CMessageLoopManager::Register	CMessageLoopManager.h	/^	virtual CStatus Register(unsigned int iMsgTypeID,CMessageObserver * pMsgObserver);$/;"	p	class:CMessageLoopManager	access:public	signature:(unsigned int iMsgTypeID,CMessageObserver * pMsgObserver)
+CMessageLoopManager::Uninitialize	CMessageLoopManager.h	/^	virtual CStatus Uninitialize()=0;$/;"	p	class:CMessageLoopManager	access:protected	signature:()
+CMessageLoopManager::WaitForMessage	CMessageLoopManager.h	/^	virtual CMessage * WaitForMessage() = 0;$/;"	p	class:CMessageLoopManager	access:protected	signature:()
+CMessageLoopManager::m_MsgFuncMappingTable	CMessageLoopManager.h	/^	std::map<unsigned int iMsgTypeID,CMessageObserver *> m_MsgFuncMappingTable;$/;"	m	class:CMessageLoopManager	access:protected
+CMessageObserver	CMessageObserver.cpp	/^CMessageObserver:: CMessageObserver()$/;"	f	class:CMessageObserver	signature:()
+CMessageObserver	CMessageObserver.h	/^	CMessageObserver();$/;"	p	class:CMessageObserver	access:public	signature:()
+CMessageObserver	CMessageObserver.h	/^class CMessageObserver$/;"	c
+CMessageObserver::CMessageObserver	CMessageObserver.cpp	/^CMessageObserver:: CMessageObserver()$/;"	f	class:CMessageObserver	signature:()
+CMessageObserver::CMessageObserver	CMessageObserver.h	/^	CMessageObserver();$/;"	p	class:CMessageObserver	access:public	signature:()
+CMessageObserver::Initialize	CMessageObserver.h	/^	virtual CStatus Initialize(void * pContext) =0;$/;"	p	class:CMessageObserver	access:public	signature:(void * pContext)
+CMessageObserver::Notify	CMessageObserver.h	/^	virtual CStatus Notify(CMessage * pMsg)=0;$/;"	p	class:CMessageObserver	access:public	signature:(CMessage * pMsg)
+CMessageObserver::~CMessageObserver	CMessageObserver.cpp	/^CMessageObserver:: ~CMessageObserver()$/;"	f	class:CMessageObserver	signature:()
+CMessageObserver::~CMessageObserver	CMessageObserver.h	/^	virtual ~CMessageObserver();$/;"	p	class:CMessageObserver	access:public	signature:()
+CMessageQueueByUserDefined	CMessageQueueByUserDefined.cpp	/^CMessageQueueByUserDefined::CMessageQueueByUserDefined()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+CMessageQueueByUserDefined	CMessageQueueByUserDefined.h	/^	CMessageQueueByUserDefined();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
+CMessageQueueByUserDefined	CMessageQueueByUserDefined.h	/^class CMessageQueueByUserDefined$/;"	c
+CMessageQueueByUserDefined::CMessageQueueByUserDefined	CMessageQueueByUserDefined.cpp	/^CMessageQueueByUserDefined::CMessageQueueByUserDefined()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+CMessageQueueByUserDefined::CMessageQueueByUserDefined	CMessageQueueByUserDefined.h	/^	CMessageQueueByUserDefined();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
+CMessageQueueByUserDefined::EnlargeQueue	CMessageQueueByUserDefined.cpp	/^CStatus CMessageQueueByUserDefined::EnlargeQueue()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+CMessageQueueByUserDefined::EnlargeQueue	CMessageQueueByUserDefined.h	/^	CStatus EnlargeQueue();$/;"	p	class:CMessageQueueByUserDefined	access:private	signature:()
+CMessageQueueByUserDefined::GetMessage	CMessageQueueByUserDefined.cpp	/^CMessage * CMessageQueueByUserDefined::GetMessage()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+CMessageQueueByUserDefined::GetMessage	CMessageQueueByUserDefined.h	/^	CMessage * GetMessage();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
+CMessageQueueByUserDefined::IsEmpty	CMessageQueueByUserDefined.cpp	/^bool CMessageQueueByUserDefined::IsEmpty()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+CMessageQueueByUserDefined::IsEmpty	CMessageQueueByUserDefined.h	/^	bool IsEmpty();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
+CMessageQueueByUserDefined::IsFull	CMessageQueueByUserDefined.cpp	/^bool CMessageQueueByUserDefined::IsFull()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+CMessageQueueByUserDefined::IsFull	CMessageQueueByUserDefined.h	/^ 	bool IsFull();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
+CMessageQueueByUserDefined::Pop	CMessageQueueByUserDefined.cpp	/^CMessage * CMessageQueueByUserDefined::Pop()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+CMessageQueueByUserDefined::Pop	CMessageQueueByUserDefined.h	/^	CMessage * Pop();$/;"	p	class:CMessageQueueByUserDefined	access:private	signature:()
+CMessageQueueByUserDefined::Push	CMessageQueueByUserDefined.cpp	/^CStatus CMessageQueueByUserDefined::Push(CMessage * pMsg)$/;"	f	class:CMessageQueueByUserDefined	signature:(CMessage * pMsg)
+CMessageQueueByUserDefined::Push	CMessageQueueByUserDefined.h	/^	CStatus Push(CMessage * pMsg);$/;"	p	class:CMessageQueueByUserDefined	access:private	signature:(CMessage * pMsg)
+CMessageQueueByUserDefined::PushMessage	CMessageQueueByUserDefined.cpp	/^CStatus CMessageQueueByUserDefined::PushMessage(CMessage * pMsg)$/;"	f	class:CMessageQueueByUserDefined	signature:(CMessage * pMsg)
+CMessageQueueByUserDefined::PushMessage	CMessageQueueByUserDefined.h	/^	CStatus PushMessage(CMessage * pMsg);$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:(CMessage * pMsg)
+CMessageQueueByUserDefined::m_Event	CMessageQueueByUserDefined.h	/^	CEvent m_Event;$/;"	m	class:CMessageQueueByUserDefined	access:private
+CMessageQueueByUserDefined::m_Mutex	CMessageQueueByUserDefined.h	/^	CMutex m_Mutex;$/;"	m	class:CMessageQueueByUserDefined	access:private
+CMessageQueueByUserDefined::m_iQueueHead	CMessageQueueByUserDefined.h	/^	int m_iQueueHead;$/;"	m	class:CMessageQueueByUserDefined	access:private
+CMessageQueueByUserDefined::m_iQueueTail	CMessageQueueByUserDefined.h	/^	int m_iQueueTail;$/;"	m	class:CMessageQueueByUserDefined	access:private
+CMessageQueueByUserDefined::m_iTotalRoom	CMessageQueueByUserDefined.h	/^	int m_iTotalRoom;$/;"	m	class:CMessageQueueByUserDefined	access:private
+CMessageQueueByUserDefined::m_pQueueSpace	CMessageQueueByUserDefined.h	/^	CMessage ** m_pQueueSpace;$/;"	m	class:CMessageQueueByUserDefined	access:private
+CMessageQueueByUserDefined::~CMessageQueueByUserDefined	CMessageQueueByUserDefined.cpp	/^CMessageQueueByUserDefined::~CMessageQueueByUserDefined()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+CMessageQueueByUserDefined::~CMessageQueueByUserDefined	CMessageQueueByUserDefined.h	/^	virtual ~CMessageQueueByUserDefined();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
+CMsgLoopMgrForUserDefinedQueue	CMsgLoopMgrForUserDefinedQueue.cpp	/^CMsgLoopMgrForUserDefinedQueue::CMsgLoopMgrForUserDefinedQueue(CMessageQueueByUserDefined * pQueue)$/;"	f	class:CMsgLoopMgrForUserDefinedQueue	signature:(CMessageQueueByUserDefined * pQueue)
+CMsgLoopMgrForUserDefinedQueue	CMsgLoopMgrForUserDefinedQueue.h	/^	CMsgLoopMgrForUserDefinedQueue(CMessageQueueByUserDefined * pQueue);$/;"	p	class:CMsgLoopMgrForUserDefinedQueue	access:public	signature:(CMessageQueueByUserDefined * pQueue)
+CMsgLoopMgrForUserDefinedQueue	CMsgLoopMgrForUserDefinedQueue.h	/^class CMsgLoopMgrForUserDefinedQueue : public CMessageLoopManager$/;"	c	inherits:CMessageLoopManager
+CMsgLoopMgrForUserDefinedQueue::CMsgLoopMgrForUserDefinedQueue	CMsgLoopMgrForUserDefinedQueue.cpp	/^CMsgLoopMgrForUserDefinedQueue::CMsgLoopMgrForUserDefinedQueue(CMessageQueueByUserDefined * pQueue)$/;"	f	class:CMsgLoopMgrForUserDefinedQueue	signature:(CMessageQueueByUserDefined * pQueue)
+CMsgLoopMgrForUserDefinedQueue::CMsgLoopMgrForUserDefinedQueue	CMsgLoopMgrForUserDefinedQueue.h	/^	CMsgLoopMgrForUserDefinedQueue(CMessageQueueByUserDefined * pQueue);$/;"	p	class:CMsgLoopMgrForUserDefinedQueue	access:public	signature:(CMessageQueueByUserDefined * pQueue)
+CMsgLoopMgrForUserDefinedQueue::Initialize	CMsgLoopMgrForUserDefinedQueue.cpp	/^CStatus CMsgLoopMgrForUserDefinedQueue::Initialize()$/;"	f	class:CMsgLoopMgrForUserDefinedQueue	signature:()
+CMsgLoopMgrForUserDefinedQueue::Initialize	CMsgLoopMgrForUserDefinedQueue.h	/^	virtual CStatus Initialize();$/;"	p	class:CMsgLoopMgrForUserDefinedQueue	access:public	signature:()
+CMsgLoopMgrForUserDefinedQueue::Uninitialize	CMsgLoopMgrForUserDefinedQueue.cpp	/^CStatus CMsgLoopMgrForUserDefinedQueue:: Uninitialize()$/;"	f	class:CMsgLoopMgrForUserDefinedQueue	signature:()
+CMsgLoopMgrForUserDefinedQueue::Uninitialize	CMsgLoopMgrForUserDefinedQueue.h	/^	virtual CStatus Uninitialize();$/;"	p	class:CMsgLoopMgrForUserDefinedQueue	access:public	signature:()
+CMsgLoopMgrForUserDefinedQueue::WaitForMessage	CMsgLoopMgrForUserDefinedQueue.cpp	/^CMessage * CMsgLoopMgrForUserDefinedQueue:: WaitForMessage()$/;"	f	class:CMsgLoopMgrForUserDefinedQueue	signature:()
+CMsgLoopMgrForUserDefinedQueue::WaitForMessage	CMsgLoopMgrForUserDefinedQueue.h	/^	virtual CMessage * WaitForMessage()$/;"	f	class:CMsgLoopMgrForUserDefinedQueue	access:public	signature:()
+CMsgLoopMgrForUserDefinedQueue::m_pQueue	CMsgLoopMgrForUserDefinedQueue.h	/^	CMessageQueueByUserDefined * m_pQueue;$/;"	m	class:CMsgLoopMgrForUserDefinedQueue	access:private
+CMutex	CMutex.cpp	/^CMutex::CMutex()$/;"	f	class:CMutex	signature:()
+CMutex	CMutex.h	/^	CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex	CMutex.h	/^class CMutex$/;"	c
+CMutex::CMutex	CMutex.cpp	/^CMutex::CMutex()$/;"	f	class:CMutex	signature:()
+CMutex::CMutex	CMutex.h	/^	CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Lock	CMutex.cpp	/^CStatus CMutex::Lock()$/;"	f	class:CMutex	signature:()
+CMutex::Lock	CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Trylock	CMutex.h	/^	CStatus Trylock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::Unlock	CMutex.cpp	/^CStatus CMutex::Unlock()$/;"	f	class:CMutex	signature:()
+CMutex::Unlock	CMutex.h	/^	CStatus Unlock();$/;"	p	class:CMutex	access:public	signature:()
+CMutex::m_Mutex	CMutex.h	/^	pthread_mutex_t m_Mutex;$/;"	m	class:CMutex	access:public
+CMutex::~CMutex	CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
+CMutex::~CMutex	CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
+CMyMsgProcessor	test.cpp	/^	CMyMsgProcessor(CMessageLoopManager * pMsgLoopMgr)$/;"	f	class:CMyMsgProcessorThread	access:public	signature:(CMessageLoopManager * pMsgLoopMgr)
+CMyMsgProcessorThread	test.cpp	/^class CMyMsgProcessorThread : public CClientBusinessForExecObj  $/;"	c	file:	inherits:CClientBusinessForExecObj
+CMyMsgProcessorThread::CMyMsgProcessor	test.cpp	/^	CMyMsgProcessor(CMessageLoopManager * pMsgLoopMgr)$/;"	f	class:CMyMsgProcessorThread	access:public	signature:(CMessageLoopManager * pMsgLoopMgr)
+CMyMsgProcessorThread::RunClientBusiness	test.cpp	/^	virtual CStatus RunClientBusiness(void * pContext)$/;"	f	class:CMyMsgProcessorThread	access:public	signature:(void * pContext)
+CMyMsgProcessorThread::m_pMsgLoopMgr	test.cpp	/^	CMessageLoopManager * m_pMsgLoopMgr;$/;"	m	class:CMyMsgProcessorThread	file:	access:private
+CQuitMessage	test.cpp	/^	CQuitMessage():CMessage(QUIT_MESSAGE_LOOP)$/;"	f	class:CQuitMessage	access:public	signature:()
+CQuitMessage	test.cpp	/^class CQuitMessage : public CMessage$/;"	c	file:	inherits:CMessage
+CQuitMessage::CQuitMessage	test.cpp	/^	CQuitMessage():CMessage(QUIT_MESSAGE_LOOP)$/;"	f	class:CQuitMessage	access:public	signature:()
+CQuitMsgProcessor	test.cpp	/^class CQuitMsgProcessor : public CMessageObserver$/;"	c	file:	inherits:CMessageObserver
+CQuitMsgProcessor::Initialize	test.cpp	/^	virtual CStatus Initialize(void * pContext)$/;"	f	class:CQuitMsgProcessor	access:public	signature:(void * pContext)
+CQuitMsgProcessor::Notify	test.cpp	/^	virtual CStatus Notify(CMessage * pMsg)$/;"	f	class:CQuitMsgProcessor	access:public	signature:(CMessage * pMsg)
+CSTATUS_H	CStatus.h	2;"	d
+CStatus	CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus	CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus	CStatus.h	/^class CStatus$/;"	c
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(const CStatus & sta)
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CStatus.cpp	/^CStatus::CStatus(int iReturnCode, int iErrorCode, const char * pErrorMsg):m_ciReturnCode(m_iReturnCode)$/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
+CStatus::CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
+CStatus::CStatus	CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
+CStatus::GetErrorMsg	CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+CStatus::GetErrorMsg	CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::InitializeMemberVars	CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::InitializeMemberVars	CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+CStatus::IsSuccess	CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+CStatus::IsSuccess	CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+CStatus::m_ciErrorCode	CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+CStatus::m_ciReturnCode	CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+CStatus::m_iErrorCode	CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+CStatus::m_iReturnCode	CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+CStatus::m_pErrorMsg	CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+CStatus::~CStatus	CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+CStatus::~CStatus	CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+CTHREAD_H	CThread.h	3;"	d
+CThread	CThread.cpp	/^CThread::CThread(CClientBusinessForExecObj * pClientBusinessForExecObj):CExecutiveObject(pClientBusinessForExecObj)$/;"	f	class:CThread	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread	CThread.h	/^	explicit CThread(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CThread	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread	CThread.h	/^class CThread : public CExecutiveObject$/;"	c	inherits:CExecutiveObject
+CThread::CThread	CThread.cpp	/^CThread::CThread(CClientBusinessForExecObj * pClientBusinessForExecObj):CExecutiveObject(pClientBusinessForExecObj)$/;"	f	class:CThread	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread::CThread	CThread.h	/^	explicit CThread(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CThread	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
+CThread::Run	CThread.cpp	/^CStatus CThread::Run(void * pContext)$/;"	f	class:CThread	signature:(void * pContext)
+CThread::Run	CThread.h	/^	virtual CStatus Run(void * pContext);$/;"	p	class:CThread	access:public	signature:(void * pContext)
+CThread::StartFunctionOfThread	CThread.cpp	/^void * CThread::StartFunctionOfThread(void * pThis)$/;"	f	class:CThread	signature:(void * pThis)
+CThread::StartFunctionOfThread	CThread.h	/^	static void * StartFunctionOfThread(void * pContext);$/;"	p	class:CThread	access:private	signature:(void * pContext)
+CThread::WaitForDeath	CThread.cpp	/^CStatus CThread::WaitForDeath()$/;"	f	class:CThread	signature:()
+CThread::WaitForDeath	CThread.h	/^	virtual CStatus WaitForDeath();$/;"	p	class:CThread	access:public	signature:()
+CThread::m_ThreadID	CThread.h	/^	pthread_t m_ThreadID;$/;"	m	class:CThread	access:private
+CThread::m_pContext	CThread.h	/^	void * m_pContext;$/;"	m	class:CThread	access:private
+CThread::~CThread	CThread.cpp	/^CThread::~CThread()$/;"	f	class:CThread	signature:()
+CThread::~CThread	CThread.h	/^	virtual ~CThread();$/;"	p	class:CThread	access:public	signature:()
+DispatchMessage	CMessageLoopManager.cpp	/^CStatus CMessageLoopManager::DispatchMessage(CMessage * pMsg)$/;"	f	class:CMessageLoopManager	signature:(CMessage * pMsg)
+DispatchMessage	CMessageLoopManager.h	/^	virtual CStatus DispatchMessage(CMessage * pMsg) = 0;$/;"	p	class:CMessageLoopManager	access:protected	signature:(CMessage * pMsg)
+EnlargeQueue	CMessageQueueByUserDefined.cpp	/^CStatus CMessageQueueByUserDefined::EnlargeQueue()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+EnlargeQueue	CMessageQueueByUserDefined.h	/^	CStatus EnlargeQueue();$/;"	p	class:CMessageQueueByUserDefined	access:private	signature:()
+EnterMessageLoop	CMessageLoopManager.cpp	/^CStatus CMessageLoopManager::EnterMessageLoop(void * pContext)$/;"	f	class:CMessageLoopManager	signature:(void * pContext)
+EnterMessageLoop	CMessageLoopManager.h	/^	virtual CStatus EnterMessageLoop(void * pContext);$/;"	p	class:CMessageLoopManager	access:public	signature:(void * pContext)
+GetErrorMsg	CStatus.cpp	/^char * CStatus::GetErrorMsg()$/;"	f	class:CStatus	signature:()
+GetErrorMsg	CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
+GetMessage	CMessageQueueByUserDefined.cpp	/^CMessage * CMessageQueueByUserDefined::GetMessage()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+GetMessage	CMessageQueueByUserDefined.h	/^	CMessage * GetMessage();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
+Initialize	CMessageLoopManager.h	/^	virtual CStatus Initialize()=0;$/;"	p	class:CMessageLoopManager	access:protected	signature:()
+Initialize	CMessageObserver.h	/^	virtual CStatus Initialize(void * pContext) =0;$/;"	p	class:CMessageObserver	access:public	signature:(void * pContext)
+Initialize	CMsgLoopMgrForUserDefinedQueue.cpp	/^CStatus CMsgLoopMgrForUserDefinedQueue::Initialize()$/;"	f	class:CMsgLoopMgrForUserDefinedQueue	signature:()
+Initialize	CMsgLoopMgrForUserDefinedQueue.h	/^	virtual CStatus Initialize();$/;"	p	class:CMsgLoopMgrForUserDefinedQueue	access:public	signature:()
+Initialize	test.cpp	/^	virtual CStatus Initialize(void * pContext)$/;"	f	class:CAddMsgProcessor	access:public	signature:(void * pContext)
+Initialize	test.cpp	/^	virtual CStatus Initialize(void * pContext)$/;"	f	class:CQuitMsgProcessor	access:public	signature:(void * pContext)
+InitializeMemberVars	CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeMemberVars	CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+IsEmpty	CMessageQueueByUserDefined.cpp	/^bool CMessageQueueByUserDefined::IsEmpty()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+IsEmpty	CMessageQueueByUserDefined.h	/^	bool IsEmpty();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
+IsFull	CMessageQueueByUserDefined.cpp	/^bool CMessageQueueByUserDefined::IsFull()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+IsFull	CMessageQueueByUserDefined.h	/^ 	bool IsFull();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
+IsSuccess	CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
+IsSuccess	CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
+Lock	CMutex.cpp	/^CStatus CMutex::Lock()$/;"	f	class:CMutex	signature:()
+Lock	CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
+MESSAGEIDTABLE_H	MessageIDTable.h	3;"	d
+Notify	CMessageObserver.h	/^	virtual CStatus Notify(CMessage * pMsg)=0;$/;"	p	class:CMessageObserver	access:public	signature:(CMessage * pMsg)
+Notify	test.cpp	/^	virtual CStatus Notify(CMessage * pMsg)$/;"	f	class:CAddMsgProcessor	access:public	signature:(CMessage * pMsg)
+Notify	test.cpp	/^	virtual CStatus Notify(CMessage * pMsg)$/;"	f	class:CQuitMsgProcessor	access:public	signature:(CMessage * pMsg)
+Pop	CMessageQueueByUserDefined.cpp	/^CMessage * CMessageQueueByUserDefined::Pop()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+Pop	CMessageQueueByUserDefined.h	/^	CMessage * Pop();$/;"	p	class:CMessageQueueByUserDefined	access:private	signature:()
+Push	CMessageQueueByUserDefined.cpp	/^CStatus CMessageQueueByUserDefined::Push(CMessage * pMsg)$/;"	f	class:CMessageQueueByUserDefined	signature:(CMessage * pMsg)
+Push	CMessageQueueByUserDefined.h	/^	CStatus Push(CMessage * pMsg);$/;"	p	class:CMessageQueueByUserDefined	access:private	signature:(CMessage * pMsg)
+PushMessage	CMessageQueueByUserDefined.cpp	/^CStatus CMessageQueueByUserDefined::PushMessage(CMessage * pMsg)$/;"	f	class:CMessageQueueByUserDefined	signature:(CMessage * pMsg)
+PushMessage	CMessageQueueByUserDefined.h	/^	CStatus PushMessage(CMessage * pMsg);$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:(CMessage * pMsg)
+QUEUE_AUTO_INCREMENT_SIZE	CMessageQueueByUserDefined.cpp	24;"	d	file:
+QUEUE_INITIAL_SIZE	CMessageQueueByUserDefined.cpp	25;"	d	file:
+QUIT_MESSAGE_LOOP	MessageIDTable.h	7;"	d
+Register	CMessageLoopManager.cpp	/^CStatus Register(unsigned int iMsgTypeID, CMessageObserver * pMsgObserver)$/;"	f	signature:(unsigned int iMsgTypeID, CMessageObserver * pMsgObserver)
+Register	CMessageLoopManager.h	/^	virtual CStatus Register(unsigned int iMsgTypeID,CMessageObserver * pMsgObserver);$/;"	p	class:CMessageLoopManager	access:public	signature:(unsigned int iMsgTypeID,CMessageObserver * pMsgObserver)
+Run	CExecutiveObject.h	/^	virtual CStatus Run(void * pContext) = 0;$/;"	p	class:CExecutiveObject	access:public	signature:(void * pContext)
+Run	CThread.cpp	/^CStatus CThread::Run(void * pContext)$/;"	f	class:CThread	signature:(void * pContext)
+Run	CThread.h	/^	virtual CStatus Run(void * pContext);$/;"	p	class:CThread	access:public	signature:(void * pContext)
+RunClientBusiness	CClientBusinessForExecObj.h	/^	virtual CStatus RunClientBusiness(void * pContext) = 0;$/;"	p	class:CClientBusinessForExecObj	access:public	signature:(void * pContext)
+RunClientBusiness	test.cpp	/^	virtual CStatus RunClientBusiness(void * pContext)$/;"	f	class:CMyMsgProcessorThread	access:public	signature:(void * pContext)
+Set	CEvent.cpp	/^CStatus CEvent::Set()$/;"	f	class:CEvent	signature:()
+Set	CEvent.h	/^	CStatus Set();$/;"	p	class:CEvent	access:public	signature:()
+StartFunctionOfThread	CThread.cpp	/^void * CThread::StartFunctionOfThread(void * pThis)$/;"	f	class:CThread	signature:(void * pThis)
+StartFunctionOfThread	CThread.h	/^	static void * StartFunctionOfThread(void * pContext);$/;"	p	class:CThread	access:private	signature:(void * pContext)
+Trylock	CMutex.h	/^	CStatus Trylock();$/;"	p	class:CMutex	access:public	signature:()
+Uninitialize	CMessageLoopManager.h	/^	virtual CStatus Uninitialize()=0;$/;"	p	class:CMessageLoopManager	access:protected	signature:()
+Uninitialize	CMsgLoopMgrForUserDefinedQueue.cpp	/^CStatus CMsgLoopMgrForUserDefinedQueue:: Uninitialize()$/;"	f	class:CMsgLoopMgrForUserDefinedQueue	signature:()
+Uninitialize	CMsgLoopMgrForUserDefinedQueue.h	/^	virtual CStatus Uninitialize();$/;"	p	class:CMsgLoopMgrForUserDefinedQueue	access:public	signature:()
+Unlock	CMutex.cpp	/^CStatus CMutex::Unlock()$/;"	f	class:CMutex	signature:()
+Unlock	CMutex.h	/^	CStatus Unlock();$/;"	p	class:CMutex	access:public	signature:()
+UseAsRecordCondVar	CEvent.cpp	/^CStatus CEvent::UseAsRecordCondVar(bool b)$/;"	f	class:CEvent	signature:(bool b)
+UseAsRecordCondVar	CEvent.h	/^	CStatus UseAsRecordCondVar(bool b);$/;"	p	class:CEvent	access:public	signature:(bool b)
+Wait	CConditionVariable.cpp	/^CStatus CConditionVariable::Wait(CMutex * pMutex)$/;"	f	class:CConditionVariable	signature:(CMutex * pMutex)
+Wait	CConditionVariable.h	/^	CStatus Wait(CMutex * pMutex);$/;"	p	class:CConditionVariable	access:public	signature:(CMutex * pMutex)
+Wait	CEvent.cpp	/^CStatus CEvent::Wait()$/;"	f	class:CEvent	signature:()
+Wait	CEvent.h	/^	CStatus Wait();$/;"	p	class:CEvent	access:public	signature:()
+WaitForDeath	CExecutiveObject.h	/^	virtual CStatus WaitForDeath() = 0;$/;"	p	class:CExecutiveObject	access:public	signature:()
+WaitForDeath	CThread.cpp	/^CStatus CThread::WaitForDeath()$/;"	f	class:CThread	signature:()
+WaitForDeath	CThread.h	/^	virtual CStatus WaitForDeath();$/;"	p	class:CThread	access:public	signature:()
+WaitForMessage	CMessageLoopManager.h	/^	virtual CMessage * WaitForMessage() = 0;$/;"	p	class:CMessageLoopManager	access:protected	signature:()
+WaitForMessage	CMsgLoopMgrForUserDefinedQueue.cpp	/^CMessage * CMsgLoopMgrForUserDefinedQueue:: WaitForMessage()$/;"	f	class:CMsgLoopMgrForUserDefinedQueue	signature:()
+WaitForMessage	CMsgLoopMgrForUserDefinedQueue.h	/^	virtual CMessage * WaitForMessage()$/;"	f	class:CMsgLoopMgrForUserDefinedQueue	access:public	signature:()
+WaitForMessageFailedTimes	CMessageLoopManager.h	7;"	d
+Wakeup	CConditionVariable.cpp	/^CStatus CConditionVariable::Wakeup()$/;"	f	class:CConditionVariable	signature:()
+Wakeup	CConditionVariable.h	/^	CStatus Wakeup();$/;"	p	class:CConditionVariable	access:public	signature:()
+WakeupAll	CConditionVariable.cpp	/^CStatus CConditionVariable::WakeupAll()$/;"	f	class:CConditionVariable	signature:()
+WakeupAll	CConditionVariable.h	/^	CStatus WakeupAll();$/;"	p	class:CConditionVariable	access:public	signature:()
+m_Cond	CConditionVariable.h	/^	pthread_cond_t m_Cond;$/;"	m	class:CConditionVariable	access:private
+m_Cond	CEvent.h	/^	CConditionVariable m_Cond;$/;"	m	class:CEvent	access:private
+m_Event	CMessageQueueByUserDefined.h	/^	CEvent m_Event;$/;"	m	class:CMessageQueueByUserDefined	access:private
+m_MsgFuncMappingTable	CMessageLoopManager.h	/^	std::map<unsigned int iMsgTypeID,CMessageObserver *> m_MsgFuncMappingTable;$/;"	m	class:CMessageLoopManager	access:protected
+m_Mutex	CEvent.h	/^	CMutex m_Mutex;$/;"	m	class:CEvent	access:private
+m_Mutex	CMessageQueueByUserDefined.h	/^	CMutex m_Mutex;$/;"	m	class:CMessageQueueByUserDefined	access:private
+m_Mutex	CMutex.h	/^	pthread_mutex_t m_Mutex;$/;"	m	class:CMutex	access:public
+m_ThreadID	CThread.h	/^	pthread_t m_ThreadID;$/;"	m	class:CThread	access:private
+m_bIsRecordCondVar	CEvent.h	/^	bool m_bIsRecordCondVar;$/;"	m	class:CEvent	access:private
+m_ciErrorCode	CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
+m_ciReturnCode	CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
+m_clMsgID	CMessage.h	/^	const unsigned long & m_clMsgID;$/;"	m	class:CMessage	access:public
+m_iErrorCode	CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
+m_iEventCounter	CEvent.h	/^	int  m_iEventCounter;$/;"	m	class:CEvent	access:private
+m_iQueueHead	CMessageQueueByUserDefined.h	/^	int m_iQueueHead;$/;"	m	class:CMessageQueueByUserDefined	access:private
+m_iQueueTail	CMessageQueueByUserDefined.h	/^	int m_iQueueTail;$/;"	m	class:CMessageQueueByUserDefined	access:private
+m_iReturnCode	CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
+m_iTotalRoom	CMessageQueueByUserDefined.h	/^	int m_iTotalRoom;$/;"	m	class:CMessageQueueByUserDefined	access:private
+m_lMsgID	CMessage.h	/^	unsigned long m_lMsgID;$/;"	m	class:CMessage	access:protected
+m_op1	test.cpp	/^	int m_op1;$/;"	m	class:CAddMessage	file:	access:public
+m_op2	test.cpp	/^	int m_op2;$/;"	m	class:CAddMessage	file:	access:public
+m_pClientBusinessForExecObj	CExecutiveObject.h	/^	CClientBusinessForExecObj * m_pClientBusinessForExecObj;$/;"	m	class:CExecutiveObject	access:protected
+m_pContext	CThread.h	/^	void * m_pContext;$/;"	m	class:CThread	access:private
+m_pErrorMsg	CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+m_pMsgLoopMgr	test.cpp	/^	CMessageLoopManager * m_pMsgLoopMgr;$/;"	m	class:CMyMsgProcessorThread	file:	access:private
+m_pMutex	CEnterCriticalSection.h	/^	CMutex * m_pMutex;$/;"	m	class:CEnterCriticalSection	access:private
+m_pQueue	CMsgLoopMgrForUserDefinedQueue.h	/^	CMessageQueueByUserDefined * m_pQueue;$/;"	m	class:CMsgLoopMgrForUserDefinedQueue	access:private
+m_pQueueSpace	CMessageQueueByUserDefined.h	/^	CMessage ** m_pQueueSpace;$/;"	m	class:CMessageQueueByUserDefined	access:private
+main	test.cpp	/^int main()$/;"	f	signature:()
+operator =	CClientBusinessForExecObj.h	/^	CClientBusinessForExecObj & operator = (const CClientBusinessForExecObj &);$/;"	p	class:CClientBusinessForExecObj	access:private	signature:(const CClientBusinessForExecObj &)
+operator =	CMessage.h	/^	CMessage & operator=(const CMessage & cm);$/;"	p	class:CMessage	access:public	signature:(const CMessage & cm)
+~CClientBusinessForExecObj	CClientBusinessForExecObj.cpp	/^CClientBusinessForExecObj::~CClientBusinessForExecObj()$/;"	f	class:CClientBusinessForExecObj	signature:()
+~CClientBusinessForExecObj	CClientBusinessForExecObj.h	/^	virtual ~CClientBusinessForExecObj();$/;"	p	class:CClientBusinessForExecObj	access:public	signature:()
+~CConditionVariable	CConditionVariable.cpp	/^CConditionVariable::~CConditionVariable()$/;"	f	class:CConditionVariable	signature:()
+~CConditionVariable	CConditionVariable.h	/^	virtual ~CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+~CEnterCriticalSection	CEnterCriticalSection.cpp	/^CEnterCriticalSection::~CEnterCriticalSection()$/;"	f	class:CEnterCriticalSection	signature:()
+~CEnterCriticalSection	CEnterCriticalSection.h	/^	virtual ~CEnterCriticalSection();$/;"	p	class:CEnterCriticalSection	access:public	signature:()
+~CEvent	CEvent.cpp	/^CEvent::~CEvent()$/;"	f	class:CEvent	signature:()
+~CEvent	CEvent.h	/^	~CEvent();$/;"	p	class:CEvent	access:public	signature:()
+~CExecutiveObject	CExecutiveObject.cpp	/^CExecutiveObject::~CExecutiveObject()$/;"	f	class:CExecutiveObject	signature:()
+~CExecutiveObject	CExecutiveObject.h	/^	virtual ~CExecutiveObject();$/;"	p	class:CExecutiveObject	access:public	signature:()
+~CMessage	CMessage.cpp	/^CMessage:: ~CMessage()$/;"	f	class:CMessage	signature:()
+~CMessage	CMessage.h	/^	virtual ~CMessage();$/;"	p	class:CMessage	access:public	signature:()
+~CMessageObserver	CMessageObserver.cpp	/^CMessageObserver:: ~CMessageObserver()$/;"	f	class:CMessageObserver	signature:()
+~CMessageObserver	CMessageObserver.h	/^	virtual ~CMessageObserver();$/;"	p	class:CMessageObserver	access:public	signature:()
+~CMessageQueueByUserDefined	CMessageQueueByUserDefined.cpp	/^CMessageQueueByUserDefined::~CMessageQueueByUserDefined()$/;"	f	class:CMessageQueueByUserDefined	signature:()
+~CMessageQueueByUserDefined	CMessageQueueByUserDefined.h	/^	virtual ~CMessageQueueByUserDefined();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
+~CMutex	CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
+~CMutex	CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
+~CStatus	CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
+~CStatus	CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+~CThread	CThread.cpp	/^CThread::~CThread()$/;"	f	class:CThread	signature:()
+~CThread	CThread.h	/^	virtual ~CThread();$/;"	p	class:CThread	access:public	signature:()
