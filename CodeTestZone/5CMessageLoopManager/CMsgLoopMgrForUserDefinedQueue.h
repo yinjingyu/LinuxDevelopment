@@ -5,9 +5,10 @@
 #define CMSGLOOPMGRFORUSERDEFINEDQUEUE_H
 
 #include "CMessageLoopManager.h"
+#include "CMessageQueueByUserDefined.h"
 #include "CStatus.h"
 #include "CMessage.h"
-#include "CMessageQueueByUserDefined.h"
+
 /*
  * =====================================================================================
  *        Class:  CMsgLoopMgrForUserDefinedQueue
@@ -24,7 +25,7 @@ class CMsgLoopMgrForUserDefinedQueue : public CMessageLoopManager
 	public:
 
 	CMsgLoopMgrForUserDefinedQueue(CMessageQueueByUserDefined * pQueue);
-	
+
 
 	virtual CMessage * WaitForMessage();
 	

@@ -54,10 +54,10 @@ class CQuitMessage : public CMessage
 	}
 };
 
-class CAdder : public CClientBusinessForExecObj  
+class CMyMsgProcessorThread : public CClientBusinessForExecObj  
 {
 	public:
-	CAdder(CMessageLoopManager * pMsgLoopMgr)
+	CMyMsgProcessorThread(CMessageLoopManager * pMsgLoopMgr)
 	{
 		m_pMsgLoopMgr = pMsgLoopMgr;
 	}
@@ -70,50 +70,51 @@ class CAdder : public CClientBusinessForExecObj
 	CMessageLoopManager * m_pMsgLoopMgr;
 };
 
-
-/*
- * =====================================================================================
- *        Class:  CMyMsgProcessor
- *  Description:  消息循环机制中具体的分发消息的实现类
- * =====================================================================================
- */
-class CMyMsgProcessor : public CMsgLoopMgrForUserDefinedQueue
+class CAddMsgProcessor : public CMessageObserver
 {
 	public:
-	
-	CMyMsgProcessor(CMessageQueueByUserDefined * pQueue):CMsgLoopMgrForUserDefinedQueue(pQueue)
+
+	virtual CStatus Initialize(void * pContext)
 	{
+		return CStatus(0,0); 	
 	}
 
-	virtual CStatus DispatchMessage(CMessage * pMsg)
+	virtual CStatus Notify(CMessage * pMsg)
 	{
 		if(NULL == pMsg)
 		{
-			return CStatus(-1,0,"In DispatchMessage of CMyMsgProcessor : paremeter pMsg is NULL");
+			return CStatus(-1,0,"in Notify of CAddMsgProcessor:paremeter is null");
 		}
 
-		switch(pMsg->m_clMsgID)
-		{
-			case ADD_MESSAGE:
-				{
-				CAddMessage * pAddMessage = (CAddMessage *)pMsg;
-				cout << pAddMessage->m_op1 + pAddMessage->m_op2 << endl;
-				break;
-				}
-			case QUIT_MESSAGE_LOOP:
-				return CStatus(QUIT_MESSAGE_LOOP,0);
-		}
+		CAddMessage * pAddMsg = (CAddMessage *)pMsg;
+		
+		cout << "the result of add is :"<<pAddMsg->m_op1 + pAddMsg->m_op2 << endl;
+
 		return CStatus(0,0);
 	}
 };
 
+class CQuitMsgProcessor : public CMessageObserver
+{
+	public:
+	virtual CStatus Initialize(void * pContext)
+	{
+		return CStatus(0,0);
+	}
+
+	virtual CStatus Notify(CMessage * pMsg)
+	{
+		return CStatus(QUIT_MESSAGE_LOOP,0);
+	}
+};
 
 int main()
 {
+	//给消息循环机制配置上消息队列
 	CMessageQueueByUserDefined * pQueue = new CMessageQueueByUserDefined();
-
-	CMessageLoopManager * pMsgLoopMgr = new CMyMsgProcessor(pQueue);
+	CMessageLoopManager * pMsgLoopMgr = new CMsgLoopMgrForUserDefinedQueue(pQueue);
 	
+
 	//CThread 需要传入一个业务逻辑实现类
 	//CAdder是业务实现类，
 	//它的业务就是等待别人给它发送加法工作业务，如果没有人发，他就阻塞
@@ -123,7 +124,10 @@ int main()
 	//消息循环机制的实现类 CMyMsgProcessor
 	//所以这个业务逻辑线程就是消息队列的拥有者和读取者，其他的所有线程都是消息队列的
 	//发送消息者
-	CThread * t = new CThread(new CAdder(pMsgLoopMgr));
+	CThread * t = new CThread(new CMyMsgProcessorThread(pMsgLoopMgr));
+
+	pMsgLoopMgr->Register(ADD_MESSAGE,new CAddMsgProcessor());
+	pMsgLoopMgr->Register(QUIT_MESSAGE_LOOP,new CQuitMsgProcessor());
 
 	t->Run(0);
 

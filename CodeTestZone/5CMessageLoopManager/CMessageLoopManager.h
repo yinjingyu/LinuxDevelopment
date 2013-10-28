@@ -4,6 +4,8 @@
 
 #include "CMessage.h"
 #include "CStatus.h"
+#include "CMessageObserver.h"
+#include <map>
 #define WaitForMessageFailedTimes 5
 
 /*
@@ -25,14 +27,19 @@ class CMessageLoopManager
 	
 	//开始进入消息循环 while(true)
 	virtual CStatus EnterMessageLoop(void * pContext);
-	
+
+	virtual CStatus Register(unsigned int iMsgTypeID,CMessageObserver * pMsgObserver);
+
 	protected:
 	
 	virtual CStatus Initialize()=0;
 	virtual CStatus Uninitialize()=0;
 
 	virtual CMessage * WaitForMessage() = 0;
-	virtual CStatus DispatchMessage(CMessage * pMsg) = 0;
+	virtual CStatus DispatchMessage(CMessage * pMsg);
+	
+	//消息-函数 映射表
+	std::map<unsigned int,CMessageObserver*> m_MsgFuncMappingTable;
 };
 
 

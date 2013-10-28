@@ -55,3 +55,4 @@ CStatus CMsgLoopMgrForUserDefinedQueue:: Uninitialize()
 {
 	return CStatus(0,0);
 }
+
