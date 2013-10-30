@@ -23,6 +23,17 @@
 //在CThread的构造函数中，初始化从基类继承来的业务逻辑指针
 CThread::CThread(CClientBusinessForExecObj * pClientBusinessForExecObj):CExecutiveObject(pClientBusinessForExecObj)
 {
+	m_pContext = 0;
+	m_bWaitForDeath = false;
+	m_bThreadCreated = false;
+}
+
+CThread::CThread(CClientBusinessForExecObj * pClientBusinessForExecObj,bool bWaitForDeath):CExecutiveObject(pClientBusinessForExecObj)
+{
+	m_pContext = 0;
+	m_bWaitForDeath = bWaitForDeath;
+	m_bThreadCreated = false;
+
 }
 
 CThread::~CThread()
@@ -43,7 +54,7 @@ CThread::~CThread()
  * =====================================================================================
  */
 CStatus CThread::Run(void * pContext)
-{
+{ 	
 	m_pContext = pContext;
 	
 	//直接把当前对象的this指针传递给业务逻辑执行函数
@@ -52,12 +63,33 @@ CStatus CThread::Run(void * pContext)
 	{
 		return CStatus(-1,0,"error in Run of CThread: pthread_creat failed!");
 	}
+	
+	m_bThreadCreated = true;
+
+	if(!m_bWaitForDeath)
+	{
+		r = pthread_detach(m_ThreadID);
+		if(r !=0 )
+		{
+			return CStatus(-1,0,"In CThread::Run() pthread_detach failed");
+		}
+	}
 
 	return CStatus(0,0);
 }
 
 CStatus CThread::WaitForDeath()
 {
+ 	if(!m_bWaitForDeath)
+	{
+		return CStatus(-1,0,"In CThread::WaitForDeath , m_bWaitForDeath is false which means WaitForDeath is not required!");
+	}
+
+	if(!m_bThreadCreated)
+	{
+		return CStatus(-1,0,"In CThread::WaitForDeath , m_bThreadCreated is null");
+	}
+
 	int r = pthread_join(m_ThreadID,0);
 	if(r != 0)
 	{
@@ -79,6 +111,14 @@ void * CThread::StartFunctionOfThread(void * pThis)
 	//CThread 继承了基类的私有成员m_pExecutiveFunctionProvider，该成员指向具体的
 	//业务逻辑对象，接着我们调用业务逻辑对象的RunExecutiveFuntion接口开始执行业务
 	pThreadThis->m_pClientBusinessForExecObj->RunClientBusiness(pThreadThis->m_pContext);
+
+	//如果不需要等待子线程死亡，那么封装子线程对象的指针就不再需要了
+	//另外，即使删除了子线程对象，子线程可能还是存在
+	if(!pThreadThis->m_bWaitForDeath)
+	{
+		delete pThreadThis;
+	}
+
 	return 0; 	
 }
 

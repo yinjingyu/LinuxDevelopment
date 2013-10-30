@@ -16,6 +16,7 @@ class CThread : public CExecutiveObject
 	public:
 
 	explicit CThread(CClientBusinessForExecObj * pClientBusinessForExecObj);
+	explicit CThread(CClientBusinessForExecObj * pClientBusinessForExecObj,bool bWaitForDeath);
 	virtual ~CThread();
 	
 	//重写基类Run函数，用于：创建并执行线程
@@ -39,6 +40,12 @@ class CThread : public CExecutiveObject
 
 	//线程ID,调用pthread_creat 时需要保存新创建线程的ID
 	pthread_t m_ThreadID;
+
+	//由创建线程作为参数传入，判断创建线程是否需要等待子线程死亡
+	bool m_bWaitForDeath;
+
+	//用来判断线程是否创建成功 	
+	bool m_bThreadCreated;
 };
 
 

@@ -59,6 +59,7 @@ CCommunicationNameServer::Register	CCommunicationNameServer.cpp	/^CStatus CCommu
 CCommunicationNameServer::Register	CCommunicationNameServer.h	/^	CStatus Register(const char * strCommObjName,ICommunicationObject * pCommObj);$/;"	p	class:CCommunicationNameServer	access:public	signature:(const char * strCommObjName,ICommunicationObject * pCommObj)
 CCommunicationNameServer::ReleaseCommunicationObject	CCommunicationNameServer.cpp	/^CStatus CCommunicationNameServer::ReleaseCommunicationObject(const char * strCommObjName)$/;"	f	class:CCommunicationNameServer	signature:(const char * strCommObjName)
 CCommunicationNameServer::ReleaseCommunicationObject	CCommunicationNameServer.h	/^	CStatus ReleaseCommunicationObject(const char * strCommObjName);$/;"	p	class:CCommunicationNameServer	access:public	signature:(const char * strCommObjName)
+CCommunicationNameServer::SendMessage	CCommunicationNameServer.cpp	/^CStatus CCommunicationNameServer::SendMessage(const char * strCommObjName, CMessage * pMessage)$/;"	f	class:CCommunicationNameServer	signature:(const char * strCommObjName, CMessage * pMessage)
 CCommunicationNameServer::SendMessage	CCommunicationNameServer.h	/^	static CStatus SendMessage(const char * strCommObjName, CMessage * pMessage);$/;"	p	class:CCommunicationNameServer	access:public	signature:(const char * strCommObjName, CMessage * pMessage)
 CCommunicationNameServer::m_MutexForCreatingInstance	CCommunicationNameServer.cpp	/^CMutex CCommunicationNameServer::m_MutexForCreatingInstance;$/;"	m	class:CCommunicationNameServer	file:
 CCommunicationNameServer::m_MutexForCreatingInstance	CCommunicationNameServer.h	/^	static CMutex  m_MutexForCreatingInstance;$/;"	m	class:CCommunicationNameServer	access:private
@@ -251,6 +252,8 @@ CStatus::m_iReturnCode	CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	acces
 CStatus::m_pErrorMsg	CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
 CStatus::~CStatus	CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
 CStatus::~CStatus	CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
+CTHREADFORMSGLOOP_H	CThreadForMsgLoop.h	4;"	d
+CTHREADINITIALFINISHEDNOTIFIER_H	CThreadInitialFinishedNotifier.h	5;"	d
 CTHREAD_H	CThread.h	3;"	d
 CThread	CThread.cpp	/^CThread::CThread(CClientBusinessForExecObj * pClientBusinessForExecObj):CExecutiveObject(pClientBusinessForExecObj)$/;"	f	class:CThread	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
 CThread	CThread.h	/^	explicit CThread(CClientBusinessForExecObj * pClientBusinessForExecObj);$/;"	p	class:CThread	access:public	signature:(CClientBusinessForExecObj * pClientBusinessForExecObj)
@@ -267,6 +270,32 @@ CThread::m_ThreadID	CThread.h	/^	pthread_t m_ThreadID;$/;"	m	class:CThread	acces
 CThread::m_pContext	CThread.h	/^	void * m_pContext;$/;"	m	class:CThread	access:private
 CThread::~CThread	CThread.cpp	/^CThread::~CThread()$/;"	f	class:CThread	signature:()
 CThread::~CThread	CThread.h	/^	virtual ~CThread();$/;"	p	class:CThread	access:public	signature:()
+CThreadForMsgLoop	CThreadForMsgLoop.cpp	/^CThreadForMsgLoop:: CThreadForMsgLoop(const char * strThreadName,CMessageObserver * pMsgObserver)$/;"	f	class:CThreadForMsgLoop	signature:(const char * strThreadName,CMessageObserver * pMsgObserver)
+CThreadForMsgLoop	CThreadForMsgLoop.cpp	/^CThreadForMsgLoop:: CThreadForMsgLoop(const char * strThreadName,CMessageObserver * pMsgObserver,bool bWaitForDeath)$/;"	f	class:CThreadForMsgLoop	signature:(const char * strThreadName,CMessageObserver * pMsgObserver,bool bWaitForDeath)
+CThreadForMsgLoop	CThreadForMsgLoop.h	/^	CThreadForMsgLoop(const char * strThreadNaem,CMessageObserver * pMsgObserver,bool bWaitForDeath);$/;"	p	class:CThreadForMsgLoop	access:public	signature:(const char * strThreadNaem,CMessageObserver * pMsgObserver,bool bWaitForDeath)
+CThreadForMsgLoop	CThreadForMsgLoop.h	/^	CThreadForMsgLoop(const char * strThreadName, CMessageObserver * pMsgObserver);$/;"	p	class:CThreadForMsgLoop	access:public	signature:(const char * strThreadName, CMessageObserver * pMsgObserver)
+CThreadForMsgLoop	CThreadForMsgLoop.h	/^class CThreadForMsgLoop$/;"	c
+CThreadForMsgLoop::CThreadForMsgLoop	CThreadForMsgLoop.cpp	/^CThreadForMsgLoop:: CThreadForMsgLoop(const char * strThreadName,CMessageObserver * pMsgObserver)$/;"	f	class:CThreadForMsgLoop	signature:(const char * strThreadName,CMessageObserver * pMsgObserver)
+CThreadForMsgLoop::CThreadForMsgLoop	CThreadForMsgLoop.cpp	/^CThreadForMsgLoop:: CThreadForMsgLoop(const char * strThreadName,CMessageObserver * pMsgObserver,bool bWaitForDeath)$/;"	f	class:CThreadForMsgLoop	signature:(const char * strThreadName,CMessageObserver * pMsgObserver,bool bWaitForDeath)
+CThreadForMsgLoop::CThreadForMsgLoop	CThreadForMsgLoop.h	/^	CThreadForMsgLoop(const char * strThreadNaem,CMessageObserver * pMsgObserver,bool bWaitForDeath);$/;"	p	class:CThreadForMsgLoop	access:public	signature:(const char * strThreadNaem,CMessageObserver * pMsgObserver,bool bWaitForDeath)
+CThreadForMsgLoop::CThreadForMsgLoop	CThreadForMsgLoop.h	/^	CThreadForMsgLoop(const char * strThreadName, CMessageObserver * pMsgObserver);$/;"	p	class:CThreadForMsgLoop	access:public	signature:(const char * strThreadName, CMessageObserver * pMsgObserver)
+CThreadForMsgLoop::Run	CThreadForMsgLoop.cpp	/^CStatus CThreadForMsgLoop::Run(void * pContext)$/;"	f	class:CThreadForMsgLoop	signature:(void * pContext)
+CThreadForMsgLoop::Run	CThreadForMsgLoop.h	/^	CStatus Run(void * pContext);$/;"	p	class:CThreadForMsgLoop	access:public	signature:(void * pContext)
+CThreadForMsgLoop::m_bWaitForDeath	CThreadForMsgLoop.h	/^	bool m_bWaitForDeath();$/;"	p	class:CThreadForMsgLoop	access:private	signature:()
+CThreadForMsgLoop::m_pThread	CThreadForMsgLoop.h	/^	CThread * m_pThread;$/;"	m	class:CThreadForMsgLoop	access:private
+CThreadForMsgLoop::~CThreadForMsgLoop	CThreadForMsgLoop.cpp	/^CThreadForMsgLoop:: ~CThreadForMsgLoop()$/;"	f	class:CThreadForMsgLoop	signature:()
+CThreadForMsgLoop::~CThreadForMsgLoop	CThreadForMsgLoop.h	/^	virtual ~CThreadForMsgLoop();$/;"	p	class:CThreadForMsgLoop	access:public	signature:()
+CThreadInitialFinishedNotifier	CThreadInitialFinishedNotifier.cpp	/^CThreadInitialFinishedNotifier::CThreadInitialFinishedNotifier(CEvent * pEvent)$/;"	f	class:CThreadInitialFinishedNotifier	signature:(CEvent * pEvent)
+CThreadInitialFinishedNotifier	CThreadInitialFinishedNotifier.h	/^	CThreadInitialFinishedNotifier();$/;"	p	class:CThreadInitialFinishedNotifier	access:public	signature:()
+CThreadInitialFinishedNotifier	CThreadInitialFinishedNotifier.h	/^class CThreadInitialFinishedNotifier : public IInitialFinishedNotifier$/;"	c	inherits:IInitialFinishedNotifier
+CThreadInitialFinishedNotifier::CThreadInitialFinishedNotifier	CThreadInitialFinishedNotifier.cpp	/^CThreadInitialFinishedNotifier::CThreadInitialFinishedNotifier(CEvent * pEvent)$/;"	f	class:CThreadInitialFinishedNotifier	signature:(CEvent * pEvent)
+CThreadInitialFinishedNotifier::CThreadInitialFinishedNotifier	CThreadInitialFinishedNotifier.h	/^	CThreadInitialFinishedNotifier();$/;"	p	class:CThreadInitialFinishedNotifier	access:public	signature:()
+CThreadInitialFinishedNotifier::IsInitialSuccess	CThreadInitialFinishedNotifier.cpp	/^bool CThreadInitialFinishedNotifier::IsInitialSuccess()$/;"	f	class:CThreadInitialFinishedNotifier	signature:()
+CThreadInitialFinishedNotifier::NotifyInitialFinished	CThreadInitialFinishedNotifier.cpp	/^CStatus CThreadInitialFinishedNotifier:: NotifyInitialFinished(bool bIsSuccess)$/;"	f	class:CThreadInitialFinishedNotifier	signature:(bool bIsSuccess)
+CThreadInitialFinishedNotifier::m_bIsSucess	CThreadInitialFinishedNotifier.h	/^	bool m_bIsSucess;$/;"	m	class:CThreadInitialFinishedNotifier	access:private
+CThreadInitialFinishedNotifier::m_pEvent	CThreadInitialFinishedNotifier.h	/^	CEvent * m_pEvent;$/;"	m	class:CThreadInitialFinishedNotifier	access:private
+CThreadInitialFinishedNotifier::~CThreadInitialFinishedNotifier	CThreadInitialFinishedNotifier.cpp	/^CThreadInitialFinishedNotifier::~CThreadInitialFinishedNotifier()$/;"	f	class:CThreadInitialFinishedNotifier	signature:()
+CThreadInitialFinishedNotifier::~CThreadInitialFinishedNotifier	CThreadInitialFinishedNotifier.h	/^	virtual ~CThreadInitialFinishedNotifier();$/;"	p	class:CThreadInitialFinishedNotifier	access:public	signature:()
 CallBackFunctionOfMsgObserver	CMessageLoopManager.h	/^typedef CStatus (CMessageObserver:: *CallBackFunctionOfMsgObserver)(CMessage *);$/;"	t
 DispatchMessage	CMessageLoopManager.cpp	/^CStatus CMessageLoopManager::DispatchMessage(CMessage * pMsg)$/;"	f	class:CMessageLoopManager	signature:(CMessage * pMsg)
 DispatchMessage	CMessageLoopManager.h	/^	virtual CStatus DispatchMessage(CMessage * pMsg);$/;"	p	class:CMessageLoopManager	access:protected	signature:(CMessage * pMsg)
@@ -291,6 +320,10 @@ ICommunicationObject::ICommunicationObject	ICommunicationObject.h	/^	ICommunicat
 ICommunicationObject::PostMessage	ICommunicationObject.h	/^	virtual CStatus PostMessage(CMessage * pMsg) = 0;$/;"	p	class:ICommunicationObject	access:public	signature:(CMessage * pMsg)
 ICommunicationObject::~ICommunicationObject	ICommunicationObject.cpp	/^ICommunicationObject:: ~ICommunicationObject()$/;"	f	class:ICommunicationObject	signature:()
 ICommunicationObject::~ICommunicationObject	ICommunicationObject.h	/^	virtual ~ICommunicationObject();$/;"	p	class:ICommunicationObject	access:public	signature:()
+IINITIALFINISHEDNOTIFIER_H	IInitialFinishedNotifier.h	4;"	d
+IInitialFinishedNotifier	IInitialFinishedNotifier.h	/^class IInitialFinishedNotifier$/;"	c
+IInitialFinishedNotifier::IsInitialSuccess	IInitialFinishedNotifier.h	/^	virtual bool IsInitialSuccess() = 0;$/;"	p	class:IInitialFinishedNotifier	access:public	signature:()
+IInitialFinishedNotifier::NotifyInitialFinished	IInitialFinishedNotifier.h	/^	virtual CStatus NotifyInitialFinished(bool bIsSuccess) = 0;$/;"	p	class:IInitialFinishedNotifier	access:public	signature:(bool bIsSuccess)
 Initialize	CMessageLoopManager.h	/^	virtual CStatus Initialize()=0;$/;"	p	class:CMessageLoopManager	access:protected	signature:()
 Initialize	CMessageObserver.h	/^	virtual CStatus Initialize(CMessageLoopManager * pMsgLoopMgr,void * pContext) =0;$/;"	p	class:CMessageObserver	access:public	signature:(CMessageLoopManager * pMsgLoopMgr,void * pContext)
 Initialize	CMsgLoopMgrForUserDefinedQueue.cpp	/^CStatus CMsgLoopMgrForUserDefinedQueue::Initialize()$/;"	f	class:CMsgLoopMgrForUserDefinedQueue	signature:()
@@ -302,11 +335,15 @@ IsEmpty	CMessageQueueByUserDefined.cpp	/^bool CMessageQueueByUserDefined::IsEmpt
 IsEmpty	CMessageQueueByUserDefined.h	/^	bool IsEmpty();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
 IsFull	CMessageQueueByUserDefined.cpp	/^bool CMessageQueueByUserDefined::IsFull()$/;"	f	class:CMessageQueueByUserDefined	signature:()
 IsFull	CMessageQueueByUserDefined.h	/^ 	bool IsFull();$/;"	p	class:CMessageQueueByUserDefined	access:public	signature:()
+IsInitialSuccess	CThreadInitialFinishedNotifier.cpp	/^bool CThreadInitialFinishedNotifier::IsInitialSuccess()$/;"	f	class:CThreadInitialFinishedNotifier	signature:()
+IsInitialSuccess	IInitialFinishedNotifier.h	/^	virtual bool IsInitialSuccess() = 0;$/;"	p	class:IInitialFinishedNotifier	access:public	signature:()
 IsSuccess	CStatus.cpp	/^bool CStatus::IsSuccess()$/;"	f	class:CStatus	signature:()
 IsSuccess	CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
 Lock	CMutex.cpp	/^CStatus CMutex::Lock()$/;"	f	class:CMutex	signature:()
 Lock	CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
 MESSAGEIDTABLE_H	MessageIDTable.h	3;"	d
+NotifyInitialFinished	CThreadInitialFinishedNotifier.cpp	/^CStatus CThreadInitialFinishedNotifier:: NotifyInitialFinished(bool bIsSuccess)$/;"	f	class:CThreadInitialFinishedNotifier	signature:(bool bIsSuccess)
+NotifyInitialFinished	IInitialFinishedNotifier.h	/^	virtual CStatus NotifyInitialFinished(bool bIsSuccess) = 0;$/;"	p	class:IInitialFinishedNotifier	access:public	signature:(bool bIsSuccess)
 On_AddMsg	test.cpp	/^	CStatus On_AddMsg(CMessage * pMsg)$/;"	f	class:CMyMsgProcessor	access:public	signature:(CMessage * pMsg)
 On_QuitMsg	test.cpp	/^	CStatus On_QuitMsg(CMessage * pMsg)$/;"	f	class:CMyMsgProcessor	access:public	signature:(CMessage * pMsg)
 Pop	CMessageQueueByUserDefined.cpp	/^CMessage * CMessageQueueByUserDefined::Pop()$/;"	f	class:CMessageQueueByUserDefined	signature:()
@@ -330,10 +367,14 @@ ReleaseCommunicationObject	CCommunicationNameServer.h	/^	CStatus ReleaseCommunic
 Run	CExecutiveObject.h	/^	virtual CStatus Run(void * pContext) = 0;$/;"	p	class:CExecutiveObject	access:public	signature:(void * pContext)
 Run	CThread.cpp	/^CStatus CThread::Run(void * pContext)$/;"	f	class:CThread	signature:(void * pContext)
 Run	CThread.h	/^	virtual CStatus Run(void * pContext);$/;"	p	class:CThread	access:public	signature:(void * pContext)
+Run	CThreadForMsgLoop.cpp	/^CStatus CThreadForMsgLoop::Run(void * pContext)$/;"	f	class:CThreadForMsgLoop	signature:(void * pContext)
+Run	CThreadForMsgLoop.h	/^	CStatus Run(void * pContext);$/;"	p	class:CThreadForMsgLoop	access:public	signature:(void * pContext)
 RunClientBusiness	CClientBizUsingMsgLoop.cpp	/^CStatus CClientBizUsingMsgLoop::RunClientBusiness(void *pContext)$/;"	f	class:CClientBizUsingMsgLoop	signature:(void *pContext)
 RunClientBusiness	CClientBizUsingMsgLoop.h	/^	virtual CStatus RunClientBusiness(void * pContext);$/;"	p	class:CClientBizUsingMsgLoop	access:public	signature:(void * pContext)
 RunClientBusiness	CClientBusinessForExecObj.h	/^	virtual CStatus RunClientBusiness(void * pContext) = 0;$/;"	p	class:CClientBusinessForExecObj	access:public	signature:(void * pContext)
 SCommunicationPtrCount	CCommunicationNameServer.h	/^}SCommunicationPtrCount;$/;"	t	typeref:struct:__anon1
+SInitialParameter	CThreadForMsgLoop.h	/^}SInitialParameter;$/;"	t	typeref:struct:__anon2
+SendMessage	CCommunicationNameServer.cpp	/^CStatus CCommunicationNameServer::SendMessage(const char * strCommObjName, CMessage * pMessage)$/;"	f	class:CCommunicationNameServer	signature:(const char * strCommObjName, CMessage * pMessage)
 SendMessage	CCommunicationNameServer.h	/^	static CStatus SendMessage(const char * strCommObjName, CMessage * pMessage);$/;"	p	class:CCommunicationNameServer	access:public	signature:(const char * strCommObjName, CMessage * pMessage)
 Set	CEvent.cpp	/^CStatus CEvent::Set()$/;"	f	class:CEvent	signature:()
 Set	CEvent.h	/^	CStatus Set();$/;"	p	class:CEvent	access:public	signature:()
@@ -364,6 +405,8 @@ WakeupAll	CConditionVariable.cpp	/^CStatus CConditionVariable::WakeupAll()$/;"	f
 WakeupAll	CConditionVariable.h	/^	CStatus WakeupAll();$/;"	p	class:CConditionVariable	access:public	signature:()
 __anon1::iConnectionCount	CCommunicationNameServer.h	/^	unsigned int iConnectionCount;$/;"	m	struct:__anon1	access:public
 __anon1::pCommObj	CCommunicationNameServer.h	/^	ICommunicationObject * pCommObj;$/;"	m	struct:__anon1	access:public
+__anon2::pContext	CThreadForMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon2	access:public
+__anon2::pNotifier	CThreadForMsgLoop.h	/^ 	CThreadInitialFinishedNotifier *  pNotifier;$/;"	m	struct:__anon2	access:public
 iConnectionCount	CCommunicationNameServer.h	/^	unsigned int iConnectionCount;$/;"	m	struct:__anon1	access:public
 m_Cond	CConditionVariable.h	/^	pthread_cond_t m_Cond;$/;"	m	class:CConditionVariable	access:private
 m_Cond	CEvent.h	/^	CConditionVariable m_Cond;$/;"	m	class:CEvent	access:private
@@ -378,6 +421,8 @@ m_MutexForNameTable	CCommunicationNameServer.h	/^	CMutex m_MutexForNameTable;$/;
 m_NameTable	CCommunicationNameServer.h	/^	std::map<std::string,SCommunicationPtrCount *> m_NameTable;$/;"	m	class:CCommunicationNameServer	access:private
 m_ThreadID	CThread.h	/^	pthread_t m_ThreadID;$/;"	m	class:CThread	access:private
 m_bIsRecordCondVar	CEvent.h	/^	bool m_bIsRecordCondVar;$/;"	m	class:CEvent	access:private
+m_bIsSucess	CThreadInitialFinishedNotifier.h	/^	bool m_bIsSucess;$/;"	m	class:CThreadInitialFinishedNotifier	access:private
+m_bWaitForDeath	CThreadForMsgLoop.h	/^	bool m_bWaitForDeath();$/;"	p	class:CThreadForMsgLoop	access:private	signature:()
 m_ciErrorCode	CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
 m_ciReturnCode	CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
 m_clMsgID	CMessage.h	/^	const unsigned long & m_clMsgID;$/;"	m	class:CMessage	access:public
@@ -393,6 +438,7 @@ m_op2	test.cpp	/^	int m_op2;$/;"	m	class:CAddMessage	file:	access:public
 m_pClientBusinessForExecObj	CExecutiveObject.h	/^	CClientBusinessForExecObj * m_pClientBusinessForExecObj;$/;"	m	class:CExecutiveObject	access:protected
 m_pContext	CThread.h	/^	void * m_pContext;$/;"	m	class:CThread	access:private
 m_pErrorMsg	CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
+m_pEvent	CThreadInitialFinishedNotifier.h	/^	CEvent * m_pEvent;$/;"	m	class:CThreadInitialFinishedNotifier	access:private
 m_pMsgLoopManager	CClientBizUsingMsgLoop.h	/^	CMessageLoopManager * m_pMsgLoopManager;$/;"	m	class:CClientBizUsingMsgLoop	access:private
 m_pMsgObserver	CMessageLoopManager.h	/^	CMessageObserver * m_pMsgObserver;$/;"	m	class:CMessageLoopManager	access:protected
 m_pMsgQueue	CCommunicationByMsgQueue.h	/^	CMessageQueueByUserDefined * m_pMsgQueue;$/;"	m	class:CCommunicationByMsgQueue	access:private
@@ -401,11 +447,14 @@ m_pNameServer	CCommunicationNameServer.cpp	/^CCommunicationNameServer * CCommuni
 m_pNameServer	CCommunicationNameServer.h	/^	static CCommunicationNameServer * m_pNameServer; 	$/;"	m	class:CCommunicationNameServer	access:private
 m_pQueue	CMsgLoopMgrForUserDefinedQueue.h	/^	CMessageQueueByUserDefined * m_pQueue;$/;"	m	class:CMsgLoopMgrForUserDefinedQueue	access:private
 m_pQueueSpace	CMessageQueueByUserDefined.h	/^	CMessage ** m_pQueueSpace;$/;"	m	class:CMessageQueueByUserDefined	access:private
+m_pThread	CThreadForMsgLoop.h	/^	CThread * m_pThread;$/;"	m	class:CThreadForMsgLoop	access:private
 m_strThreadName	CMsgLoopMgrForUserDefinedQueue.h	/^	std::string m_strThreadName;$/;"	m	class:CMsgLoopMgrForUserDefinedQueue	access:private
 main	test.cpp	/^int main()$/;"	f	signature:()
 operator =	CClientBusinessForExecObj.h	/^	CClientBusinessForExecObj & operator = (const CClientBusinessForExecObj &);$/;"	p	class:CClientBusinessForExecObj	access:private	signature:(const CClientBusinessForExecObj &)
 operator =	CMessage.h	/^	CMessage & operator=(const CMessage & cm);$/;"	p	class:CMessage	access:public	signature:(const CMessage & cm)
 pCommObj	CCommunicationNameServer.h	/^	ICommunicationObject * pCommObj;$/;"	m	struct:__anon1	access:public
+pContext	CThreadForMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon2	access:public
+pNotifier	CThreadForMsgLoop.h	/^ 	CThreadInitialFinishedNotifier *  pNotifier;$/;"	m	struct:__anon2	access:public
 ~CClientBizUsingMsgLoop	CClientBizUsingMsgLoop.cpp	/^CClientBizUsingMsgLoop:: ~CClientBizUsingMsgLoop()$/;"	f	class:CClientBizUsingMsgLoop	signature:()
 ~CClientBizUsingMsgLoop	CClientBizUsingMsgLoop.h	/^	virtual ~CClientBizUsingMsgLoop();$/;"	p	class:CClientBizUsingMsgLoop	access:public	signature:()
 ~CClientBusinessForExecObj	CClientBusinessForExecObj.cpp	/^CClientBusinessForExecObj::~CClientBusinessForExecObj()$/;"	f	class:CClientBusinessForExecObj	signature:()
@@ -434,5 +483,9 @@ pCommObj	CCommunicationNameServer.h	/^	ICommunicationObject * pCommObj;$/;"	m	st
 ~CStatus	CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
 ~CThread	CThread.cpp	/^CThread::~CThread()$/;"	f	class:CThread	signature:()
 ~CThread	CThread.h	/^	virtual ~CThread();$/;"	p	class:CThread	access:public	signature:()
+~CThreadForMsgLoop	CThreadForMsgLoop.cpp	/^CThreadForMsgLoop:: ~CThreadForMsgLoop()$/;"	f	class:CThreadForMsgLoop	signature:()
+~CThreadForMsgLoop	CThreadForMsgLoop.h	/^	virtual ~CThreadForMsgLoop();$/;"	p	class:CThreadForMsgLoop	access:public	signature:()
+~CThreadInitialFinishedNotifier	CThreadInitialFinishedNotifier.cpp	/^CThreadInitialFinishedNotifier::~CThreadInitialFinishedNotifier()$/;"	f	class:CThreadInitialFinishedNotifier	signature:()
+~CThreadInitialFinishedNotifier	CThreadInitialFinishedNotifier.h	/^	virtual ~CThreadInitialFinishedNotifier();$/;"	p	class:CThreadInitialFinishedNotifier	access:public	signature:()
 ~ICommunicationObject	ICommunicationObject.cpp	/^ICommunicationObject:: ~ICommunicationObject()$/;"	f	class:ICommunicationObject	signature:()
 ~ICommunicationObject	ICommunicationObject.h	/^	virtual ~ICommunicationObject();$/;"	p	class:ICommunicationObject	access:public	signature:()

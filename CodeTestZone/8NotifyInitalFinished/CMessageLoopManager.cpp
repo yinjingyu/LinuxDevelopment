@@ -19,6 +19,8 @@
 #include "CMessageLoopManager.h"
 #include "MessageIDTable.h"
 #include <map>
+#include "CThreadForMsgLoop.h"
+#include "CThreadInitialFinishedNotifier.h"
 
 class CMessageObserver;
 
@@ -29,18 +31,33 @@ CMessageLoopManager:: CMessageLoopManager(CMessageObserver * pMsgObserver)
 
 CStatus CMessageLoopManager::EnterMessageLoop(void * pContext)
 {
+	if(0 == pContext)
+	{
+		return CStatus(-1,0,"In CMessageLoopManager::EnterMessageLoop : pContext is null");
+	}
 	
-	//允许传递给线程的参数是NULL型，表示不传递参数，所以不做检查
+	SInitialParameter * pInitParameter = (SInitialParameter *)pContext;
 
 	//1、进入消息循环前，允许消息循环做一些初始化的工作
  	CStatus s1 = Initialize();
 	if(!s1.IsSuccess())
+	{
+		//通知创建线程，子线程在进入消息循环前初始化失败
+		pInitParameter->pNotifier->NotifyInitialFinished(false);
 		return s1;
+	}
 
 	//在进入消息循环前，调用观察者的初始化函数
-	CStatus s_initOfMsgObserver = m_pMsgObserver->Initialize(this,pContext);
+	CStatus s_initOfMsgObserver = m_pMsgObserver->Initialize(this,pInitParameter->pContext);
 	if(!s_initOfMsgObserver.IsSuccess())
+	{
+		//通知创建线程，子线程中的消息观察者初始化失败
+		pInitParameter->pNotifier->NotifyInitialFinished(false);
 		return s_initOfMsgObserver;
+	}
+	
+	//通知主线程，子线程在进入消息循环前所有该做的初始化均成功，现在可以放心的给子线程发送消息了 	
+	pInitParameter->pNotifier->NotifyInitialFinished(true);
 
 	//3、消息队列的拥有线程owner开始进入一个死循环（即消息循环机制）
 	//owner 阻塞的一直从消息队列中读取other线程发给它的消息
