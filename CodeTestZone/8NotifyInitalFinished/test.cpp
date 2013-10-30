@@ -87,6 +87,8 @@ int main()
 {
 	
 //	CThread * t = new CThread(new CClientBizUsingMsgLoop(new CMsgLoopMgrForUserDefinedQueue("thread_1",new CMyMsgProcessor())));
+	
+	//简化了使用消息循环线程
 	CThreadForMsgLoop * t = new CThreadForMsgLoop("thread_1",new CMyMsgProcessor());
 	t->Run(0);
  	
