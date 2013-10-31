@@ -23,10 +23,17 @@
 #include "CThreadInitFinishedNotifier.h"
 #include <unistd.h>
 #include "CMsgObserver.h"
+#include <iostream>
+
 class CMsgObserver;
 
 CMsgLoopManager:: CMsgLoopManager(CMsgObserver * pMsgObserver)
 {
+	if(pMsgObserver == 0)
+	{
+		std::cout << "In construct of CMsgObserver:pMsgObserver is null" << std::endl;
+		throw CStatus(-1,0,"In construct of CMsgObserver:pMsgObserver is null");
+	}
 	m_pMsgObserver = pMsgObserver;
 }
 
@@ -42,29 +49,35 @@ CMsgLoopManager:: ~CMsgLoopManager()
 
 CStatus CMsgLoopManager::EnterMessageLoop(void * pContext)
 {
-	if(0 == pContext)
-	{
-		return CStatus(-1,0,"In CMessageLoopManager::EnterMessageLoop : pContext is null");
-	}
-	
 	SInitialParameter * pInitParameter = (SInitialParameter *)pContext;
+	
+	if(pInitParameter == 0 || pInitParameter->pNotifier == 0)
+	{
+		std::cout << "In CMsgLoopManager::EnterMessageLoop : pInitParameter is bad!" << std::endl;
+		return CStatus(-1,0);
+	}
 
 	//1、进入消息循环前，允许消息循环做一些初始化的工作
  	CStatus s1 = Initialize();
 	if(!s1.IsSuccess())
 	{
+		std::cout << s1.GetErrorMsg() << std::endl;
 		//通知创建线程，子线程在进入消息循环前初始化失败
 		pInitParameter->pNotifier->NotifyInitialFinished(false);
-		return s1;
+		return CStatus(-1,0);
 	}
 
 	//在进入消息循环前，调用观察者的初始化函数
 	CStatus s_mo_i = m_pMsgObserver->Initialize(this,pInitParameter->pContext);
 	if(!s_mo_i.IsSuccess())
 	{
+		std::cout << "In CMsgLoopManager::EnterMessageLoop : m_pMsgObserver->Initialize() error!" << std::endl;
+		CStatus s = Uninitialize();
+		if(!s.IsSuccess())
+			std::cout << "In CMsgLoopManager::EnterMessageLoop : 1_Uninitialize() error!" << std::endl;
 		//通知创建线程，子线程中的消息观察者初始化失败
 		pInitParameter->pNotifier->NotifyInitialFinished(false);
-		return s_mo_i;
+		return CStatus(-1,0);
 	}
 	
 	//通知主线程，子线程在进入消息循环前所有该做的初始化均成功，现在可以放心的给子线程发送消息了 	
@@ -90,8 +103,7 @@ CStatus CMsgLoopManager::EnterMessageLoop(void * pContext)
 		}
 		
 		CStatus s2 = DispatchMessage(pMsg);
-		if(!s2.IsSuccess())
-			return s2;
+
 		//当处理完消息后，应该直接注销消息
 		delete pMsg;	
 		pMsg = 0;
@@ -103,7 +115,10 @@ CStatus CMsgLoopManager::EnterMessageLoop(void * pContext)
 	//5、允许消息队列做一些收尾工作
 	CStatus s3 = Uninitialize();
 	if(!s3.IsSuccess())
-		return s3;
+	{
+		std::cout << "CMsgLoopManager::EnterMessageLoop 2_Uninitialize() error!" << std::endl;
+		return CStatus(-1,0);
+	}
 
 	return CStatus(1,0);
 }
@@ -119,7 +134,8 @@ CStatus CMsgLoopManager::Register(unsigned int iMsgTypeID, CallBackFunctionOfMsg
 {
 	if(0 == pFunction)
 	{
-		return CStatus(-1,0,"in Register of CMessageLoopManager : pMsgObserver is null");
+		std::cout << "in Register of CMessageLoopManager : pMsgObserver is null"<< std::endl; 	
+		return CStatus(-1,0);
 	}
 
 	m_MsgFuncMappingTable[iMsgTypeID] = pFunction;
@@ -140,7 +156,8 @@ CStatus CMsgLoopManager::DispatchMessage(CMessage * pMsg)
 {
 	if(0 == pMsg)
 	{
-		return CStatus(-1,0,"in DispatchMessage of CMessageLoopManager:bad paremeter ,pmsg is null");
+		std::cout << "in DispatchMessage of CMessageLoopManager:bad paremeter ,pmsg is null"<<std::endl;
+		return CStatus(-1,0);
 	}
 
 	//遍历查找消息处理函数
@@ -148,6 +165,7 @@ CStatus CMsgLoopManager::DispatchMessage(CMessage * pMsg)
 	it = m_MsgFuncMappingTable.find(pMsg->m_clMsgID);
 	if(it == m_MsgFuncMappingTable.end())
 	{
+		std::cout << "msg unregistered!" <<std::endl;
 		return CStatus(-1,0,"尚未注册该消息");
 	}
 
@@ -156,7 +174,10 @@ CStatus CMsgLoopManager::DispatchMessage(CMessage * pMsg)
 	if(pFunction != 0)
 		return (m_pMsgObserver->*pFunction)(pMsg);
 	else
+	{
+		std::cout << "msg processor unregistered!"<< std::endl;
 		return CStatus(-1,0,"该消息没有注册处理类");	
+	}
 }
 
 

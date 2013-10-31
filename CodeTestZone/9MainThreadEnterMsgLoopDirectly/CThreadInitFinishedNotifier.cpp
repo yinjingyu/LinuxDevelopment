@@ -18,6 +18,7 @@
 
 #include "CThreadInitFinishedNotifier.h"
 #include "CStatus.h"
+#include <iostream>
 
 CStatus CThreadInitFinishedNotifier:: NotifyInitialFinished(bool bIsSuccess)
 {
@@ -25,10 +26,16 @@ CStatus CThreadInitFinishedNotifier:: NotifyInitialFinished(bool bIsSuccess)
 	
 	if(0 == m_pEvent)
 	{
-		return CStatus(-1,0,"In NotifyInitialFinished of CThreadInitialFinishedNotifier : m_pEvent is NULL"); 
+		return CStatus(-1,0); 
 	}
-
-	return m_pEvent->Set();
+	
+	CStatus s = m_pEvent->Set();
+	if(!s.IsSuccess())
+	{
+		std::cout << "In CThreadInitFinishedNotifier::NotifyInitialFinished , m_pEvent->Set failed!" << std::endl;
+		return CStatus(-1,0);
+	}
+	return CStatus(0,0);
 }
 
 bool CThreadInitFinishedNotifier::IsInitialSuccess()

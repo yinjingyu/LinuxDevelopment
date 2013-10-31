@@ -55,14 +55,20 @@ CThread::~CThread()
  */
 CStatus CThread::Run(void * pContext)
 { 	
+	if(m_bThreadCreated)
+	{
+		std::cout << "In CThread::Run :thread is already existed!" << std::endl;
+		return CStatus(-1,0);
+	}
 	m_pContext = pContext;
 	
 	//直接把当前对象的this指针传递给业务逻辑执行函数
 	int r = pthread_create(&m_ThreadID,NULL,StartFunctionOfThread,this);
 	if(r != 0)
 	{
+		std::cout << "error in Run of CThread: pthread_creat failed!"<<std::endl;
 		delete this;
-		return CStatus(-1,0,"error in Run of CThread: pthread_creat failed!");
+		return CStatus(-1,0);
 	}
 
 	m_bThreadCreated = true;
@@ -72,15 +78,16 @@ CStatus CThread::Run(void * pContext)
 		r = pthread_detach(m_ThreadID);
 		if(r !=0 )
 		{
-			return CStatus(-1,0,"In CThread::Run() pthread_detach failed");
+			std::cout <<"In CThread::Run() pthread_detach failed"<< std::endl;
+			return CStatus(-1,0);
 		}
 	}
 
  	CStatus s_wait4new = m_EventForWaitingForNewThread.Wait();
 	if(!s_wait4new.IsSuccess())
 	{
-		std::cout << s_wait4new.GetErrorMsg() << std::endl;
-		return CStatus(-1,0,"in CThread::Run m_EventForWaitingForNewThread.wait faild!");
+		std::cout << "in CThread::Run m_EventForWaitingForNewThread.wait faild!"<< std::endl;
+		return CStatus(-1,0);
 	}
 
 	//创建线程完成了对子线程的成员的访问后，就通知子线程现在可以放心无误的
@@ -88,8 +95,8 @@ CStatus CThread::Run(void * pContext)
 	CStatus s_set4new = m_EventForWaitingForOldThread.Set();
 	if(!s_set4new.IsSuccess())
 	{
-		std::cout << s_set4new.GetErrorMsg() << std::endl;
-		return CStatus(-1,0,"in CThread::Run m_EventForWaitingForOldThread.Set failed!");
+		std::cout <<"in CThread::Run m_EventForWaitingForOldThread.Set failed!"<< std::endl;
+		return CStatus(-1,0);
 	}
 	return CStatus(0,0);
 }
@@ -98,22 +105,22 @@ CStatus CThread::WaitForDeath()
 {
  	if(!m_bWaitForDeath)
 	{
-		return CStatus(-1,0,"In CThread::WaitForDeath , m_bWaitForDeath is false which means WaitForDeath is not required!");
+		return CStatus(-1,0);
 	}
 
 	if(!m_bThreadCreated)
 	{
-		return CStatus(-1,0,"In CThread::WaitForDeath , m_bThreadCreated is null");
+		return CStatus(-1,0);
 	}
 
 	int r = pthread_join(m_ThreadID,0);
 	if(r != 0)
 	{
-		return CStatus(-1,0,"error in CThread::WaitForDeath");
+		std::cout << "error in CThread::WaitForDeath"<< std::endl;
+		return CStatus(-1,0);
 	}
 	
 	delete this;
-
 	return CStatus(0,0);
 }
 /* 

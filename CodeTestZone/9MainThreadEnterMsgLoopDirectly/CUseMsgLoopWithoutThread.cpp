@@ -23,11 +23,14 @@
 #include "CMsgLoopMgrUsingUsrDefQueue.h"
 #include "CThreadInitFinishedNotifier.h"
 #include "CThreadUsingMsgLoop.h"
+#include <iostream>
+
 CUseMsgLoopWithoutThread::CUseMsgLoopWithoutThread(const char * strThreadName, CMsgObserver * pMsgObserver)
 {
 	if(0 == strThreadName || 0 == pMsgObserver)
 	{
-		throw CStatus(-1,0,"In construction of CUseMsgLoopWithoutThread : parameter is null");
+		std::cout <<"In construction of CUseMsgLoopWithoutThread : parameter is null"<< std::endl;
+		throw CStatus(-1,0);
 	}
 	try
 	{

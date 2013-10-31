@@ -20,7 +20,7 @@
 #include "CEnterCriticalSection.h"
 #include "CMutex.h"
 #include <iostream>
-
+#include <string.h>
 CMutex CCommunicationNameServer::m_MutexForCreatingInstance;
 CCommunicationNameServer * CCommunicationNameServer::m_pNameServer = 0;
 
@@ -118,23 +118,27 @@ CStatus CCommunicationNameServer::ReleaseCommunicationObject(const char * strCom
 	ICommunicationObject * pTmp = 0;
 	
 	{
-	CEnterCriticalSection cs(&m_MutexForNameTable);
-	std::map<std::string, SCommunicationPtrCount *>::iterator it1;
-	it1 = m_NameTable.find(strCommObjName);
-	if(it1 == m_NameTable.end())
+	 	CEnterCriticalSection cs(&m_MutexForNameTable);
+	 	std::map<std::string, SCommunicationPtrCount *>::iterator it1;
+	 	it1 = m_NameTable.find(strCommObjName);
+	 	if(it1 == m_NameTable.end())
+	 	{
+	 		return CStatus(-1,0,"in GetCommunicationObject of CCommunicationNameServer: can't find referenced comm obj");
+	 	}
+ 	
+ 		it1->second->iConnectionCount--;
+ 		if(it1->second->iConnectionCount <= 0)
+ 		{
+			pTmp = it1->second->pCommObj;
+ 			delete it1->second;
+ 			m_NameTable.erase(it1);
+ 		}
+ 	}
+	if( 0 != pTmp)
 	{
-		return CStatus(-1,0,"in GetCommunicationObject of CCommunicationNameServer: can't find referenced comm obj");
+		delete pTmp;
 	}
-
-	it1->second->iConnectionCount--;
-	if(it1->second->iConnectionCount <= 0)
-	{
-		delete it1->second->pCommObj;
-		delete it1->second;
-		m_NameTable.erase(it1);
-	}
-	}
-	return CStatus(0,0);
+ 	return CStatus(0,0);
 }
 
 CStatus CCommunicationNameServer::SendMessage(const char * strCommObjName, CMessage * pMessage)

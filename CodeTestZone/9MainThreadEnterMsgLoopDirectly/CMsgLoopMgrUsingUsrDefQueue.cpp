@@ -21,7 +21,7 @@
 #include "CMessage.h"
 #include "CCommunicationNameServer.h"
 #include "CCommunicationByMsgQueue.h"
-
+#include <iostream>
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  CMsgLoopMgrForUserDefinedQueue
@@ -40,7 +40,8 @@ CMsgLoopMgrUsingUsrDefQueue::CMsgLoopMgrUsingUsrDefQueue(const char * strThreadN
 	}
 	catch(...)
 	{
-		throw CStatus(-1,0,"in construction of CMsgLoopMgrForUserDefinedQueue: new CMessageQueueByUserDefined failed");
+		std::cout << "in construction of CMsgLoopMgrForUserDefinedQueue: new CMessageQueueByUserDefined failed"<< std::endl;
+		throw CStatus(-1,0);
 	}
 	
 	m_strThreadName = strThreadName;
@@ -89,12 +90,14 @@ CStatus CMsgLoopMgrUsingUsrDefQueue::Initialize()
 				delete m_pQueue;
 				m_pQueue = 0;
 			}
-			return CStatus(-1,0,"in CMsgLoopMgrUsingUsrDefQueue::Initialize pNameServer is null");
+			std::cout << "in CMsgLoopMgrUsingUsrDefQueue::Initialize pNameServer is null"<< std::endl;
+			return CStatus(-1,0);
 		}
 	}
 	catch(...)
 	{
-		return CStatus(-1,0,"in Initialize of CMsgLoopMgrForUserDefinedQueue : GetInstance of CCommunicationNameServer failed");
+		std::cout << "in Initialize of CMsgLoopMgrForUserDefinedQueue : GetInstance of CCommunicationNameServer failed"<< std::endl;
+		return CStatus(-1,0);
 	}
 
 	CStatus s1 = pNameServer->Register(m_strThreadName.c_str(),new CCommunicationByMsgQueue(m_pQueue));
@@ -105,7 +108,9 @@ CStatus CMsgLoopMgrUsingUsrDefQueue::Initialize()
 			delete m_pQueue;
 			m_pQueue = 0;
 		}
-		return s1;
+
+		std::cout << "pNameServer->Register error!"<< std::endl;
+		return CStatus(-1,0);
 	}
 	return CStatus(0,0);
 }
@@ -128,9 +133,14 @@ CStatus CMsgLoopMgrUsingUsrDefQueue:: Uninitialize()
 	}
 	catch(...)
 	{
-		return CStatus(-1,0,"in Uninitialize of CMsgLoopMgrForUserDefinedQueue : GetInstance of CCommunicationNameServer failed");
+		std::cout << "in Uninitialize of CMsgLoopMgrForUserDefinedQueue : GetInstance of CCommunicationNameServer failed"<< std::endl;
+		return CStatus(-1,0);
 	}
-	
+	if(0 == pNameServer)
+	{
+		std::cout << "in CMsgLoopMgrForUserDefinedQueue :: Uninitialize , pNameServer is null"<< std::endl;	
+		return CStatus(-1,0);
+	}
 	return pNameServer->ReleaseCommunicationObject(m_strThreadName.c_str());
 }
 
