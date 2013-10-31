@@ -46,6 +46,16 @@ CMsgLoopMgrUsingUsrDefQueue::CMsgLoopMgrUsingUsrDefQueue(const char * strThreadN
 	m_strThreadName = strThreadName;
 }
 
+
+CMsgLoopMgrUsingUsrDefQueue::~CMsgLoopMgrUsingUsrDefQueue()
+{
+//	if(0 != m_pQueue)
+//	{
+//		delete m_pQueue;
+//		m_pQueue = 0;
+//	}
+}
+
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  CMsgLoopMgrForUserDefinedQueue
@@ -72,6 +82,15 @@ CStatus CMsgLoopMgrUsingUsrDefQueue::Initialize()
 	try
 	{
 		pNameServer = CCommunicationNameServer::GetInstance();
+		if(0 == pNameServer)
+		{
+			if(0 != m_pQueue)
+			{
+				delete m_pQueue;
+				m_pQueue = 0;
+			}
+			return CStatus(-1,0,"in CMsgLoopMgrUsingUsrDefQueue::Initialize pNameServer is null");
+		}
 	}
 	catch(...)
 	{
@@ -81,6 +100,11 @@ CStatus CMsgLoopMgrUsingUsrDefQueue::Initialize()
 	CStatus s1 = pNameServer->Register(m_strThreadName.c_str(),new CCommunicationByMsgQueue(m_pQueue));
 	if(!s1.IsSuccess())
 	{
+		if(0 != m_pQueue)
+		{
+			delete m_pQueue;
+			m_pQueue = 0;
+		}
 		return s1;
 	}
 	return CStatus(0,0);
@@ -109,4 +133,5 @@ CStatus CMsgLoopMgrUsingUsrDefQueue:: Uninitialize()
 	
 	return pNameServer->ReleaseCommunicationObject(m_strThreadName.c_str());
 }
+
 

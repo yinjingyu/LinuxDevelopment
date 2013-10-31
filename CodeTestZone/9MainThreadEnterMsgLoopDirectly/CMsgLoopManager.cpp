@@ -21,13 +21,24 @@
 #include <map>
 #include "CThreadUsingMsgLoop.h"
 #include "CThreadInitFinishedNotifier.h"
-
+#include <unistd.h>
+#include "CMsgObserver.h"
 class CMsgObserver;
 
 CMsgLoopManager:: CMsgLoopManager(CMsgObserver * pMsgObserver)
 {
 	m_pMsgObserver = pMsgObserver;
 }
+
+CMsgLoopManager:: ~CMsgLoopManager()
+{
+	if(0 != m_pMsgObserver)
+	{
+		delete m_pMsgObserver;
+		m_pMsgObserver = 0;
+	}
+}
+
 
 CStatus CMsgLoopManager::EnterMessageLoop(void * pContext)
 {
@@ -81,7 +92,10 @@ CStatus CMsgLoopManager::EnterMessageLoop(void * pContext)
 		CStatus s2 = DispatchMessage(pMsg);
 		if(!s2.IsSuccess())
 			return s2;
-		
+		//当处理完消息后，应该直接注销消息
+		delete pMsg;	
+		pMsg = 0;
+
 		if(s2.m_ciReturnCode == QUIT_MESSAGE_LOOP)
 			break;
 	}	
@@ -91,7 +105,7 @@ CStatus CMsgLoopManager::EnterMessageLoop(void * pContext)
 	if(!s3.IsSuccess())
 		return s3;
 
-	return CStatus(0,0);
+	return CStatus(1,0);
 }
 
 

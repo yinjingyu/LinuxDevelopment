@@ -28,7 +28,13 @@ CCommunicationByMsgQueue:: CCommunicationByMsgQueue(CUsrDefMsgQueue * pMsgQueue)
 }
 CCommunicationByMsgQueue:: ~CCommunicationByMsgQueue()
 {
-
+	//基于消息队列的线程通讯实体结束后
+	//应该先释放消息队列
+	if(0 != m_pMsgQueue)
+	{
+		delete m_pMsgQueue;
+		m_pMsgQueue = 0;
+	}
 }
 CStatus CCommunicationByMsgQueue:: PostMessage(CMessage * pMsg)
 {

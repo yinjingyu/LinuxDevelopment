@@ -29,7 +29,9 @@ void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char *
 {
 	 m_iReturnCode = iReturnCode;
 	 m_iErrorCode  = iErrorCode;
-	 m_pErrorMsg = new char[strlen(pErrorMsg)];
+     //我们要给一个字符串分配空间，strlen函数并没有计算
+	 //结束符\0的大小，而strcpy又会拷贝\0，所以必须+1
+	 m_pErrorMsg = new char[strlen(pErrorMsg)+1];
 	 strcpy(m_pErrorMsg,pErrorMsg);
 }
 
@@ -41,8 +43,7 @@ void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char *
  */
 CStatus::CStatus(int iReturnCode, int iErrorCode):m_ciReturnCode(m_iReturnCode),m_ciErrorCode(m_iErrorCode)
 {
-	const char * strMsg = "no error message!";
-	InitializeMemberVars(iReturnCode,iErrorCode,strMsg);
+	 InitializeMemberVars(iReturnCode,iErrorCode,"no error message");
 }
 
 /* 
@@ -71,7 +72,11 @@ CStatus::CStatus(const CStatus & sta):m_ciReturnCode(m_iReturnCode), m_ciErrorCo
 CStatus::~CStatus()
 {
 	//需要在析构函数中释放错误消息
-	delete m_pErrorMsg;
+//	if(0 != m_pErrorMsg)
+//	{
+//	 	delete m_pErrorMsg;
+//		m_pErrorMsg = 0;
+//	}
 }
 
 bool CStatus::IsSuccess()

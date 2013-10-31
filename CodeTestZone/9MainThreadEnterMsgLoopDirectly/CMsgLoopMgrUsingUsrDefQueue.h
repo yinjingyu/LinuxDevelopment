@@ -27,7 +27,7 @@ class CMsgLoopMgrUsingUsrDefQueue : public CMsgLoopManager
 	public:
 
 	CMsgLoopMgrUsingUsrDefQueue(const char * strThreadName,CMsgObserver * pMsgObserver);
-
+	virtual ~CMsgLoopMgrUsingUsrDefQueue();
 
 	virtual CMessage * WaitForMessage();
 	

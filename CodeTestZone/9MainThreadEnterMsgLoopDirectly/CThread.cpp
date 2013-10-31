@@ -17,7 +17,7 @@
  */
 
 #include <pthread.h>
-
+#include <iostream>
 #include "CThread.h"
 
 //在CThread的构造函数中，初始化从基类继承来的业务逻辑指针
@@ -61,9 +61,10 @@ CStatus CThread::Run(void * pContext)
 	int r = pthread_create(&m_ThreadID,NULL,StartFunctionOfThread,this);
 	if(r != 0)
 	{
+		delete this;
 		return CStatus(-1,0,"error in Run of CThread: pthread_creat failed!");
 	}
-	
+
 	m_bThreadCreated = true;
 
 	if(!m_bWaitForDeath)
@@ -75,6 +76,21 @@ CStatus CThread::Run(void * pContext)
 		}
 	}
 
+ 	CStatus s_wait4new = m_EventForWaitingForNewThread.Wait();
+	if(!s_wait4new.IsSuccess())
+	{
+		std::cout << s_wait4new.GetErrorMsg() << std::endl;
+		return CStatus(-1,0,"in CThread::Run m_EventForWaitingForNewThread.wait faild!");
+	}
+
+	//创建线程完成了对子线程的成员的访问后，就通知子线程现在可以放心无误的
+	//执行自己的业务逻辑了
+	CStatus s_set4new = m_EventForWaitingForOldThread.Set();
+	if(!s_set4new.IsSuccess())
+	{
+		std::cout << s_set4new.GetErrorMsg() << std::endl;
+		return CStatus(-1,0,"in CThread::Run m_EventForWaitingForOldThread.Set failed!");
+	}
 	return CStatus(0,0);
 }
 
@@ -95,6 +111,9 @@ CStatus CThread::WaitForDeath()
 	{
 		return CStatus(-1,0,"error in CThread::WaitForDeath");
 	}
+	
+	delete this;
+
 	return CStatus(0,0);
 }
 /* 
@@ -107,7 +126,23 @@ void * CThread::StartFunctionOfThread(void * pThis)
 {
 	//把参数重新转换会CThread对象的this指针，这样我们就可以访问它的数据成员
 	CThread * pThreadThis = (CThread *)pThis;
-	
+
+	//通知创建线程，我（子线程）已经成功的运行起来了
+	CStatus s1 = pThreadThis->m_EventForWaitingForNewThread.Set();
+	if(!s1.IsSuccess())
+	{
+		std::cout << s1.GetErrorMsg() << std::endl;
+		return 0; 
+	}
+
+	//等待创建线程允许自己开始执行业务逻辑 	
+	CStatus s2 = pThreadThis->m_EventForWaitingForOldThread.Wait();
+	if(!s2.IsSuccess())
+	{
+		std::cout << s2.GetErrorMsg() << std::endl;
+		return 0;
+	}
+
 	//CThread 继承了基类的私有成员m_pExecutiveFunctionProvider，该成员指向具体的
 	//业务逻辑对象，接着我们调用业务逻辑对象的RunExecutiveFuntion接口开始执行业务
 	pThreadThis->m_pUsrBizForExecObj->RunClientBusiness(pThreadThis->m_pContext);

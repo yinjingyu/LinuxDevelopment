@@ -21,16 +21,23 @@
 
 CUsrBizUsingMsgLoop::CUsrBizUsingMsgLoop(CMsgLoopManager *pMsgLoopManager)
 {
+	if(0 == pMsgLoopManager)
+	{
+		throw CStatus(-1,0,"In CUsrBizUsingMsgLoop::Construction pMsgLoopManager is null");
+	}
 	m_pMsgLoopManager = pMsgLoopManager;
 }
 
 CUsrBizUsingMsgLoop:: ~CUsrBizUsingMsgLoop()
 {
-	delete m_pMsgLoopManager;
+	if(0 != m_pMsgLoopManager)
+	{
+		delete m_pMsgLoopManager;
+		m_pMsgLoopManager = 0;
+	}
 }
 
 CStatus CUsrBizUsingMsgLoop::RunClientBusiness(void *pContext)
 {
-	CStatus s = m_pMsgLoopManager->EnterMessageLoop(pContext);
-	return s;
+	return m_pMsgLoopManager->EnterMessageLoop(pContext);
 }

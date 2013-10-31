@@ -38,6 +38,16 @@ CUsrDefMsgQueue::CUsrDefMsgQueue()
 
 CUsrDefMsgQueue::~CUsrDefMsgQueue()
 {
+	//如果消息队列被注销前，消息队列中还有消息，
+	//就应该先注销掉所有的消息
+	while(true)
+	{
+		CMessage * pMsg = Pop();
+		if(0 == pMsg)
+			break;
+		delete pMsg;
+	}
+	
 	delete m_pQueueSpace;
 }
 

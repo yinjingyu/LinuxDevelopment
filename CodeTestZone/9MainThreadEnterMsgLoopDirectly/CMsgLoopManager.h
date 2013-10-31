@@ -32,7 +32,7 @@ class CMsgLoopManager
 
 	//在消息循环的构造函数中，初始化观察者
 	CMsgLoopManager(CMsgObserver * pMsgObserver);
-
+	virtual ~CMsgLoopManager();
 	protected:
 	
 	virtual CStatus Initialize()=0;

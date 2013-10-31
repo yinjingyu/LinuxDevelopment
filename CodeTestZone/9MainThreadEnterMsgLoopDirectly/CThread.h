@@ -10,6 +10,7 @@
  */
 #include "CStatus.h"
 #include "CExecutiveObject.h"
+#include "CEvent.h"
 
 class CThread : public CExecutiveObject
 {
@@ -46,6 +47,18 @@ class CThread : public CExecutiveObject
 
 	//用来判断线程是否创建成功 	
 	bool m_bThreadCreated;
+
+    //Run方法的调用者，希望在Run方法返回后，已经能确保新线程已经
+	//运行起来了，所以设这一个事件对象，由子线程发送给创建线程
+	//告诉创建线程，我（子线程）已经成功运行了
+	CEvent m_EventForWaitingForNewThread;
+	
+	//新线程创建完成后，不应该立即去执行它的业务逻辑，
+	//而是应该先等待创建者的通知（假设一种情况：创建线程调用完pthread_create后，瞬间子线程
+	//就执行玩了业务逻辑，且把自己所在的对象给注销了，此时主线程还想调用子线程的一些状态变量
+	//那么就会出错）
+	//所以子线程创建完成后，必须等待创建线程允许执行业务逻辑的通知才能再继续执行
+	CEvent m_EventForWaitingForOldThread;
 };
 
 

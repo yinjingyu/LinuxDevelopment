@@ -42,7 +42,11 @@ CUseMsgLoopWithoutThread::CUseMsgLoopWithoutThread(const char * strThreadName, C
 
 CUseMsgLoopWithoutThread::~CUseMsgLoopWithoutThread()
 {
-	delete m_pUsrBiz;
+	if(0 != m_pUsrBiz)
+	{
+		delete m_pUsrBiz;
+		m_pUsrBiz = 0;
+	}
 }
 
 CStatus CUseMsgLoopWithoutThread::Run(void * pContext)

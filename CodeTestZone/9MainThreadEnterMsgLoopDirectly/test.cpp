@@ -67,7 +67,9 @@ class CMainObserver : public CMsgObserver
 	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)
 	{
 		pMsgLoopMgr->Register(1,(CallBackFunctionOfMsgObserver)(&CMainObserver::On_1));
+
 		m_pTChild = new CThreadUsingMsgLoop("child",new CChildObserver(),true);
+
 		m_pTChild->Run(0); 		
 	}
 
