@@ -83,8 +83,8 @@ CStatus CThread::Run(void * pContext)
 		}
 	}
 
- 	CStatus s_wait4new = m_EventForWaitingForNewThread.Wait();
-	if(!s_wait4new.IsSuccess())
+ 	CStatus s1 = m_EventForWaitingForNewThread.Wait();
+	if(!s1.IsSuccess())
 	{
 		std::cout << "in CThread::Run m_EventForWaitingForNewThread.wait faild!"<< std::endl;
 		return CStatus(-1,0);
@@ -92,8 +92,8 @@ CStatus CThread::Run(void * pContext)
 
 	//创建线程完成了对子线程的成员的访问后，就通知子线程现在可以放心无误的
 	//执行自己的业务逻辑了
-	CStatus s_set4new = m_EventForWaitingForOldThread.Set();
-	if(!s_set4new.IsSuccess())
+	CStatus s2 = m_EventForWaitingForOldThread.Set();
+	if(!s2.IsSuccess())
 	{
 		std::cout <<"in CThread::Run m_EventForWaitingForOldThread.Set failed!"<< std::endl;
 		return CStatus(-1,0);
@@ -114,6 +114,7 @@ CStatus CThread::WaitForDeath()
 	}
 
 	int r = pthread_join(m_ThreadID,0);
+	
 	if(r != 0)
 	{
 		std::cout << "error in CThread::WaitForDeath"<< std::endl;

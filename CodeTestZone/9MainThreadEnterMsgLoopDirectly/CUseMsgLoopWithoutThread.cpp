@@ -24,21 +24,26 @@
 #include "CThreadInitFinishedNotifier.h"
 #include "CThreadUsingMsgLoop.h"
 #include <iostream>
-
+#include <string.h>
 CUseMsgLoopWithoutThread::CUseMsgLoopWithoutThread(const char * strThreadName, CMsgObserver * pMsgObserver)
 {
-	if(0 == strThreadName || 0 == pMsgObserver)
+	if(pMsgObserver == 0)
+	{
+		std::cout << "In CUseMsgLoopWithoutThread contructor,pMsgObserver is null" << std::endl;
+		throw "In CUseMsgLoopWithoutThread contructor,pMsgObserver is null"; 	
+	}
+	if(0 == strThreadName || strlen(strThreadName) == 0 )
 	{
 		std::cout <<"In construction of CUseMsgLoopWithoutThread : parameter is null"<< std::endl;
-		throw CStatus(-1,0);
+		throw "error in CUseMsgLoopWithoutThread contructor!";
 	}
 	try
 	{
 		m_pUsrBiz = new CUsrBizUsingMsgLoop(new CMsgLoopMgrUsingUsrDefQueue(strThreadName,pMsgObserver));
 	}
-	catch(CStatus s)
+	catch(...)
 	{
-		throw s;
+		std::cout <<"In CUseMsgLoopWithoutThread contructor, m_pUsrBiz initialize failed!" <<std::endl;
 	}
 }
 

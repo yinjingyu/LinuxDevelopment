@@ -25,6 +25,7 @@
 #include "CThreadInitFinishedNotifier.h"
 #include <string.h>
 #include <iostream>
+
 CThreadUsingMsgLoop:: CThreadUsingMsgLoop(const char * strThreadName,CMsgObserver * pMsgObserver)
 {
 	if( 0 == pMsgObserver)
@@ -46,9 +47,15 @@ CThreadUsingMsgLoop:: CThreadUsingMsgLoop(const char * strThreadName,CMsgObserve
 
 CThreadUsingMsgLoop:: CThreadUsingMsgLoop(const char * strThreadName,CMsgObserver * pMsgObserver,bool bWaitForDeath)
 {
-	if(0 == strThreadName || 0 == pMsgObserver)
+	if(0 == pMsgObserver)
 	{
-		throw CStatus(-1,0,"In Construction of CThreadForMsgLoop,paremeter is null");
+		std::cout<< "In Construction of CThreadUsingMsgLoop ,pMsgObserver is null" << std::endl;
+		throw "In Construction of CThreadUsingMsgLoop ,pMsgObserver is null";
+	}
+	if(0 == strThreadName || (strlen(strThreadName) ==0 ))
+	{
+		delete pMsgObserver; 	 	
+		throw "In Construction of CThreadForMsgLoop,paremeter is null";
 	}
 
 	m_bWaitForDeath =bWaitForDeath;
@@ -96,7 +103,10 @@ CStatus CThreadUsingMsgLoop::Run(void * pContext)
 	//主线程等待子线程初始化完毕
 	CStatus s_w = event.Wait();
 	if(!s_w.IsSuccess())
-		return s_w;
+	{
+		std::cout <<"In CThreadForMsgLoop::Run , event.wait failed !"<<std::endl;
+		return CStatus(-1,0);
+	}
 	
 	//判断子线程初始化是否成功
 	if(!notifier.IsInitialSuccess())

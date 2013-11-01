@@ -17,12 +17,13 @@
  */
 
 #include "CCommunicationByMsgQueue.h"
-
+#include <iostream>
 CCommunicationByMsgQueue:: CCommunicationByMsgQueue(CUsrDefMsgQueue * pMsgQueue)
 {
 	if(0 == pMsgQueue)
 	{
-		throw CStatus(-1,0,"in construction of CCommunicationByMessageQueue : paremeter is null");
+		std::cout <<"in construction of CCommunicationByMessageQueue : paremeter is null"<< std::endl;
+		throw CStatus(-1,0);
 	}
 	m_pMsgQueue = pMsgQueue;
 }
@@ -40,7 +41,8 @@ CStatus CCommunicationByMsgQueue:: PostMessage(CMessage * pMsg)
 {
 	if(0 == pMsg)
 	{
-		return CStatus(-1,0,"in PostMessage of CCommunicationByMessageQueue: paremeter is null");
+		std::cout <<"in PostMessage of CCommunicationByMessageQueue: paremeter is null"<<std::endl;
+		return CStatus(-1,0);
 	}
 
 	return m_pMsgQueue->PushMessage(pMsg);

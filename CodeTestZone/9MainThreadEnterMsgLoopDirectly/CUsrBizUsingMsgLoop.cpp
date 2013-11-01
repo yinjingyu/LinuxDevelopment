@@ -18,12 +18,14 @@
 
 #include "CUsrBizUsingMsgLoop.h"
 #include "CStatus.h"
+#include <iostream>
 
 CUsrBizUsingMsgLoop::CUsrBizUsingMsgLoop(CMsgLoopManager *pMsgLoopManager)
 {
 	if(0 == pMsgLoopManager)
 	{
-		throw CStatus(-1,0,"In CUsrBizUsingMsgLoop::Construction pMsgLoopManager is null");
+		std::cout <<"In CUsrBizUsingMsgLoop::Construction pMsgLoopManager is null"<<std::endl;
+		throw CStatus(-1,0);
 	}
 	m_pMsgLoopManager = pMsgLoopManager;
 }

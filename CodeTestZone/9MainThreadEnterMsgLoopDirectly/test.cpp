@@ -19,7 +19,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <pthread.h>
-
 #include "IUsrBizForExecObj.h"
 #include "CMessage.h"
 #include "CUsrDefMsgQueue.h"
@@ -32,6 +31,7 @@
 #include "CCommunicationNameServer.h"
 #include "CThreadUsingMsgLoop.h"
 #include "CUseMsgLoopWithoutThread.h"
+
 using namespace std;
 
 
@@ -62,7 +62,11 @@ class CMainObserver : public CMsgObserver
 	CThreadUsingMsgLoop * m_pTChild;
 
 	public:
-
+	
+	~CMainObserver()
+	{
+		delete m_pTChild;
+	}
 
 	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)
 	{
@@ -87,6 +91,5 @@ int main()
 	CUseMsgLoopWithoutThread p("main",new CMainObserver());
 	
 	p.Run(0);
-
  	return 0;
 }

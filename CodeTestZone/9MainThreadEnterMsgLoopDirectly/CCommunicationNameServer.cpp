@@ -21,6 +21,7 @@
 #include "CMutex.h"
 #include <iostream>
 #include <string.h>
+
 CMutex CCommunicationNameServer::m_MutexForCreatingInstance;
 CCommunicationNameServer * CCommunicationNameServer::m_pNameServer = 0;
 
@@ -46,7 +47,8 @@ CCommunicationNameServer * CCommunicationNameServer:: GetInstance()
 	}
 	catch(...)
 	{
-		throw CStatus(-1,0,"in GetInstance of CCommunicationNameServer:catch exception when new CCommunicationNameServer");
+		std::cout <<"in GetInstance of CCommunicationNameServer:catch exception when new CCommunicationNameServer"<<std::endl;	
+		throw CStatus(-1,0);
  	}
 
 	return m_pNameServer;
@@ -57,13 +59,21 @@ CStatus CCommunicationNameServer:: Register(const char * strCommObjName, ICommun
 {
 	if(0 == pCommObj)
 	{
-		return CStatus(-1,0,"in Register of CCommunicationNameServer:paremeter is null");
+		std::cout <<"in Register of CCommunicationNameServer:paremeter is null"<<std::endl;
+		return CStatus(-1,0);
 	}
 
 	if((strCommObjName == 0) || (strlen(strCommObjName) == 0))
 	{
 		delete pCommObj;
-		return CStatus(-1,0,"register error in CCommunicationNameServer");
+		std::cout <<"register error in CCommunicationNameServer"<<std::endl;
+		return CStatus(-1,0);
+	}
+
+	if(m_pNameServer == 0)
+	{
+		std::cout << "In CCommunicationNameServer::Register, m_pNameServer is 0"<< std::endl;
+		return CStatus(-1,0);	
 	}
 
 	CEnterCriticalSection cs(&m_MutexForNameTable);
@@ -72,7 +82,8 @@ CStatus CCommunicationNameServer:: Register(const char * strCommObjName, ICommun
  	if(it1 != m_NameTable.end())
  	{
 		delete pCommObj;
-		return CStatus(-1,1,"in Register of CCommunicationNameServer : already registerd");
+		std::cout <<"in Register of CCommunicationNameServer : already registerd"<<std::endl;
+		return CStatus(-1,1);
  	}
 
 	SCommunicationPtrCount * p = new SCommunicationPtrCount;
@@ -92,7 +103,14 @@ ICommunicationObject * CCommunicationNameServer::GetCommunicationObject(const ch
 {
 	if(0 == strCommObjName || (strlen(strCommObjName) == 0))
 	{
-		throw CStatus(-1,0,"in GetCommunicationObject of ICommunicationObject : paremeter is null");
+		std::cout <<"in GetCommunicationObject of ICommunicationObject : paremeter is null"<<std::endl;
+		throw 0;
+	}
+
+	if(m_pNameServer == 0)
+	{
+		std::cout << "In CCommunicationNameServer::GetCommunicationObject , m_pNameServer is 0"<<std::endl;
+		return 0;
 	}
 
 	CEnterCriticalSection cs(&m_MutexForNameTable);
@@ -112,18 +130,19 @@ CStatus CCommunicationNameServer::ReleaseCommunicationObject(const char * strCom
 {
 	if(0 == strCommObjName || (strlen(strCommObjName) == 0))
 	{
-		return CStatus(-1,0,"in GetCommunicationObject of ICommunicationObject : paremeter is null");
+		std::cout <<"in GetCommunicationObject of ICommunicationObject : paremeter is null"<< std::endl;
+		return CStatus(-1,0);
 	}
 	
 	ICommunicationObject * pTmp = 0;
-	
 	{
 	 	CEnterCriticalSection cs(&m_MutexForNameTable);
 	 	std::map<std::string, SCommunicationPtrCount *>::iterator it1;
 	 	it1 = m_NameTable.find(strCommObjName);
 	 	if(it1 == m_NameTable.end())
 	 	{
-	 		return CStatus(-1,0,"in GetCommunicationObject of CCommunicationNameServer: can't find referenced comm obj");
+			std::cout <<"in GetCommunicationObject of CCommunicationNameServer: can't find referenced comm obj"<< std::endl;
+	 		return CStatus(-1,0);
 	 	}
  	
  		it1->second->iConnectionCount--;
@@ -146,14 +165,14 @@ CStatus CCommunicationNameServer::SendMessage(const char * strCommObjName, CMess
 	if(0 == pMessage)
 	{
 		std::cout << "bad paremeter in CCommunicationNameServer:: SendMessage" << std::endl;
-
-		return CStatus(-1,0,"bad paremeter in CCommunicationNameServer:: SendMessage");
+		return CStatus(-1,0);
 	}
 
 	if((strCommObjName == 0) || (strlen(strCommObjName) == 0))
 	{
 		delete pMessage;
-		return CStatus(-1,0,"sendmessgae error");
+		std::cout << "in CCommunicationNameServer::SendMessage , strCommObjName is 0"<<std::endl;
+		return CStatus(-1,0);
 	}
 
 
@@ -162,33 +181,35 @@ CStatus CCommunicationNameServer::SendMessage(const char * strCommObjName, CMess
 	{
 		delete pMessage;
 		std::cout << "Get Instance of nameserver failed" << std::endl;
-		return CStatus(-1,0,"in SendMessage of CCommunicationNameServer : get instance failed");
+		return CStatus(-1,0);
 	}
 
 	ICommunicationObject * pCommunicationObject = pNameServer->GetCommunicationObject(strCommObjName);
-	
 	if(0 == pCommunicationObject)
 	{
 		delete pMessage;
  	 	std::cout << "in CCommunicationNameServer SendMessage:GetCommunicationObject failed" << std::endl;
-		return CStatus(-1,0,"in SendMessage of CCommunicationNameServer : GetCommunicationObject failed");
+		return CStatus(-1,0);
 	}
 	
-	CStatus s_pm = pCommunicationObject->PostMessage(pMessage);
-	if(!s_pm.IsSuccess())
+	CStatus s1 = pCommunicationObject->PostMessage(pMessage);
+	if(!s1.IsSuccess())
 	{
-		CStatus s_pm_1 = pNameServer->ReleaseCommunicationObject(strCommObjName);
-		if(!s_pm_1.IsSuccess())
+		std::cout << "In CCommunicationNameServer::SendMessage, pCommunicationObject->PostMessage failed" <<std::endl;
+		CStatus s2 = pNameServer->ReleaseCommunicationObject(strCommObjName);
+		if(!s2.IsSuccess())
 		{
-			return s_pm_1;
+			std::cout<<"In CCommunicationNameServer::SendMessage , 1_pNameServer->ReleaseCommunicationObject failed!" <<std::endl;
+			return CStatus(-1,0);
 		}
-		return s_pm;
+		return CStatus(-1,0);
 	}
 	
-	CStatus s_rco = pNameServer->ReleaseCommunicationObject(strCommObjName);
-	if(!s_rco.IsSuccess())
+	CStatus s3 = pNameServer->ReleaseCommunicationObject(strCommObjName);
+	if(!s3.IsSuccess())
 	{
-		return s_rco;
+		std::cout<<"In CCommunicationNameServer::SendMessage , 2_pNameServer->ReleaseCommunicationObject failed!"<<std::endl;
+		return CStatus(-1,0);
 	}
 
 	return CStatus(0,0);	
