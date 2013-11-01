@@ -62,7 +62,9 @@ class CMainObserver : public CMsgObserver
 	CThreadUsingMsgLoop * m_pTChild;
 
 	public:
-	
+
+	//必须在主线程的析构函数中调用delete子线程操作
+	//这样主线程才有机会（在CThreadUsingMsgLoop 的析够函数中）调用WaitForDeath来等待子线程死亡
 	~CMainObserver()
 	{
 		delete m_pTChild;
