@@ -1,4 +1,4 @@
-a.out : test.cpp
+a.out : *.cpp
 	g++ *.cpp -L./lib -lExecutive -lpthread -g 
 	rm -rf *.o
 clean:

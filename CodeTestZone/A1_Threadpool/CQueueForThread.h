@@ -1,16 +1,16 @@
 
-#ifndef CMESSAGEQUEUEBYUSERDEFINED_H
-#define CMESSAGEQUEUEBYUSERDEFINED_H
+#ifndef CQUEUEFORTHREAD_H
+#define CQUEUEFORTHREAD_H
 
-#include "CMessage.h"
-#include "CStatus.h"
-#include "CMutex.h"
-#include "CEvent.h"
+#include "./include/CStatus.h"
+#include "./include/CMutex.h"
+#include "CThreadUsingMsgLoop.h"
+#include "./include/CEvent.h"
 
-class CUsrDefMsgQueue
+class CQueueForThread
 {
 	private:
-	CMessage ** m_pQueueSpace;
+	CThreadUsingMsgLoop ** m_pQueueSpace;
 
 	int m_iQueueTail;
 	int m_iQueueHead;
@@ -22,18 +22,18 @@ class CUsrDefMsgQueue
 	private:
 	CStatus EnlargeQueue();
 
-	CStatus Push(CMessage * pMsg);
-	CMessage * Pop();
+	CStatus Push(CThreadUsingMsgLoop * pThread);
+	CThreadUsingMsgLoop * Pop();
 
 	public:
  	bool IsFull();
 	bool IsEmpty();
 
-	CUsrDefMsgQueue();
-	virtual ~CUsrDefMsgQueue();
+	CQueueForThread();
+	virtual ~CQueueForThread();
 	
-	CStatus PushMessage(CMessage * pMsg);
-	CMessage * GetMessage();
+	CStatus PushThread(CThreadUsingMsgLoop * pThread);
+	CThreadUsingMsgLoop * GetThread();
 };
 
 #endif

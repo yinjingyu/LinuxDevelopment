@@ -1,4 +1,4 @@
-/*
+ /*
  * =====================================================================================
  * *       Filename:  test.cpp
  *
@@ -19,79 +19,23 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <pthread.h>
-#include "./include/IUsrBizForExecObj.h"
-#include "./include/CMessage.h"
-#include "./include/CUsrDefMsgQueue.h"
-#include "./include/CStatus.h"
-#include "./include/CMsgLoopManager.h"
-#include "./include/CMsgLoopMgrUsingUsrDefQueue.h"
-#include "./include/MessageIDTable.h"
-#include "./include/CThread.h"
-#include "./include/CUsrBizUsingMsgLoop.h"
-#include "./include/CCommunicationNameServer.h"
-#include "./include/CThreadUsingMsgLoop.h"
-#include "./include/CUseMsgLoopWithoutThread.h"
+
+#include "CThreadPool.h"
+#include "CAddMessage. h"
+
 
 using namespace std;
 
 
-class CChildObserver : public CMsgObserver
-{
-	public:
-	
-	//由CMessageLoopManager在进入消息循环前调用
-	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)
-	{
-		pMsgLoopMgr->Register(1,(CallBackFunctionOfMsgObserver)(&CChildObserver::On_1));
-		CCommunicationNameServer::SendMessage("main",new CMessage(1));
-		return CStatus(0,0);
-	}
-
-	CStatus On_1(CMessage * pMsg)
-	{
-		cout << "in child On_1" << endl;
- 		return CStatus(QUIT_MESSAGE_LOOP,0);
-	}
-
-};
-
-class CMainObserver : public CMsgObserver
-{
-	private: 
-
-	CThreadUsingMsgLoop * m_pTChild;
-
-	public:
-
-	//必须在主线程的析构函数中调用delete子线程操作
-	//这样主线程才有机会（在CThreadUsingMsgLoop 的析够函数中）调用WaitForDeath来等待子线程死亡
-	~CMainObserver()
-	{
-		delete m_pTChild;
-	}
-
-	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)
-	{
-		pMsgLoopMgr->Register(1,(CallBackFunctionOfMsgObserver)(&CMainObserver::On_1));
-
-		m_pTChild = new CThreadUsingMsgLoop("child",new CChildObserver(),true);
-
-		m_pTChild->Run(0); 		
-	}
-
-
-	CStatus On_1(CMessage * pm)
-	{
-		cout << "in main On_1" << endl;
-		CCommunicationNameServer::SendMessage("child",new CMessage(1));
-		return CStatus(QUIT_MESSAGE_LOOP,0);
-	}
-};
-
 int main()
 {
-	CUseMsgLoopWithoutThread p("main",new CMainObserver());
+	CThreadPool * pThreadPool = new CThreadPool(3);
+	for(int i = 0; i < 3; i++)
+	{
+		pThreadPool->DispatchMessage(new CAddMessage(1,i));
+	}
 	
-	p.Run(0);
+	delete pThreadPool;
+
  	return 0;
 }
