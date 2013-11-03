@@ -107,7 +107,13 @@ CStatus CMsgLoopManager::EnterMessageLoop(void * pContext)
 		//当处理完消息后，应该直接注销消息
 		delete pMsg;	
 		pMsg = 0;
-
+		
+		//判断分发消息是否成功
+        if(!s2.IsSuccess())
+  		{
+			std::cout<<"In EnterMessageLoop of CMessageLoopManager : DispatchMessage failed!" <<std::endl;
+			break;
+		}
 		if(s2.m_ciReturnCode == QUIT_MESSAGE_LOOP)
 			break;
 	}	

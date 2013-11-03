@@ -29,6 +29,7 @@ class CQueueForThread
  	bool IsFull();
 	bool IsEmpty();
 
+	CQueueForThread(const unsigned int nThreadAmounts);
 	CQueueForThread();
 	virtual ~CQueueForThread();
 	

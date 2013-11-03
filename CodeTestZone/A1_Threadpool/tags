@@ -6,27 +6,38 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ADD_MESSAGE	MessageIDTable.h	8;"	d
 ADD_MESSAGE	include/MessageIDTable.h	8;"	d
+CADDMESSAGE_H	CAddMessage.h	4;"	d
 CADDTHREADJOBDONEMESSAGE_H	CAddThreadJobDoneMessage.h	4;"	d
-CAddMessage	test.cpp	/^	CAddMessage (int opt1, int opt2):CMessage(1),m_ciOpt1(m_iOpt1),m_ciOpt2(m_iOpt2)$/;"	f	class:CAddMessage	access:public	signature:(int opt1, int opt2)
-CAddMessage	test.cpp	/^class CAddMessage : public CMessage$/;"	c	file:	inherits:CMessage
-CAddMessage::CAddMessage	test.cpp	/^	CAddMessage (int opt1, int opt2):CMessage(1),m_ciOpt1(m_iOpt1),m_ciOpt2(m_iOpt2)$/;"	f	class:CAddMessage	access:public	signature:(int opt1, int opt2)
-CAddMessage::m_ciOpt1	test.cpp	/^	const int & m_ciOpt1;$/;"	m	class:CAddMessage	file:	access:public
-CAddMessage::m_ciOpt2	test.cpp	/^	const int & m_ciOpt2;$/;"	m	class:CAddMessage	file:	access:public
-CAddMessage::m_iOpt1	test.cpp	/^	int m_iOpt1;$/;"	m	class:CAddMessage	file:	access:private
-CAddMessage::m_iOpt2	test.cpp	/^	int m_iOpt2;$/;"	m	class:CAddMessage	file:	access:private
-CAddMessage::~CAddMessage	test.cpp	/^	virtual ~CAddMessage ()$/;"	f	class:CAddMessage	access:public	signature:()
-CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.cpp	/^CAddThreadJobDoneMessage::CAddThreadJobDoneMessage(const char * strAddThreadID)$/;"	f	class:CAddThreadJobDoneMessage	signature:(const char * strAddThreadID)
-CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.h	/^	CAddThreadJobDoneMessage(const char * strAddThreadID,CMutex * pMutex):CMessage(CADDTHREAD_JOBDONE_MSG),m_cpStrAddThreadID(m_pStrAddThreadID)$/;"	f	class:CAddThreadJobDoneMessage	access:public	signature:(const char * strAddThreadID,CMutex * pMutex)
+CADDTHREADOBSERVER_H	CAddThreadObserver.h	4;"	d
+CAddMessage	CAddMessage.cpp	/^CAddMessage:: CAddMessage(int opt1,int opt2):CMessage(ADD_MESSAGE),m_cOpt1(m_opt1),m_cOpt2(m_opt2)$/;"	f	class:CAddMessage	signature:(int opt1,int opt2)
+CAddMessage	CAddMessage.h	/^	CAddMessage(int opt1, int opt2);$/;"	p	class:CAddMessage	access:public	signature:(int opt1, int opt2)
+CAddMessage	CAddMessage.h	/^class CAddMessage : public CMessage$/;"	c	inherits:CMessage
+CAddMessage::CAddMessage	CAddMessage.cpp	/^CAddMessage:: CAddMessage(int opt1,int opt2):CMessage(ADD_MESSAGE),m_cOpt1(m_opt1),m_cOpt2(m_opt2)$/;"	f	class:CAddMessage	signature:(int opt1,int opt2)
+CAddMessage::CAddMessage	CAddMessage.h	/^	CAddMessage(int opt1, int opt2);$/;"	p	class:CAddMessage	access:public	signature:(int opt1, int opt2)
+CAddMessage::m_cOpt1	CAddMessage.h	/^	const int & m_cOpt1;$/;"	m	class:CAddMessage	access:public
+CAddMessage::m_cOpt2	CAddMessage.h	/^	const int & m_cOpt2;$/;"	m	class:CAddMessage	access:public
+CAddMessage::m_opt1	CAddMessage.h	/^	int m_opt1;$/;"	m	class:CAddMessage	access:private
+CAddMessage::m_opt2	CAddMessage.h	/^	int m_opt2;$/;"	m	class:CAddMessage	access:private
+CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.cpp	/^CAddThreadJobDoneMessage::CAddThreadJobDoneMessage(const char * strAddThreadID):CMessage(JOBDONE_THREADPOOL_MESSAGE)$/;"	f	class:CAddThreadJobDoneMessage	signature:(const char * strAddThreadID)
+CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.h	/^    CAddThreadJobDoneMessage(const char * strAddThreadID);$/;"	p	class:CAddThreadJobDoneMessage	access:public	signature:(const char * strAddThreadID)
 CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.h	/^class CAddThreadJobDoneMessage : public CMessage$/;"	c	inherits:CMessage
-CAddThreadJobDoneMessage::CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.cpp	/^CAddThreadJobDoneMessage::CAddThreadJobDoneMessage(const char * strAddThreadID)$/;"	f	class:CAddThreadJobDoneMessage	signature:(const char * strAddThreadID)
-CAddThreadJobDoneMessage::CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.h	/^	CAddThreadJobDoneMessage(const char * strAddThreadID,CMutex * pMutex):CMessage(CADDTHREAD_JOBDONE_MSG),m_cpStrAddThreadID(m_pStrAddThreadID)$/;"	f	class:CAddThreadJobDoneMessage	access:public	signature:(const char * strAddThreadID,CMutex * pMutex)
-CAddThreadJobDoneMessage::m_cpStrAddThreadID	CAddThreadJobDoneMessage.h	/^	const char * m_cpStrAddThreadID;$/;"	m	class:CAddThreadJobDoneMessage	access:public
+CAddThreadJobDoneMessage::CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.cpp	/^CAddThreadJobDoneMessage::CAddThreadJobDoneMessage(const char * strAddThreadID):CMessage(JOBDONE_THREADPOOL_MESSAGE)$/;"	f	class:CAddThreadJobDoneMessage	signature:(const char * strAddThreadID)
+CAddThreadJobDoneMessage::CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.h	/^    CAddThreadJobDoneMessage(const char * strAddThreadID);$/;"	p	class:CAddThreadJobDoneMessage	access:public	signature:(const char * strAddThreadID)
+CAddThreadJobDoneMessage::GetAddThreadID	CAddThreadJobDoneMessage.cpp	/^char * CAddThreadJobDoneMessage::GetAddThreadID()$/;"	f	class:CAddThreadJobDoneMessage	signature:()
+CAddThreadJobDoneMessage::GetAddThreadID	CAddThreadJobDoneMessage.h	/^	char * GetAddThreadID();$/;"	p	class:CAddThreadJobDoneMessage	access:public	signature:()
 CAddThreadJobDoneMessage::m_pStrAddThreadID	CAddThreadJobDoneMessage.h	/^	char * m_pStrAddThreadID;$/;"	m	class:CAddThreadJobDoneMessage	access:private
 CAddThreadJobDoneMessage::~CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.cpp	/^CAddThreadJobDoneMessage:: ~CAddThreadJobDoneMessage()$/;"	f	class:CAddThreadJobDoneMessage	signature:()
 CAddThreadJobDoneMessage::~CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.h	/^	virtual ~CAddThreadJobDoneMessage();$/;"	p	class:CAddThreadJobDoneMessage	access:public	signature:()
-CAddThreadObserver	test.cpp	/^class CAddThreadObserver : public CMsgObserver$/;"	c	file:	inherits:CMsgObserver
-CAddThreadObserver::Initialize	test.cpp	/^	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)$/;"	f	class:CAddThreadObserver	access:public	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
-CAddThreadObserver::On_Add	test.cpp	/^	CStatus On_Add(CMessage * pMsg)$/;"	f	class:CAddThreadObserver	access:public	signature:(CMessage * pMsg)
+CAddThreadObserver	CAddThreadObserver.cpp	/^CAddThreadObserver::CAddThreadObserver(const char * pStrThreadName)$/;"	f	class:CAddThreadObserver	signature:(const char * pStrThreadName)
+CAddThreadObserver	CAddThreadObserver.h	/^	CAddThreadObserver(const char * pStrThreadName);	$/;"	p	class:CAddThreadObserver	access:public	signature:(const char * pStrThreadName)
+CAddThreadObserver	CAddThreadObserver.h	/^class CAddThreadObserver : public CMsgObserver$/;"	c	inherits:CMsgObserver
+CAddThreadObserver::CAddThreadObserver	CAddThreadObserver.cpp	/^CAddThreadObserver::CAddThreadObserver(const char * pStrThreadName)$/;"	f	class:CAddThreadObserver	signature:(const char * pStrThreadName)
+CAddThreadObserver::CAddThreadObserver	CAddThreadObserver.h	/^	CAddThreadObserver(const char * pStrThreadName);	$/;"	p	class:CAddThreadObserver	access:public	signature:(const char * pStrThreadName)
+CAddThreadObserver::Initialize	CAddThreadObserver.cpp	/^CStatus CAddThreadObserver::Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)$/;"	f	class:CAddThreadObserver	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
+CAddThreadObserver::Initialize	CAddThreadObserver.h	/^	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext);$/;"	p	class:CAddThreadObserver	access:public	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
+CAddThreadObserver::On_Add	CAddThreadObserver.cpp	/^CStatus CAddThreadObserver::On_Add(CMessage * pMsg)$/;"	f	class:CAddThreadObserver	signature:(CMessage * pMsg)
+CAddThreadObserver::On_Add	CAddThreadObserver.h	/^	CStatus On_Add(CMessage * pMsg);$/;"	p	class:CAddThreadObserver	access:private	signature:(CMessage * pMsg)
+CAddThreadObserver::m_pStrThreadName	CAddThreadObserver.h	/^	char * m_pStrThreadName;$/;"	m	class:CAddThreadObserver	access:public
 CCLIENTBUSINESSFOREXECUTIVE_H	include/IUsrBizForExecObj.h	4;"	d
 CCLIENTBUSINESSUSINGMSGLOOP_H	include/CUsrBizUsingMsgLoop.h	5;"	d
 CCOMMUNICATEBYMESSAGEQUEUE_H	include/CCommunicationByMsgQueue.h	4;"	d
@@ -192,13 +203,16 @@ CMutex::m_Mutex	include/CMutex.h	/^	pthread_mutex_t m_Mutex;$/;"	m	class:CMutex	
 CMutex::~CMutex	include/CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
 CMutex::~CMutex	src/CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
 CQUEUEFORTHREAD_H	CQueueForThread.h	3;"	d
+CQUITMESSAGE_H	CQuitMessage.h	4;"	d
+CQueueForThread	CQueueForThread.cpp	/^ CQueueForThread::CQueueForThread(const unsigned int nThreadAmounts)$/;"	f	class:CQueueForThread	signature:(const unsigned int nThreadAmounts)
 CQueueForThread	CQueueForThread.cpp	/^CQueueForThread::CQueueForThread()$/;"	f	class:CQueueForThread	signature:()
-CQueueForThread	CQueueForThread.cpp	/^CQueueForThread::CQueueForThread(const unsigned int nThreadAmounts)$/;"	f	class:CQueueForThread	signature:(const unsigned int nThreadAmounts)
 CQueueForThread	CQueueForThread.h	/^	CQueueForThread();$/;"	p	class:CQueueForThread	access:public	signature:()
+CQueueForThread	CQueueForThread.h	/^	CQueueForThread(const unsigned int nThreadAmounts);$/;"	p	class:CQueueForThread	access:public	signature:(const unsigned int nThreadAmounts)
 CQueueForThread	CQueueForThread.h	/^class CQueueForThread$/;"	c
+CQueueForThread::CQueueForThread	CQueueForThread.cpp	/^ CQueueForThread::CQueueForThread(const unsigned int nThreadAmounts)$/;"	f	class:CQueueForThread	signature:(const unsigned int nThreadAmounts)
 CQueueForThread::CQueueForThread	CQueueForThread.cpp	/^CQueueForThread::CQueueForThread()$/;"	f	class:CQueueForThread	signature:()
-CQueueForThread::CQueueForThread	CQueueForThread.cpp	/^CQueueForThread::CQueueForThread(const unsigned int nThreadAmounts)$/;"	f	class:CQueueForThread	signature:(const unsigned int nThreadAmounts)
 CQueueForThread::CQueueForThread	CQueueForThread.h	/^	CQueueForThread();$/;"	p	class:CQueueForThread	access:public	signature:()
+CQueueForThread::CQueueForThread	CQueueForThread.h	/^	CQueueForThread(const unsigned int nThreadAmounts);$/;"	p	class:CQueueForThread	access:public	signature:(const unsigned int nThreadAmounts)
 CQueueForThread::EnlargeQueue	CQueueForThread.cpp	/^CStatus CQueueForThread::EnlargeQueue()$/;"	f	class:CQueueForThread	signature:()
 CQueueForThread::EnlargeQueue	CQueueForThread.h	/^	CStatus EnlargeQueue();$/;"	p	class:CQueueForThread	access:private	signature:()
 CQueueForThread::GetThread	CQueueForThread.cpp	/^CThreadUsingMsgLoop * CQueueForThread::GetThread()$/;"	f	class:CQueueForThread	signature:()
@@ -221,6 +235,13 @@ CQueueForThread::m_iTotalRoom	CQueueForThread.h	/^	int m_iTotalRoom;$/;"	m	class
 CQueueForThread::m_pQueueSpace	CQueueForThread.h	/^	CThreadUsingMsgLoop ** m_pQueueSpace;$/;"	m	class:CQueueForThread	access:private
 CQueueForThread::~CQueueForThread	CQueueForThread.cpp	/^CQueueForThread::~CQueueForThread()$/;"	f	class:CQueueForThread	signature:()
 CQueueForThread::~CQueueForThread	CQueueForThread.h	/^	virtual ~CQueueForThread();$/;"	p	class:CQueueForThread	access:public	signature:()
+CQuitMessage	CQuitMessage.cpp	/^CQuitMessage::CQuitMessage() : CMessage(QUIT_MESSAGE_LOOP)$/;"	f	class:CQuitMessage	signature:()
+CQuitMessage	CQuitMessage.h	/^	CQuitMessage ();$/;"	p	class:CQuitMessage	access:public	signature:()
+CQuitMessage	CQuitMessage.h	/^class CQuitMessage : public CMessage$/;"	c	inherits:CMessage
+CQuitMessage::CQuitMessage	CQuitMessage.cpp	/^CQuitMessage::CQuitMessage() : CMessage(QUIT_MESSAGE_LOOP)$/;"	f	class:CQuitMessage	signature:()
+CQuitMessage::CQuitMessage	CQuitMessage.h	/^	CQuitMessage ();$/;"	p	class:CQuitMessage	access:public	signature:()
+CQuitMessage::~CQuitMessage	CQuitMessage.cpp	/^CQuitMessage::~CQuitMessage()$/;"	f	class:CQuitMessage	signature:()
+CQuitMessage::~CQuitMessage	CQuitMessage.h	/^	virtual ~CQuitMessage ();$/;"	p	class:CQuitMessage	access:public	signature:()
 CSTATUS_H	include/CStatus.h	2;"	d
 CStatus	include/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
 CStatus	include/CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
@@ -251,7 +272,6 @@ CStatus::~CStatus	src/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	sign
 CTHREADFORMSGLOOP_H	CThreadUsingMsgLoop.h	4;"	d
 CTHREADFORMSGLOOP_H	include/CThreadUsingMsgLoop.h	4;"	d
 CTHREADINITIALFINISHEDNOTIFIER_H	include/CThreadInitFinishedNotifier.h	5;"	d
-CTHREADPOOLMANAGER_H	CThreadPoolWithManager.h	4;"	d
 CTHREADPOOLOBSERVER_H	CThreadPoolObserver.h	3;"	d
 CTHREADPOOL_H	CThreadPool.h	3;"	d
 CTHREAD_H	include/CThread.h	3;"	d
@@ -300,21 +320,23 @@ CThreadPool::DispatchMessage	CThreadPool.cpp	/^CStatus CThreadPool::DispatchMess
 CThreadPool::DispatchMessage	CThreadPool.h	/^	CStatus DispatchMessage(CMessage * pMsg);$/;"	p	class:CThreadPool	access:public	signature:(CMessage * pMsg)
 CThreadPool::m_MutexForThreadQueue	CThreadPool.h	/^	CMutex m_MutexForThreadQueue;$/;"	m	class:CThreadPool	access:private
 CThreadPool::m_MutexForThreadTable	CThreadPool.h	/^	CMutex m_MutexForThreadTable;$/;"	m	class:CThreadPool	access:private
-CThreadPool::m_ThreadTable	CThreadPool.h	/^	std::map<char *,CThreadUsingMsgLoop *> m_ThreadTable;$/;"	m	class:CThreadPool	access:private
+CThreadPool::m_ThreadTable	CThreadPool.h	/^	std::map<std::string,CThreadUsingMsgLoop *> m_ThreadTable;$/;"	m	class:CThreadPool	access:private
+CThreadPool::m_pThreadPoolMgr	CThreadPool.h	/^	CThreadUsingMsgLoop * m_pThreadPoolMgr;$/;"	m	class:CThreadPool	access:private
 CThreadPool::m_pThreadQueue	CThreadPool.h	/^	CQueueForThread * m_pThreadQueue;	$/;"	m	class:CThreadPool	access:private
+CThreadPool::~CThreadPool	CThreadPool.cpp	/^CThreadPool::~CThreadPool()$/;"	f	class:CThreadPool	signature:()
 CThreadPool::~CThreadPool	CThreadPool.h	/^	virtual ~CThreadPool ();$/;"	p	class:CThreadPool	access:public	signature:()
-CThreadPoolManager	CThreadPoolWithManager.h	/^class CThreadPoolManager$/;"	c
-CThreadPoolManager::CThreadPoolWithManager	CThreadPoolWithManager.h	/^	CThreadPoolWithManager (arguments);$/;"	p	class:CThreadPoolManager	access:public	signature:(arguments)
-CThreadPoolManager::m_pThreadPool	CThreadPoolWithManager.h	/^	CThreadPool * m_pThreadPool;$/;"	m	class:CThreadPoolManager	access:private
-CThreadPoolManager::~CThreadPoolManager	CThreadPoolWithManager.h	/^	virtual ~CThreadPoolManager ();$/;"	p	class:CThreadPoolManager	access:public	signature:()
-CThreadPoolObserver	CThreadPoolObserver.h	/^	CThreadPoolObserver(CThreadPool * pThreadPool)$/;"	f	class:CThreadPoolObserver	access:public	signature:(CThreadPool * pThreadPool)
+CThreadPoolObserver	CThreadPoolObserver.cpp	/^CThreadPoolObserver::CThreadPoolObserver(CThreadPool * pThreadPool)$/;"	f	class:CThreadPoolObserver	signature:(CThreadPool * pThreadPool)
+CThreadPoolObserver	CThreadPoolObserver.h	/^	CThreadPoolObserver(CThreadPool * pThreadPool);$/;"	p	class:CThreadPoolObserver	access:public	signature:(CThreadPool * pThreadPool)
 CThreadPoolObserver	CThreadPoolObserver.h	/^class CThreadPoolObserver :public CMsgObserver$/;"	c	inherits:CMsgObserver
-CThreadPoolObserver::CThreadPoolObserver	CThreadPoolObserver.h	/^	CThreadPoolObserver(CThreadPool * pThreadPool)$/;"	f	class:CThreadPoolObserver	access:public	signature:(CThreadPool * pThreadPool)
-CThreadPoolObserver::Initialize	CThreadPoolObserver.h	/^	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)$/;"	f	class:CThreadPoolObserver	access:public	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
-CThreadPoolObserver::On_JobDone	CThreadPoolObserver.h	/^	CStatus On_JobDone(CMessage * pMsg)$/;"	f	class:CThreadPoolObserver	access:private	signature:(CMessage * pMsg)
-CThreadPoolObserver::On_QuitLoopMessage	CThreadPoolObserver.h	/^	CStatus On_QuitLoopMessage(CMessage * pMsg)$/;"	f	class:CThreadPoolObserver	access:private	signature:(CMessage * pMsg)
+CThreadPoolObserver::CThreadPoolObserver	CThreadPoolObserver.cpp	/^CThreadPoolObserver::CThreadPoolObserver(CThreadPool * pThreadPool)$/;"	f	class:CThreadPoolObserver	signature:(CThreadPool * pThreadPool)
+CThreadPoolObserver::CThreadPoolObserver	CThreadPoolObserver.h	/^	CThreadPoolObserver(CThreadPool * pThreadPool);$/;"	p	class:CThreadPoolObserver	access:public	signature:(CThreadPool * pThreadPool)
+CThreadPoolObserver::Initialize	CThreadPoolObserver.cpp	/^CStatus CThreadPoolObserver::Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)$/;"	f	class:CThreadPoolObserver	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
+CThreadPoolObserver::Initialize	CThreadPoolObserver.h	/^	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext);$/;"	p	class:CThreadPoolObserver	access:public	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
+CThreadPoolObserver::On_JobDone	CThreadPoolObserver.cpp	/^CStatus CThreadPoolObserver::On_JobDone(CMessage * pMsg)$/;"	f	class:CThreadPoolObserver	signature:(CMessage * pMsg)
+CThreadPoolObserver::On_JobDone	CThreadPoolObserver.h	/^	CStatus On_JobDone(CMessage * pMsg);$/;"	p	class:CThreadPoolObserver	access:private	signature:(CMessage * pMsg)
+CThreadPoolObserver::On_QuitLoopMessage	CThreadPoolObserver.cpp	/^CStatus CThreadPoolObserver::On_QuitLoopMessage(CMessage * pMsg)$/;"	f	class:CThreadPoolObserver	signature:(CMessage * pMsg)
+CThreadPoolObserver::On_QuitLoopMessage	CThreadPoolObserver.h	/^	CStatus On_QuitLoopMessage(CMessage * pMsg);$/;"	p	class:CThreadPoolObserver	access:private	signature:(CMessage * pMsg)
 CThreadPoolObserver::m_pThreadPool	CThreadPoolObserver.h	/^	CThreadPool * m_pThreadPool;$/;"	m	class:CThreadPoolObserver	access:private
-CThreadPoolWithManager	CThreadPoolWithManager.h	/^	CThreadPoolWithManager (arguments);$/;"	p	class:CThreadPoolManager	access:public	signature:(arguments)
 CThreadUsingMsgLoop	CThreadUsingMsgLoop.cpp	/^CThreadUsingMsgLoop:: CThreadUsingMsgLoop(const char * strThreadName,CMsgObserver * pMsgObserver)$/;"	f	class:CThreadUsingMsgLoop	signature:(const char * strThreadName,CMsgObserver * pMsgObserver)
 CThreadUsingMsgLoop	CThreadUsingMsgLoop.cpp	/^CThreadUsingMsgLoop:: CThreadUsingMsgLoop(const char * strThreadName,CMsgObserver * pMsgObserver,bool bWaitForDeath)$/;"	f	class:CThreadUsingMsgLoop	signature:(const char * strThreadName,CMsgObserver * pMsgObserver,bool bWaitForDeath)
 CThreadUsingMsgLoop	CThreadUsingMsgLoop.h	/^	CThreadUsingMsgLoop(const char * strThreadNaem,CMsgObserver * pMsgObserver,bool bWaitForDeath);$/;"	p	class:CThreadUsingMsgLoop	access:public	signature:(const char * strThreadNaem,CMsgObserver * pMsgObserver,bool bWaitForDeath)
@@ -418,6 +440,8 @@ EnlargeQueue	include/CUsrDefMsgQueue.h	/^	CStatus EnlargeQueue();$/;"	p	class:CU
 EnlargeQueue	src/CUsrDefMsgQueue.cpp	/^CStatus CUsrDefMsgQueue::EnlargeQueue()$/;"	f	class:CUsrDefMsgQueue	signature:()
 EnterMessageLoop	include/CMsgLoopManager.h	/^	virtual CStatus EnterMessageLoop(void * pContext);$/;"	p	class:CMsgLoopManager	access:public	signature:(void * pContext)
 EnterMessageLoop	src/CMsgLoopManager.cpp	/^CStatus CMsgLoopManager::EnterMessageLoop(void * pContext)$/;"	f	class:CMsgLoopManager	signature:(void * pContext)
+GetAddThreadID	CAddThreadJobDoneMessage.cpp	/^char * CAddThreadJobDoneMessage::GetAddThreadID()$/;"	f	class:CAddThreadJobDoneMessage	signature:()
+GetAddThreadID	CAddThreadJobDoneMessage.h	/^	char * GetAddThreadID();$/;"	p	class:CAddThreadJobDoneMessage	access:public	signature:()
 GetCommunicationObject	include/CCommunicationNameServer.h	/^	ICommunicationObject * GetCommunicationObject(const char * strCommObjName);$/;"	p	class:CCommunicationNameServer	access:public	signature:(const char * strCommObjName)
 GetCommunicationObject	src/CCommunicationNameServer.cpp	/^ICommunicationObject * CCommunicationNameServer::GetCommunicationObject(const char * strCommObjName)$/;"	f	class:CCommunicationNameServer	signature:(const char * strCommObjName)
 GetErrorMsg	include/CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
@@ -443,12 +467,14 @@ IINITIALFINISHEDNOTIFIER_H	include/IInitFinishedNotifier.h	4;"	d
 IInitFinishedNotifier	include/IInitFinishedNotifier.h	/^class IInitFinishedNotifier$/;"	c
 IInitFinishedNotifier::IsInitialSuccess	include/IInitFinishedNotifier.h	/^	virtual bool IsInitialSuccess() = 0;$/;"	p	class:IInitFinishedNotifier	access:public	signature:()
 IInitFinishedNotifier::NotifyInitialFinished	include/IInitFinishedNotifier.h	/^	virtual CStatus NotifyInitialFinished(bool bIsSuccess) = 0;$/;"	p	class:IInitFinishedNotifier	access:public	signature:(bool bIsSuccess)
-Initialize	CThreadPoolObserver.h	/^	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)$/;"	f	class:CThreadPoolObserver	access:public	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
+Initialize	CAddThreadObserver.cpp	/^CStatus CAddThreadObserver::Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)$/;"	f	class:CAddThreadObserver	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
+Initialize	CAddThreadObserver.h	/^	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext);$/;"	p	class:CAddThreadObserver	access:public	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
+Initialize	CThreadPoolObserver.cpp	/^CStatus CThreadPoolObserver::Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)$/;"	f	class:CThreadPoolObserver	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
+Initialize	CThreadPoolObserver.h	/^	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext);$/;"	p	class:CThreadPoolObserver	access:public	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
 Initialize	include/CMsgLoopManager.h	/^	virtual CStatus Initialize()=0;$/;"	p	class:CMsgLoopManager	access:protected	signature:()
 Initialize	include/CMsgLoopMgrUsingUsrDefQueue.h	/^	virtual CStatus Initialize();$/;"	p	class:CMsgLoopMgrUsingUsrDefQueue	access:public	signature:()
 Initialize	include/CMsgObserver.h	/^	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr,void * pContext) =0;$/;"	p	class:CMsgObserver	access:public	signature:(CMsgLoopManager * pMsgLoopMgr,void * pContext)
 Initialize	src/CMsgLoopMgrUsingUsrDefQueue.cpp	/^CStatus CMsgLoopMgrUsingUsrDefQueue::Initialize()$/;"	f	class:CMsgLoopMgrUsingUsrDefQueue	signature:()
-Initialize	test.cpp	/^	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext)$/;"	f	class:CAddThreadObserver	access:public	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
 InitializeMemberVars	include/CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
 InitializeMemberVars	src/CStatus.cpp	/^void CStatus::InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg) $/;"	f	class:CStatus	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
 IsEmpty	CQueueForThread.cpp	/^bool CQueueForThread::IsEmpty()$/;"	f	class:CQueueForThread	signature:()
@@ -472,9 +498,12 @@ MESSAGEIDTABLE_H	include/MessageIDTable.h	3;"	d
 NotifyInitialFinished	include/CThreadInitFinishedNotifier.h	/^	virtual CStatus NotifyInitialFinished(bool bIsSuccess);$/;"	p	class:CThreadInitFinishedNotifier	access:public	signature:(bool bIsSuccess)
 NotifyInitialFinished	include/IInitFinishedNotifier.h	/^	virtual CStatus NotifyInitialFinished(bool bIsSuccess) = 0;$/;"	p	class:IInitFinishedNotifier	access:public	signature:(bool bIsSuccess)
 NotifyInitialFinished	src/CThreadInitFinishedNotifier.cpp	/^CStatus CThreadInitFinishedNotifier:: NotifyInitialFinished(bool bIsSuccess)$/;"	f	class:CThreadInitFinishedNotifier	signature:(bool bIsSuccess)
-On_Add	test.cpp	/^	CStatus On_Add(CMessage * pMsg)$/;"	f	class:CAddThreadObserver	access:public	signature:(CMessage * pMsg)
-On_JobDone	CThreadPoolObserver.h	/^	CStatus On_JobDone(CMessage * pMsg)$/;"	f	class:CThreadPoolObserver	access:private	signature:(CMessage * pMsg)
-On_QuitLoopMessage	CThreadPoolObserver.h	/^	CStatus On_QuitLoopMessage(CMessage * pMsg)$/;"	f	class:CThreadPoolObserver	access:private	signature:(CMessage * pMsg)
+On_Add	CAddThreadObserver.cpp	/^CStatus CAddThreadObserver::On_Add(CMessage * pMsg)$/;"	f	class:CAddThreadObserver	signature:(CMessage * pMsg)
+On_Add	CAddThreadObserver.h	/^	CStatus On_Add(CMessage * pMsg);$/;"	p	class:CAddThreadObserver	access:private	signature:(CMessage * pMsg)
+On_JobDone	CThreadPoolObserver.cpp	/^CStatus CThreadPoolObserver::On_JobDone(CMessage * pMsg)$/;"	f	class:CThreadPoolObserver	signature:(CMessage * pMsg)
+On_JobDone	CThreadPoolObserver.h	/^	CStatus On_JobDone(CMessage * pMsg);$/;"	p	class:CThreadPoolObserver	access:private	signature:(CMessage * pMsg)
+On_QuitLoopMessage	CThreadPoolObserver.cpp	/^CStatus CThreadPoolObserver::On_QuitLoopMessage(CMessage * pMsg)$/;"	f	class:CThreadPoolObserver	signature:(CMessage * pMsg)
+On_QuitLoopMessage	CThreadPoolObserver.h	/^	CStatus On_QuitLoopMessage(CMessage * pMsg);$/;"	p	class:CThreadPoolObserver	access:private	signature:(CMessage * pMsg)
 Pop	CQueueForThread.cpp	/^CThreadUsingMsgLoop * CQueueForThread::Pop()$/;"	f	class:CQueueForThread	signature:()
 Pop	CQueueForThread.h	/^	CThreadUsingMsgLoop * Pop();$/;"	p	class:CQueueForThread	access:private	signature:()
 Pop	include/CUsrDefMsgQueue.h	/^	CMessage * Pop();$/;"	p	class:CUsrDefMsgQueue	access:private	signature:()
@@ -571,23 +600,20 @@ m_MutexForThreadQueue	CThreadPool.h	/^	CMutex m_MutexForThreadQueue;$/;"	m	class
 m_MutexForThreadTable	CThreadPool.h	/^	CMutex m_MutexForThreadTable;$/;"	m	class:CThreadPool	access:private
 m_NameTable	include/CCommunicationNameServer.h	/^	std::map<std::string,SCommunicationPtrCount *> m_NameTable;$/;"	m	class:CCommunicationNameServer	access:private
 m_ThreadID	include/CThread.h	/^	pthread_t m_ThreadID;$/;"	m	class:CThread	access:private
-m_ThreadTable	CThreadPool.h	/^	std::map<char *,CThreadUsingMsgLoop *> m_ThreadTable;$/;"	m	class:CThreadPool	access:private
+m_ThreadTable	CThreadPool.h	/^	std::map<std::string,CThreadUsingMsgLoop *> m_ThreadTable;$/;"	m	class:CThreadPool	access:private
 m_bIsRecordCondVar	include/CEvent.h	/^	bool m_bIsRecordCondVar;$/;"	m	class:CEvent	access:private
 m_bIsSucess	include/CThreadInitFinishedNotifier.h	/^	bool m_bIsSucess;$/;"	m	class:CThreadInitFinishedNotifier	access:private
 m_bThreadCreated	include/CThread.h	/^	bool m_bThreadCreated;$/;"	m	class:CThread	access:private
 m_bWaitForDeath	CThreadUsingMsgLoop.h	/^	bool m_bWaitForDeath;$/;"	m	class:CThreadUsingMsgLoop	access:private
 m_bWaitForDeath	include/CThread.h	/^	bool m_bWaitForDeath;$/;"	m	class:CThread	access:private
 m_bWaitForDeath	include/CThreadUsingMsgLoop.h	/^	bool m_bWaitForDeath;$/;"	m	class:CThreadUsingMsgLoop	access:private
+m_cOpt1	CAddMessage.h	/^	const int & m_cOpt1;$/;"	m	class:CAddMessage	access:public
+m_cOpt2	CAddMessage.h	/^	const int & m_cOpt2;$/;"	m	class:CAddMessage	access:public
 m_ciErrorCode	include/CStatus.h	/^	const int & m_ciErrorCode;$/;"	m	class:CStatus	access:public
-m_ciOpt1	test.cpp	/^	const int & m_ciOpt1;$/;"	m	class:CAddMessage	file:	access:public
-m_ciOpt2	test.cpp	/^	const int & m_ciOpt2;$/;"	m	class:CAddMessage	file:	access:public
 m_ciReturnCode	include/CStatus.h	/^	const int & m_ciReturnCode;$/;"	m	class:CStatus	access:public
 m_clMsgID	include/CMessage.h	/^	const unsigned long & m_clMsgID;$/;"	m	class:CMessage	access:public
-m_cpStrAddThreadID	CAddThreadJobDoneMessage.h	/^	const char * m_cpStrAddThreadID;$/;"	m	class:CAddThreadJobDoneMessage	access:public
 m_iErrorCode	include/CStatus.h	/^	int m_iErrorCode;$/;"	m	class:CStatus	access:private
 m_iEventCounter	include/CEvent.h	/^	int  m_iEventCounter;$/;"	m	class:CEvent	access:private
-m_iOpt1	test.cpp	/^	int m_iOpt1;$/;"	m	class:CAddMessage	file:	access:private
-m_iOpt2	test.cpp	/^	int m_iOpt2;$/;"	m	class:CAddMessage	file:	access:private
 m_iQueueHead	CQueueForThread.h	/^	int m_iQueueHead;$/;"	m	class:CQueueForThread	access:private
 m_iQueueHead	include/CUsrDefMsgQueue.h	/^	int m_iQueueHead;$/;"	m	class:CUsrDefMsgQueue	access:private
 m_iQueueTail	CQueueForThread.h	/^	int m_iQueueTail;$/;"	m	class:CQueueForThread	access:private
@@ -596,6 +622,8 @@ m_iReturnCode	include/CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access
 m_iTotalRoom	CQueueForThread.h	/^	int m_iTotalRoom;$/;"	m	class:CQueueForThread	access:private
 m_iTotalRoom	include/CUsrDefMsgQueue.h	/^	int m_iTotalRoom;$/;"	m	class:CUsrDefMsgQueue	access:private
 m_lMsgID	include/CMessage.h	/^	unsigned long m_lMsgID;$/;"	m	class:CMessage	access:protected
+m_opt1	CAddMessage.h	/^	int m_opt1;$/;"	m	class:CAddMessage	access:private
+m_opt2	CAddMessage.h	/^	int m_opt2;$/;"	m	class:CAddMessage	access:private
 m_pContext	include/CThread.h	/^	void * m_pContext;$/;"	m	class:CThread	access:private
 m_pErrorMsg	include/CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
 m_pEvent	include/CThreadInitFinishedNotifier.h	/^	CEvent * m_pEvent;$/;"	m	class:CThreadInitFinishedNotifier	access:private
@@ -609,10 +637,11 @@ m_pQueue	include/CMsgLoopMgrUsingUsrDefQueue.h	/^	CUsrDefMsgQueue * m_pQueue;$/;
 m_pQueueSpace	CQueueForThread.h	/^	CThreadUsingMsgLoop ** m_pQueueSpace;$/;"	m	class:CQueueForThread	access:private
 m_pQueueSpace	include/CUsrDefMsgQueue.h	/^	CMessage ** m_pQueueSpace;$/;"	m	class:CUsrDefMsgQueue	access:private
 m_pStrAddThreadID	CAddThreadJobDoneMessage.h	/^	char * m_pStrAddThreadID;$/;"	m	class:CAddThreadJobDoneMessage	access:private
+m_pStrThreadName	CAddThreadObserver.h	/^	char * m_pStrThreadName;$/;"	m	class:CAddThreadObserver	access:public
 m_pThread	CThreadUsingMsgLoop.h	/^	CThread * m_pThread;$/;"	m	class:CThreadUsingMsgLoop	access:private
 m_pThread	include/CThreadUsingMsgLoop.h	/^	CThread * m_pThread;$/;"	m	class:CThreadUsingMsgLoop	access:private
 m_pThreadPool	CThreadPoolObserver.h	/^	CThreadPool * m_pThreadPool;$/;"	m	class:CThreadPoolObserver	access:private
-m_pThreadPool	CThreadPoolWithManager.h	/^	CThreadPool * m_pThreadPool;$/;"	m	class:CThreadPoolManager	access:private
+m_pThreadPoolMgr	CThreadPool.h	/^	CThreadUsingMsgLoop * m_pThreadPoolMgr;$/;"	m	class:CThreadPool	access:private
 m_pThreadQueue	CThreadPool.h	/^	CQueueForThread * m_pThreadQueue;	$/;"	m	class:CThreadPool	access:private
 m_pUsrBiz	include/CUseMsgLoopWithoutThread.h	/^	CUsrBizForExecObj * m_pUsrBiz;$/;"	m	class:CUseMsgLoopWithoutThread	access:private
 m_pUsrBizForExecObj	include/CExecutiveObject.h	/^	CUsrBizForExecObj * m_pUsrBizForExecObj;$/;"	m	class:CExecutiveObject	access:protected
@@ -626,7 +655,6 @@ pContext	CThreadUsingMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon3	access:p
 pContext	include/CThreadUsingMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon1	access:public
 pNotifier	CThreadUsingMsgLoop.h	/^ 	CThreadInitFinishedNotifier *  pNotifier;$/;"	m	struct:__anon3	access:public
 pNotifier	include/CThreadUsingMsgLoop.h	/^ 	CThreadInitFinishedNotifier *  pNotifier;$/;"	m	struct:__anon1	access:public
-~CAddMessage	test.cpp	/^	virtual ~CAddMessage ()$/;"	f	class:CAddMessage	access:public	signature:()
 ~CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.cpp	/^CAddThreadJobDoneMessage:: ~CAddThreadJobDoneMessage()$/;"	f	class:CAddThreadJobDoneMessage	signature:()
 ~CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.h	/^	virtual ~CAddThreadJobDoneMessage();$/;"	p	class:CAddThreadJobDoneMessage	access:public	signature:()
 ~CCommunicationByMsgQueue	include/CCommunicationByMsgQueue.h	/^	virtual ~CCommunicationByMsgQueue();$/;"	p	class:CCommunicationByMsgQueue	access:public	signature:()
@@ -653,14 +681,16 @@ pNotifier	include/CThreadUsingMsgLoop.h	/^ 	CThreadInitFinishedNotifier *  pNoti
 ~CMutex	src/CMutex.cpp	/^CMutex::~CMutex()$/;"	f	class:CMutex	signature:()
 ~CQueueForThread	CQueueForThread.cpp	/^CQueueForThread::~CQueueForThread()$/;"	f	class:CQueueForThread	signature:()
 ~CQueueForThread	CQueueForThread.h	/^	virtual ~CQueueForThread();$/;"	p	class:CQueueForThread	access:public	signature:()
+~CQuitMessage	CQuitMessage.cpp	/^CQuitMessage::~CQuitMessage()$/;"	f	class:CQuitMessage	signature:()
+~CQuitMessage	CQuitMessage.h	/^	virtual ~CQuitMessage ();$/;"	p	class:CQuitMessage	access:public	signature:()
 ~CStatus	include/CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
 ~CStatus	src/CStatus.cpp	/^CStatus::~CStatus()$/;"	f	class:CStatus	signature:()
 ~CThread	include/CThread.h	/^	virtual ~CThread();$/;"	p	class:CThread	access:public	signature:()
 ~CThread	src/CThread.cpp	/^CThread::~CThread()$/;"	f	class:CThread	signature:()
 ~CThreadInitFinishedNotifier	include/CThreadInitFinishedNotifier.h	/^	virtual ~CThreadInitFinishedNotifier();$/;"	p	class:CThreadInitFinishedNotifier	access:public	signature:()
 ~CThreadInitFinishedNotifier	src/CThreadInitFinishedNotifier.cpp	/^CThreadInitFinishedNotifier::~CThreadInitFinishedNotifier()$/;"	f	class:CThreadInitFinishedNotifier	signature:()
+~CThreadPool	CThreadPool.cpp	/^CThreadPool::~CThreadPool()$/;"	f	class:CThreadPool	signature:()
 ~CThreadPool	CThreadPool.h	/^	virtual ~CThreadPool ();$/;"	p	class:CThreadPool	access:public	signature:()
-~CThreadPoolManager	CThreadPoolWithManager.h	/^	virtual ~CThreadPoolManager ();$/;"	p	class:CThreadPoolManager	access:public	signature:()
 ~CThreadUsingMsgLoop	CThreadUsingMsgLoop.cpp	/^CThreadUsingMsgLoop:: ~CThreadUsingMsgLoop()$/;"	f	class:CThreadUsingMsgLoop	signature:()
 ~CThreadUsingMsgLoop	CThreadUsingMsgLoop.h	/^	virtual ~CThreadUsingMsgLoop();$/;"	p	class:CThreadUsingMsgLoop	access:public	signature:()
 ~CThreadUsingMsgLoop	include/CThreadUsingMsgLoop.h	/^	virtual ~CThreadUsingMsgLoop();$/;"	p	class:CThreadUsingMsgLoop	access:public	signature:()
