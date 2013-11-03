@@ -84,13 +84,10 @@ CThreadPool::CThreadPool(const unsigned int nThreadAmounts)
 
 CThreadPool::~CThreadPool()
 {
-	if(m_pThreadPoolMgr != 0)
-	{
-		CCommunicationNameServer::SendMessage("ThreadPool",new CQuitMessage());
-		delete m_pThreadPoolMgr;
-		m_pThreadPoolMgr = 0;
-	}
-	//遍历线程池中的所有线程，并注销他们	
+	//等待线程池做完所有的任务(依据是：线程池的空闲线程队列满)
+	m_WaitForQuitEvent.Wait();
+
+  	//遍历线程池中的所有线程，并注销他们	
 	std::map<std::string,CThreadUsingMsgLoop *>::iterator it;
 	for(it = m_ThreadTable.begin();it != m_ThreadTable.end(); it++)
 	{
@@ -104,12 +101,21 @@ CThreadPool::~CThreadPool()
  			delete it->second;
 			it->second =0;
 		}
-	}
-	//删除空闲线程队列
+	}	
+
+ 	//删除空闲线程队列
 	if(m_pThreadQueue != 0)
 	{
 		delete m_pThreadQueue;
 		m_pThreadQueue = 0;
+	}
+
+	//注销线程池的管理线程
+	if(m_pThreadPoolMgr != 0)
+	{
+		CCommunicationNameServer::SendMessage("ThreadPool",new CQuitMessage());
+		delete m_pThreadPoolMgr;
+		m_pThreadPoolMgr = 0;
 	}
 }
 
@@ -143,6 +149,5 @@ CStatus CThreadPool::DispatchMessage(CMessage * pMsg)
 	
 	return CStatus(1,0);
 }
-
 
 

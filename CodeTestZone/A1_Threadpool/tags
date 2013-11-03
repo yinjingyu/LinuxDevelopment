@@ -37,6 +37,8 @@ CAddThreadObserver::Initialize	CAddThreadObserver.cpp	/^CStatus CAddThreadObserv
 CAddThreadObserver::Initialize	CAddThreadObserver.h	/^	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext);$/;"	p	class:CAddThreadObserver	access:public	signature:(CMsgLoopManager * pMsgLoopMgr, void * pContext)
 CAddThreadObserver::On_Add	CAddThreadObserver.cpp	/^CStatus CAddThreadObserver::On_Add(CMessage * pMsg)$/;"	f	class:CAddThreadObserver	signature:(CMessage * pMsg)
 CAddThreadObserver::On_Add	CAddThreadObserver.h	/^	CStatus On_Add(CMessage * pMsg);$/;"	p	class:CAddThreadObserver	access:private	signature:(CMessage * pMsg)
+CAddThreadObserver::On_Quit	CAddThreadObserver.cpp	/^CStatus CAddThreadObserver::On_Quit()$/;"	f	class:CAddThreadObserver	signature:()
+CAddThreadObserver::On_Quit	CAddThreadObserver.h	/^	CStatus On_Quit();$/;"	p	class:CAddThreadObserver	access:private	signature:()
 CAddThreadObserver::m_pStrThreadName	CAddThreadObserver.h	/^	char * m_pStrThreadName;$/;"	m	class:CAddThreadObserver	access:public
 CCLIENTBUSINESSFOREXECUTIVE_H	include/IUsrBizForExecObj.h	4;"	d
 CCLIENTBUSINESSUSINGMSGLOOP_H	include/CUsrBizUsingMsgLoop.h	5;"	d
@@ -321,6 +323,7 @@ CThreadPool::DispatchMessage	CThreadPool.h	/^	CStatus DispatchMessage(CMessage *
 CThreadPool::m_MutexForThreadQueue	CThreadPool.h	/^	CMutex m_MutexForThreadQueue;$/;"	m	class:CThreadPool	access:private
 CThreadPool::m_MutexForThreadTable	CThreadPool.h	/^	CMutex m_MutexForThreadTable;$/;"	m	class:CThreadPool	access:private
 CThreadPool::m_ThreadTable	CThreadPool.h	/^	std::map<std::string,CThreadUsingMsgLoop *> m_ThreadTable;$/;"	m	class:CThreadPool	access:private
+CThreadPool::m_WaitForQuitEvent	CThreadPool.h	/^	CEvent m_WaitForQuitEvent;$/;"	m	class:CThreadPool	access:private
 CThreadPool::m_pThreadPoolMgr	CThreadPool.h	/^	CThreadUsingMsgLoop * m_pThreadPoolMgr;$/;"	m	class:CThreadPool	access:private
 CThreadPool::m_pThreadQueue	CThreadPool.h	/^	CQueueForThread * m_pThreadQueue;	$/;"	m	class:CThreadPool	access:private
 CThreadPool::~CThreadPool	CThreadPool.cpp	/^CThreadPool::~CThreadPool()$/;"	f	class:CThreadPool	signature:()
@@ -502,6 +505,8 @@ On_Add	CAddThreadObserver.cpp	/^CStatus CAddThreadObserver::On_Add(CMessage * pM
 On_Add	CAddThreadObserver.h	/^	CStatus On_Add(CMessage * pMsg);$/;"	p	class:CAddThreadObserver	access:private	signature:(CMessage * pMsg)
 On_JobDone	CThreadPoolObserver.cpp	/^CStatus CThreadPoolObserver::On_JobDone(CMessage * pMsg)$/;"	f	class:CThreadPoolObserver	signature:(CMessage * pMsg)
 On_JobDone	CThreadPoolObserver.h	/^	CStatus On_JobDone(CMessage * pMsg);$/;"	p	class:CThreadPoolObserver	access:private	signature:(CMessage * pMsg)
+On_Quit	CAddThreadObserver.cpp	/^CStatus CAddThreadObserver::On_Quit()$/;"	f	class:CAddThreadObserver	signature:()
+On_Quit	CAddThreadObserver.h	/^	CStatus On_Quit();$/;"	p	class:CAddThreadObserver	access:private	signature:()
 On_QuitLoopMessage	CThreadPoolObserver.cpp	/^CStatus CThreadPoolObserver::On_QuitLoopMessage(CMessage * pMsg)$/;"	f	class:CThreadPoolObserver	signature:(CMessage * pMsg)
 On_QuitLoopMessage	CThreadPoolObserver.h	/^	CStatus On_QuitLoopMessage(CMessage * pMsg);$/;"	p	class:CThreadPoolObserver	access:private	signature:(CMessage * pMsg)
 Pop	CQueueForThread.cpp	/^CThreadUsingMsgLoop * CQueueForThread::Pop()$/;"	f	class:CQueueForThread	signature:()
@@ -543,9 +548,9 @@ Run	src/CUseMsgLoopWithoutThread.cpp	/^CStatus CUseMsgLoopWithoutThread::Run(voi
 RunClientBusiness	include/CUsrBizUsingMsgLoop.h	/^	virtual CStatus RunClientBusiness(void * pContext);$/;"	p	class:CUsrBizUsingMsgLoop	access:public	signature:(void * pContext)
 RunClientBusiness	include/IUsrBizForExecObj.h	/^	virtual CStatus RunClientBusiness(void * pContext) = 0;$/;"	p	class:CUsrBizForExecObj	access:public	signature:(void * pContext)
 RunClientBusiness	src/CUsrBizUsingMsgLoop.cpp	/^CStatus CUsrBizUsingMsgLoop::RunClientBusiness(void *pContext)$/;"	f	class:CUsrBizUsingMsgLoop	signature:(void *pContext)
-SCommunicationPtrCount	include/CCommunicationNameServer.h	/^}SCommunicationPtrCount;$/;"	t	typeref:struct:__anon2
+SCommunicationPtrCount	include/CCommunicationNameServer.h	/^}SCommunicationPtrCount;$/;"	t	typeref:struct:__anon1
 SInitialParameter	CThreadUsingMsgLoop.h	/^}SInitialParameter;$/;"	t	typeref:struct:__anon3
-SInitialParameter	include/CThreadUsingMsgLoop.h	/^}SInitialParameter;$/;"	t	typeref:struct:__anon1
+SInitialParameter	include/CThreadUsingMsgLoop.h	/^}SInitialParameter;$/;"	t	typeref:struct:__anon2
 SendMessage	include/CCommunicationNameServer.h	/^	static CStatus SendMessage(const char * strCommObjName, CMessage * pMessage);$/;"	p	class:CCommunicationNameServer	access:public	signature:(const char * strCommObjName, CMessage * pMessage)
 SendMessage	src/CCommunicationNameServer.cpp	/^CStatus CCommunicationNameServer::SendMessage(const char * strCommObjName, CMessage * pMessage)$/;"	f	class:CCommunicationNameServer	signature:(const char * strCommObjName, CMessage * pMessage)
 Set	include/CEvent.h	/^	CStatus Set();$/;"	p	class:CEvent	access:public	signature:()
@@ -575,13 +580,13 @@ Wakeup	include/CConditionVariable.h	/^	CStatus Wakeup();$/;"	p	class:CConditionV
 Wakeup	src/CConditionVariable.cpp	/^CStatus CConditionVariable::Wakeup()$/;"	f	class:CConditionVariable	signature:()
 WakeupAll	include/CConditionVariable.h	/^	CStatus WakeupAll();$/;"	p	class:CConditionVariable	access:public	signature:()
 WakeupAll	src/CConditionVariable.cpp	/^CStatus CConditionVariable::WakeupAll()$/;"	f	class:CConditionVariable	signature:()
-__anon1::pContext	include/CThreadUsingMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon1	access:public
-__anon1::pNotifier	include/CThreadUsingMsgLoop.h	/^ 	CThreadInitFinishedNotifier *  pNotifier;$/;"	m	struct:__anon1	access:public
-__anon2::iConnectionCount	include/CCommunicationNameServer.h	/^	unsigned int iConnectionCount;$/;"	m	struct:__anon2	access:public
-__anon2::pCommObj	include/CCommunicationNameServer.h	/^	ICommunicationObject * pCommObj;$/;"	m	struct:__anon2	access:public
+__anon1::iConnectionCount	include/CCommunicationNameServer.h	/^	unsigned int iConnectionCount;$/;"	m	struct:__anon1	access:public
+__anon1::pCommObj	include/CCommunicationNameServer.h	/^	ICommunicationObject * pCommObj;$/;"	m	struct:__anon1	access:public
+__anon2::pContext	include/CThreadUsingMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon2	access:public
+__anon2::pNotifier	include/CThreadUsingMsgLoop.h	/^ 	CThreadInitFinishedNotifier *  pNotifier;$/;"	m	struct:__anon2	access:public
 __anon3::pContext	CThreadUsingMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon3	access:public
 __anon3::pNotifier	CThreadUsingMsgLoop.h	/^ 	CThreadInitFinishedNotifier *  pNotifier;$/;"	m	struct:__anon3	access:public
-iConnectionCount	include/CCommunicationNameServer.h	/^	unsigned int iConnectionCount;$/;"	m	struct:__anon2	access:public
+iConnectionCount	include/CCommunicationNameServer.h	/^	unsigned int iConnectionCount;$/;"	m	struct:__anon1	access:public
 m_Cond	include/CConditionVariable.h	/^	pthread_cond_t m_Cond;$/;"	m	class:CConditionVariable	access:private
 m_Cond	include/CEvent.h	/^	CConditionVariable m_Cond;$/;"	m	class:CEvent	access:private
 m_Event	CQueueForThread.h	/^	CEvent m_Event;$/;"	m	class:CQueueForThread	access:private
@@ -601,6 +606,7 @@ m_MutexForThreadTable	CThreadPool.h	/^	CMutex m_MutexForThreadTable;$/;"	m	class
 m_NameTable	include/CCommunicationNameServer.h	/^	std::map<std::string,SCommunicationPtrCount *> m_NameTable;$/;"	m	class:CCommunicationNameServer	access:private
 m_ThreadID	include/CThread.h	/^	pthread_t m_ThreadID;$/;"	m	class:CThread	access:private
 m_ThreadTable	CThreadPool.h	/^	std::map<std::string,CThreadUsingMsgLoop *> m_ThreadTable;$/;"	m	class:CThreadPool	access:private
+m_WaitForQuitEvent	CThreadPool.h	/^	CEvent m_WaitForQuitEvent;$/;"	m	class:CThreadPool	access:private
 m_bIsRecordCondVar	include/CEvent.h	/^	bool m_bIsRecordCondVar;$/;"	m	class:CEvent	access:private
 m_bIsSucess	include/CThreadInitFinishedNotifier.h	/^	bool m_bIsSucess;$/;"	m	class:CThreadInitFinishedNotifier	access:private
 m_bThreadCreated	include/CThread.h	/^	bool m_bThreadCreated;$/;"	m	class:CThread	access:private
@@ -650,11 +656,11 @@ m_strThreadName	include/CMsgLoopMgrUsingUsrDefQueue.h	/^	std::string m_strThread
 main	test.cpp	/^int main()$/;"	f	signature:()
 operator =	include/CMessage.h	/^	CMessage & operator=(const CMessage & cm);$/;"	p	class:CMessage	access:public	signature:(const CMessage & cm)
 operator =	include/IUsrBizForExecObj.h	/^	CUsrBizForExecObj & operator = (const CUsrBizForExecObj &);$/;"	p	class:CUsrBizForExecObj	access:private	signature:(const CUsrBizForExecObj &)
-pCommObj	include/CCommunicationNameServer.h	/^	ICommunicationObject * pCommObj;$/;"	m	struct:__anon2	access:public
+pCommObj	include/CCommunicationNameServer.h	/^	ICommunicationObject * pCommObj;$/;"	m	struct:__anon1	access:public
 pContext	CThreadUsingMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon3	access:public
-pContext	include/CThreadUsingMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon1	access:public
+pContext	include/CThreadUsingMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon2	access:public
 pNotifier	CThreadUsingMsgLoop.h	/^ 	CThreadInitFinishedNotifier *  pNotifier;$/;"	m	struct:__anon3	access:public
-pNotifier	include/CThreadUsingMsgLoop.h	/^ 	CThreadInitFinishedNotifier *  pNotifier;$/;"	m	struct:__anon1	access:public
+pNotifier	include/CThreadUsingMsgLoop.h	/^ 	CThreadInitFinishedNotifier *  pNotifier;$/;"	m	struct:__anon2	access:public
 ~CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.cpp	/^CAddThreadJobDoneMessage:: ~CAddThreadJobDoneMessage()$/;"	f	class:CAddThreadJobDoneMessage	signature:()
 ~CAddThreadJobDoneMessage	CAddThreadJobDoneMessage.h	/^	virtual ~CAddThreadJobDoneMessage();$/;"	p	class:CAddThreadJobDoneMessage	access:public	signature:()
 ~CCommunicationByMsgQueue	include/CCommunicationByMsgQueue.h	/^	virtual ~CCommunicationByMsgQueue();$/;"	p	class:CCommunicationByMsgQueue	access:public	signature:()

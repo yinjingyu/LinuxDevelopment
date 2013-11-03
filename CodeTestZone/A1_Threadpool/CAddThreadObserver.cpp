@@ -50,6 +50,7 @@ CStatus CAddThreadObserver::Initialize(CMsgLoopManager * pMsgLoopMgr, void * pCo
 CStatus CAddThreadObserver::On_Add(CMessage * pMsg)
 {
 	CAddMessage * pAddMsg = (CAddMessage *)pMsg;
+
 	std::cout << "add result is :" << pAddMsg->m_cOpt1 + pAddMsg->m_cOpt2 << std::endl;
 	
 	CStatus s = CCommunicationNameServer::SendMessage("ThreadPool",new CAddThreadJobDoneMessage(m_pStrThreadName));

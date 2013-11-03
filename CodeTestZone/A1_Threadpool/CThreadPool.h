@@ -19,6 +19,7 @@ public:
 	virtual ~CThreadPool ();
 	
 	CStatus DispatchMessage(CMessage * pMsg);
+
 private:
 	
 	CQueueForThread * m_pThreadQueue;	
@@ -28,6 +29,8 @@ private:
 	CMutex m_MutexForThreadQueue;
 
 	CThreadUsingMsgLoop * m_pThreadPoolMgr;
+
+	CEvent m_WaitForQuitEvent;
 };
 
 #endif

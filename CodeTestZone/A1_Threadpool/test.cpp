@@ -27,17 +27,16 @@
 
 using namespace std;
 
-
 int main()
 {
 	CThreadPool * pThreadPool = new CThreadPool(3);
 
-	for(int i = 0; i < 3; i++)
+	for(int i = 0; i < 10; i++)
 	{
 		pThreadPool->DispatchMessage(new CAddMessage(1,i));
 	}
 	
-//	sleep(2);
+ 	//	sleep(2);
 	delete pThreadPool;
 
  	return 0;

@@ -39,11 +39,13 @@ CQueueForThread::CQueueForThread()
 
  CQueueForThread::CQueueForThread(const unsigned int nThreadAmounts)
 {
-	m_pQueueSpace = new CThreadUsingMsgLoop * [nThreadAmounts];
+	//由于循环队列有一个单元需要拿出来做空闲标志位，所以实际线程大小
+	//要比输入的大小大一个单元
+	m_pQueueSpace = new CThreadUsingMsgLoop * [nThreadAmounts+1];
 	m_iQueueTail = 0;
 	m_iQueueHead = m_iQueueTail;
 
-	m_iTotalRoom = nThreadAmounts;
+	m_iTotalRoom = nThreadAmounts+1;
 
 	//设置事件作为记录型条件变量来使用	
 	m_Event.UseAsRecordCondVar(true);

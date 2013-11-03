@@ -89,7 +89,20 @@ CStatus CThreadPoolObserver::On_JobDone(CMessage * pMsg)
 			return CStatus(-1,0);
 		}
 	}
-	
+
+	{
+		//用来检查是否所有线程都做完了工作
+		CEnterCriticalSection ecs(&m_pThreadPool->m_MutexForThreadQueue);
+		if(m_pThreadPool->m_pThreadQueue->IsFull())
+		{
+			CStatus s = m_pThreadPool->m_WaitForQuitEvent.Set();
+			if(!s.IsSuccess())
+			{
+				std::cout<<"In CThreadPoolObserver::On_JobDone,m_WaitForQuitEvent->Set failed!"<<std::endl;
+				return CStatus(-1,0);
+			}
+		}
+	}
 	return CStatus(0,0);
 }
 

@@ -15,7 +15,7 @@ class CQueueForThread
 	int m_iQueueTail;
 	int m_iQueueHead;
 
-	int m_iTotalRoom;
+//	int m_iTotalRoom;
 	
 	CMutex m_Mutex;
 	CEvent m_Event;
@@ -28,6 +28,8 @@ class CQueueForThread
 	public:
  	bool IsFull();
 	bool IsEmpty();
+
+	int m_iTotalRoom;
 
 	CQueueForThread(const unsigned int nThreadAmounts);
 	CQueueForThread();
