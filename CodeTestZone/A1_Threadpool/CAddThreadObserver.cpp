@@ -20,6 +20,7 @@
 #include "MessageIDTable.h"
 #include "CAddMessage.h"
 #include "CAddThreadJobDoneMessage.h"
+#include "CAddResultMessage.h"
 
 #include "./include/CMsgLoopManager.h"
 #include "./include/CMessage.h"
@@ -51,12 +52,18 @@ CStatus CAddThreadObserver::On_Add(CMessage * pMsg)
 {
 	CAddMessage * pAddMsg = (CAddMessage *)pMsg;
 
-	std::cout << "add result is :" << pAddMsg->m_cOpt1 + pAddMsg->m_cOpt2 << std::endl;
-	
+	int result =  pAddMsg->m_cOpt1 + pAddMsg->m_cOpt2;
+
+	CStatus s1 = CCommunicationNameServer::SendMessage("UsrThread",new CAddResultMessage(result)); 	
+	if(!s1.IsSuccess())
+	{
+		std::cout <<"In CAddThreadObserver::On_Add,CCommunicationNameServer::SendMessage to UsrThread failed"<<std::endl;
+	}
+
 	CStatus s = CCommunicationNameServer::SendMessage("ThreadPool",new CAddThreadJobDoneMessage(m_pStrThreadName));
 	if(!s.IsSuccess())
 	{
-		std::cout<<"In CAddThreadObserver::On_Add , CCommunicationNameServer::SendMessage failed!"<<std::endl;
+		std::cout<<"In CAddThreadObserver::On_Add , CCommunicationNameServer::SendMessage to ThreadPool failed!"<<std::endl;
 		return CStatus(QUIT_MESSAGE_LOOP,0);
 	}
 

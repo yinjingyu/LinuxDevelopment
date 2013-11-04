@@ -1,7 +1,7 @@
 
 
 
-#define CUSRTHREADOBSERVER_H
+#ifndef CUSRTHREADOBSERVER_H
 #define CUSRTHREADOBSERVER_H
 
 #include "./include/CMsgObserver.h"
@@ -15,11 +15,15 @@ class CUsrThreadObserver : public CMsgObserver
 
 	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr, void * pContext);
 
+	CUsrThreadObserver(void * pContext);
+
 	private:
 
-	CStatus On_ResultReceived(CMessage * pMsg);
+	CStatus On_RequestResult(CMessage * pMsg);
 
 	CStatus On_Quit(CMessage * pMsg);
+
+	void * m_pContext;
 };
 
 #endif

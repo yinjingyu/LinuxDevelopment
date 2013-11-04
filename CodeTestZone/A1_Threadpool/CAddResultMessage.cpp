@@ -19,7 +19,7 @@
 #include "CAddResultMessage.h"
 #include "MessageIDTable.h"
 
-CAddResultMessage::CAddResultMessage(int iResult):CMessage(ADDRESULT_MESSAGE),m_ciResult(m_iResult)
+CAddResultMessage::CAddResultMessage(int iResult):CMessage(USR_REQUESTRESULT_MESSAGE),m_ciResult(m_iResult)
 {
 	m_iResult = iResult;
 }

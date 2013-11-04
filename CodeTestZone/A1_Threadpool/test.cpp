@@ -23,7 +23,9 @@
 #include "CThreadPool.h"
 #include "CAddMessage.h"
 #include "CQuitMessage.h"
-
+#include "CThreadUsingMsgLoop.h"
+#include "CUsrThreadObserver.h"
+#include "./include/CCommunicationNameServer.h"
 
 using namespace std;
 
@@ -31,13 +33,13 @@ int main()
 {
 	CThreadPool * pThreadPool = new CThreadPool(3);
 
-	for(int i = 0; i < 10; i++)
-	{
-		pThreadPool->DispatchMessage(new CAddMessage(1,i));
-	}
-	
- 	//	sleep(2);
+	CThreadUsingMsgLoop * pUsrThread = new CThreadUsingMsgLoop("UsrThread",new CUsrThreadObserver(pThreadPool),true);
+	pUsrThread->Run(0);
+
 	delete pThreadPool;
+	
+	CCommunicationNameServer::SendMessage("UsrThread",new CQuitMessage());
+	delete pUsrThread;
 
  	return 0;
 }
