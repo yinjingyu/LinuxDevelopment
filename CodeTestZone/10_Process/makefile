@@ -1,5 +1,5 @@
-a.out : *.cpp
-	g++ *.cpp -lpthread -L./lib -lThreadCntl -g
+a.out : ./src/*.cpp
+	g++ ./src/*.cpp -lpthread -I./include  -g
 	rm -rf *.o
 clean:
 	rm -rf *.out
