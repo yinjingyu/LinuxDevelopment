@@ -41,6 +41,9 @@
 #include "CMutexByPThread.h"
 #include "CMutexByRecordLocking.h"
 #include "CMutexByRecordLockingAndPThread.h"
+
+#include "CSharedMemory.h"
+
 //进程相关用到的头文件
 
 #include "CUsrBizForProcess.h"
