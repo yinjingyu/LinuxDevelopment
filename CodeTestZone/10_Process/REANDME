@@ -1,0 +1,3 @@
+  
+g++ *.cpp -lpthread -L./lib -lThreadCntl
+   
