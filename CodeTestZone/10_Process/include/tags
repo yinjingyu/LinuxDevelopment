@@ -5,7 +5,8 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ADD_MESSAGE	MessageIDTable.h	8;"	d
-ALLOCATED_SHARED_OBJECT	ISharedObjects.h	18;"	d
+ALLOCATED_SHARED_OBJECT	ISharedObjectPool.h	18;"	d
+ALLOCATED_SHARED_OBJECT	ISharedObjects.h	13;"	d
 CCLIENTBUSINESSFOREXECUTIVE_H	IUsrBizForExecObj.h	4;"	d
 CCLIENTBUSINESSUSINGMSGLOOP_H	CUsrBizUsingMsgLoop.h	5;"	d
 CCOMMUNICATEBYMESSAGEQUEUE_H	CCommunicationByMsgQueue.h	4;"	d
@@ -31,12 +32,18 @@ CCommunicationNameServer::m_NameTable	CCommunicationNameServer.h	/^	std::map<std
 CCommunicationNameServer::m_pNameServer	CCommunicationNameServer.h	/^	static CCommunicationNameServer * m_pNameServer; 	$/;"	m	class:CCommunicationNameServer	access:private
 CCommunicationNameServer::~CCommunicationNameServer	CCommunicationNameServer.h	/^	~CCommunicationNameServer();$/;"	p	class:CCommunicationNameServer	access:private	signature:()
 CConditionVariable	CConditionVariable.h	/^	CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable	CConditionVariable.h	/^	CConditionVariable(const char * pstrCondName);$/;"	p	class:CConditionVariable	access:public	signature:(const char * pstrCondName)
+CConditionVariable	CConditionVariable.h	/^	CConditionVariable(pthrad_cond_t * pCond);$/;"	p	class:CConditionVariable	access:public	signature:(pthrad_cond_t * pCond)
 CConditionVariable	CConditionVariable.h	/^class CConditionVariable$/;"	c
 CConditionVariable::CConditionVariable	CConditionVariable.h	/^	CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
+CConditionVariable::CConditionVariable	CConditionVariable.h	/^	CConditionVariable(const char * pstrCondName);$/;"	p	class:CConditionVariable	access:public	signature:(const char * pstrCondName)
+CConditionVariable::CConditionVariable	CConditionVariable.h	/^	CConditionVariable(pthrad_cond_t * pCond);$/;"	p	class:CConditionVariable	access:public	signature:(pthrad_cond_t * pCond)
 CConditionVariable::Wait	CConditionVariable.h	/^	CStatus Wait(CMutex * pMutex);$/;"	p	class:CConditionVariable	access:public	signature:(CMutex * pMutex)
 CConditionVariable::Wakeup	CConditionVariable.h	/^	CStatus Wakeup();$/;"	p	class:CConditionVariable	access:public	signature:()
 CConditionVariable::WakeupAll	CConditionVariable.h	/^	CStatus WakeupAll();$/;"	p	class:CConditionVariable	access:public	signature:()
-CConditionVariable::m_Cond	CConditionVariable.h	/^	pthread_cond_t m_Cond;$/;"	m	class:CConditionVariable	access:private
+CConditionVariable::m_bNeedDestroy	CConditionVariable.h	/^	bool m_bNeedDestroy;$/;"	m	class:CConditionVariable	access:private
+CConditionVariable::m_pConditionVariable	CConditionVariable.h	/^	pthread_cond_t * m_pConditionVariable;$/;"	m	class:CConditionVariable	access:private
+CConditionVariable::m_strCondName	CConditionVariable.h	/^	string m_strCondName;$/;"	m	class:CConditionVariable	access:private
 CConditionVariable::~CConditionVariable	CConditionVariable.h	/^	virtual ~CConditionVariable();$/;"	p	class:CConditionVariable	access:public	signature:()
 CENTERCRITICALSECTION_H	CEnterCriticalSection.h	3;"	d
 CEVENT_H	CEvent.h	3;"	d
@@ -65,6 +72,16 @@ CExecutiveObject::WaitForDeath	CExecutiveObject.h	/^	virtual CStatus WaitForDeat
 CExecutiveObject::m_pUsrBizForExecObj	CExecutiveObject.h	/^	IUsrBizForExecObj * m_pUsrBizForExecObj;$/;"	m	class:CExecutiveObject	access:protected
 CExecutiveObject::~CExecutiveObject	CExecutiveObject.h	/^	virtual ~CExecutiveObject();$/;"	p	class:CExecutiveObject	access:public	signature:()
 CLIBEXECINITIALIZER_H	CLibExecInitializer.h	5;"	d
+CLMutexByPThread	CMutexByPThread.cpp	/^CLMutexByPThread::CLMutexByPThread()$/;"	f	class:CLMutexByPThread	signature:()
+CLMutexByPThread	CMutexByPThread.cpp	/^CLMutexByPThread::CLMutexByPThread(pthread_mutex_t *pMutex)$/;"	f	class:CLMutexByPThread	signature:(pthread_mutex_t *pMutex)
+CLMutexByPThread::CLMutexByPThread	CMutexByPThread.cpp	/^CLMutexByPThread::CLMutexByPThread()$/;"	f	class:CLMutexByPThread	signature:()
+CLMutexByPThread::CLMutexByPThread	CMutexByPThread.cpp	/^CLMutexByPThread::CLMutexByPThread(pthread_mutex_t *pMutex)$/;"	f	class:CLMutexByPThread	signature:(pthread_mutex_t *pMutex)
+CLMutexByPThread::GetMutexPointer	CMutexByPThread.cpp	/^pthread_mutex_t *CLMutexByPThread::GetMutexPointer()$/;"	f	class:CLMutexByPThread	signature:()
+CLMutexByPThread::Initialize	CMutexByPThread.cpp	/^CLStatus CLMutexByPThread::Initialize()$/;"	f	class:CLMutexByPThread	signature:()
+CLMutexByPThread::Lock	CMutexByPThread.cpp	/^CLStatus CLMutexByPThread::Lock()$/;"	f	class:CLMutexByPThread	signature:()
+CLMutexByPThread::Uninitialize	CMutexByPThread.cpp	/^CLStatus CLMutexByPThread::Uninitialize()$/;"	f	class:CLMutexByPThread	signature:()
+CLMutexByPThread::Unlock	CMutexByPThread.cpp	/^CLStatus CLMutexByPThread::Unlock()$/;"	f	class:CLMutexByPThread	signature:()
+CLMutexByPThread::~CLMutexByPThread	CMutexByPThread.cpp	/^CLMutexByPThread::~CLMutexByPThread()$/;"	f	class:CLMutexByPThread	signature:()
 CLibExecInitializer	CLibExecInitializer.h	/^	CLibExecInitializer();$/;"	p	class:CLibExecInitializer	access:private	signature:()
 CLibExecInitializer	CLibExecInitializer.h	/^	CLibExecInitializer(const CLibExecInitializer &);$/;"	p	class:CLibExecInitializer	access:private	signature:(const CLibExecInitializer &)
 CLibExecInitializer	CLibExecInitializer.h	/^class CLibExecInitializer$/;"	c
@@ -138,11 +155,11 @@ CMutex::~CMutex	CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	
 CMutexByPThread	CMutexByPThread.h	/^	CMutexByPThread();$/;"	p	class:CMutexByPThread	access:public	signature:()
 CMutexByPThread	CMutexByPThread.h	/^	CMutexByPThread(const CMutexByPThread &);$/;"	p	class:CMutexByPThread	access:private	signature:(const CMutexByPThread &)
 CMutexByPThread	CMutexByPThread.h	/^	explicit CMutexByPThread(pthread_mutex_t * pMutex);$/;"	p	class:CMutexByPThread	access:public	signature:(pthread_mutex_t * pMutex)
-CMutexByPThread	CMutexByPThread.h	/^class CMutexByPThread : public CMutexInterface$/;"	c	inherits:CMutexInterface
+CMutexByPThread	CMutexByPThread.h	/^class CMutexByPThread : public CMutexUsingPThread$/;"	c	inherits:CMutexUsingPThread
 CMutexByPThread::CMutexByPThread	CMutexByPThread.h	/^	CMutexByPThread();$/;"	p	class:CMutexByPThread	access:public	signature:()
 CMutexByPThread::CMutexByPThread	CMutexByPThread.h	/^	CMutexByPThread(const CMutexByPThread &);$/;"	p	class:CMutexByPThread	access:private	signature:(const CMutexByPThread &)
 CMutexByPThread::CMutexByPThread	CMutexByPThread.h	/^	explicit CMutexByPThread(pthread_mutex_t * pMutex);$/;"	p	class:CMutexByPThread	access:public	signature:(pthread_mutex_t * pMutex)
-CMutexByPThread::GetMutexPointer	CMutexByPThread.h	/^	pthread_mutex_t * GetMutexPointer();$/;"	p	class:CMutexByPThread	access:public	signature:()
+CMutexByPThread::GetMutexPointer	CMutexByPThread.h	/^	virtual pthread_mutex_t * GetMutexPointer();$/;"	p	class:CMutexByPThread	access:public	signature:()
 CMutexByPThread::Initialize	CMutexByPThread.h	/^	virtual CStatus Initialize();$/;"	p	class:CMutexByPThread	access:public	signature:()
 CMutexByPThread::Lock	CMutexByPThread.h	/^	virtual CStatus Lock();$/;"	p	class:CMutexByPThread	access:public	signature:()
 CMutexByPThread::Uninitialize	CMutexByPThread.h	/^	virtual CStatus Uninitialize();$/;"	p	class:CMutexByPThread	access:public	signature:()
@@ -179,6 +196,21 @@ CMutexByRecordLockingAndPThread::m_ProcessMutex	CMutexByRecordLockingAndPThread.
 CMutexByRecordLockingAndPThread::m_ThreadMutex	CMutexByRecordLockingAndPThread.h	/^	CMutex m_ThreadMutex;$/;"	m	class:CMutexByRecordLockingAndPThread	access:private
 CMutexByRecordLockingAndPThread::operator =	CMutexByRecordLockingAndPThread.h	/^	CMutexByRecordLockingAndPThread & operator =(const CMutexByRecordLockingAndPThread &);$/;"	p	class:CMutexByRecordLockingAndPThread	access:private	signature:(const CMutexByRecordLockingAndPThread &)
 CMutexByRecordLockingAndPThread_H	CMutexByRecordLockingAndPThread.h	4;"	d
+CMutexBySharedPThread	CMutexBySharedPThread.h	/^	CMutexBySharedPThread(const CMutexBySharedPThread&);$/;"	p	class:CMutexBySharedPThread	access:private	signature:(const CMutexBySharedPThread&)
+CMutexBySharedPThread	CMutexBySharedPThread.h	/^	CMutexBySharedPThread(const char *pstrMutexName);$/;"	p	class:CMutexBySharedPThread	access:public	signature:(const char *pstrMutexName)
+CMutexBySharedPThread	CMutexBySharedPThread.h	/^class CMutexBySharedPThread : public CMutexUsingPThread$/;"	c	inherits:CMutexUsingPThread
+CMutexBySharedPThread::CMutexBySharedPThread	CMutexBySharedPThread.h	/^	CMutexBySharedPThread(const CMutexBySharedPThread&);$/;"	p	class:CMutexBySharedPThread	access:private	signature:(const CMutexBySharedPThread&)
+CMutexBySharedPThread::CMutexBySharedPThread	CMutexBySharedPThread.h	/^	CMutexBySharedPThread(const char *pstrMutexName);$/;"	p	class:CMutexBySharedPThread	access:public	signature:(const char *pstrMutexName)
+CMutexBySharedPThread::GetMutexPointer	CMutexBySharedPThread.h	/^	virtual pthread_mutex_t *GetMutexPointer();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
+CMutexBySharedPThread::Initialize	CMutexBySharedPThread.h	/^	virtual CStatus Initialize();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
+CMutexBySharedPThread::Lock	CMutexBySharedPThread.h	/^	virtual CStatus Lock();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
+CMutexBySharedPThread::Uninitialize	CMutexBySharedPThread.h	/^	virtual CStatus Uninitialize();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
+CMutexBySharedPThread::Unlock	CMutexBySharedPThread.h	/^	virtual CStatus Unlock();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
+CMutexBySharedPThread::m_pMutex	CMutexBySharedPThread.h	/^	pthread_mutex_t *m_pMutex;$/;"	m	class:CMutexBySharedPThread	access:private
+CMutexBySharedPThread::m_strMutexName	CMutexBySharedPThread.h	/^	string m_strMutexName;$/;"	m	class:CMutexBySharedPThread	access:private
+CMutexBySharedPThread::operator =	CMutexBySharedPThread.h	/^	CMutexBySharedPThread& operator=(const CMutexBySharedPThread&);$/;"	p	class:CMutexBySharedPThread	access:private	signature:(const CMutexBySharedPThread&)
+CMutexBySharedPThread::~CMutexBySharedPThread	CMutexBySharedPThread.h	/^	virtual ~CMutexBySharedPThread();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
+CMutexBySharedPThread_H	CMutexBySharedPThread.h	2;"	d
 CMutexInterface	CMutexInterface.h	/^	CMutexInterface();$/;"	p	class:CMutexInterface	access:public	signature:()
 CMutexInterface	CMutexInterface.h	/^	CMutexInterface(const CMutexInterface &);$/;"	p	class:CMutexInterface	access:private	signature:(const CMutexInterface &)
 CMutexInterface	CMutexInterface.h	/^class CMutexInterface$/;"	c
@@ -206,6 +238,33 @@ CProcess::m_bProcessCreated	CProcess.h	/^	bool m_bProcessCreated;$/;"	m	class:CP
 CProcess::m_bWaitForDeath	CProcess.h	/^	bool m_bWaitForDeath;$/;"	m	class:CProcess	access:private
 CProcess::~CProcess	CProcess.h	/^	~CProcess();$/;"	p	class:CProcess	access:public	signature:()
 CSTATUS_H	CStatus.h	2;"	d
+CSharedCondVarManager	CSharedCondVarManager.h	/^	CSharedCondVarManager();$/;"	p	class:CSharedCondVarManager	access:private	signature:()
+CSharedCondVarManager	CSharedCondVarManager.h	/^	CSharedCondVarManager(const CSharedCondVarManager&);$/;"	p	class:CSharedCondVarManager	access:private	signature:(const CSharedCondVarManager&)
+CSharedCondVarManager	CSharedCondVarManager.h	/^class CSharedCondVarManager$/;"	c
+CSharedCondVarManager::CSharedCondVarManager	CSharedCondVarManager.h	/^	CSharedCondVarManager();$/;"	p	class:CSharedCondVarManager	access:private	signature:()
+CSharedCondVarManager::CSharedCondVarManager	CSharedCondVarManager.h	/^	CSharedCondVarManager(const CSharedCondVarManager&);$/;"	p	class:CSharedCondVarManager	access:private	signature:(const CSharedCondVarManager&)
+CSharedCondVarManager::Create	CSharedCondVarManager.h	/^	static CStatus Create();$/;"	p	class:CSharedCondVarManager	access:private	signature:()
+CSharedCondVarManager::Destroy	CSharedCondVarManager.h	/^	static CStatus Destroy();$/;"	p	class:CSharedCondVarManager	access:private	signature:()
+CSharedCondVarManager::Get	CSharedCondVarManager.h	/^	static pthread_cond_t* Get(const char *pstrCondName);$/;"	p	class:CSharedCondVarManager	access:public	signature:(const char *pstrCondName)
+CSharedCondVarManager::GetInstance	CSharedCondVarManager.h	/^	static CSharedCondVarManager* GetInstance();$/;"	p	class:CSharedCondVarManager	access:public	signature:()
+CSharedCondVarManager::GetSharedCond	CSharedCondVarManager.h	/^	pthread_cond_t *GetSharedCond(const char *pstrCondName);$/;"	p	class:CSharedCondVarManager	access:public	signature:(const char *pstrCondName)
+CSharedCondVarManager::Release	CSharedCondVarManager.h	/^	static CStatus Release(const char *pstrCondName);$/;"	p	class:CSharedCondVarManager	access:public	signature:(const char *pstrCondName)
+CSharedCondVarManager::ReleaseSharedCond	CSharedCondVarManager.h	/^	CStatus ReleaseSharedCond(const char *pstrCondName);$/;"	p	class:CSharedCondVarManager	access:public	signature:(const char *pstrCondName)
+CSharedCondVarManager::m_pShCondVarMgr	CSharedCondVarManager.h	/^	static CSharedCondVarManager *m_pShCondVarMgr;$/;"	m	class:CSharedCondVarManager	access:private
+CSharedCondVarManager::m_pShCondVarPool	CSharedCondVarManager.h	/^	CSharedConditionVariablePool *m_pShCondVarPool;$/;"	m	class:CSharedCondVarManager	access:private
+CSharedCondVarManager::operator =	CSharedCondVarManager.h	/^	CSharedCondVarManager& operator=(const CSharedCondVarManager&);$/;"	p	class:CSharedCondVarManager	access:private	signature:(const CSharedCondVarManager&)
+CSharedCondVarManager::~CSharedCondVarManager	CSharedCondVarManager.h	/^	virtual ~CSharedCondVarManager();$/;"	p	class:CSharedCondVarManager	access:private	signature:()
+CSharedCondVarManager_H	CSharedCondVarManager.h	2;"	d
+CSharedConditionVariablePool	CSharedConditionVariablePool.h	/^	CSharedConditionVariablePool();$/;"	p	class:CSharedConditionVariablePool	access:private	signature:()
+CSharedConditionVariablePool	CSharedConditionVariablePool.h	/^	CSharedConditionVariablePool(const CSharedConditionVariablePool&);$/;"	p	class:CSharedConditionVariablePool	access:private	signature:(const CSharedConditionVariablePool&)
+CSharedConditionVariablePool	CSharedConditionVariablePool.h	/^class CSharedConditionVariablePool : public ISharedObjects$/;"	c	inherits:ISharedObjects
+CSharedConditionVariablePool::CSharedConditionVariablePool	CSharedConditionVariablePool.h	/^	CSharedConditionVariablePool();$/;"	p	class:CSharedConditionVariablePool	access:private	signature:()
+CSharedConditionVariablePool::CSharedConditionVariablePool	CSharedConditionVariablePool.h	/^	CSharedConditionVariablePool(const CSharedConditionVariablePool&);$/;"	p	class:CSharedConditionVariablePool	access:private	signature:(const CSharedConditionVariablePool&)
+CSharedConditionVariablePool::DestroySharedObject	CSharedConditionVariablePool.h	/^	virtual CStatus DestroySharedObject(SSharedObjectHead *pObject);$/;"	p	class:CSharedConditionVariablePool	access:public	signature:(SSharedObjectHead *pObject)
+CSharedConditionVariablePool::InitializeSharedObject	CSharedConditionVariablePool.h	/^	virtual CStatus InitializeSharedObject(SSharedObjectHead *pObject);$/;"	p	class:CSharedConditionVariablePool	access:public	signature:(SSharedObjectHead *pObject)
+CSharedConditionVariablePool::operator =	CSharedConditionVariablePool.h	/^	CSharedConditionVariablePool& operator=(const CSharedConditionVariablePool&);$/;"	p	class:CSharedConditionVariablePool	access:private	signature:(const CSharedConditionVariablePool&)
+CSharedConditionVariablePool::~CSharedConditionVariablePool	CSharedConditionVariablePool.h	/^	virtual ~CSharedConditionVariablePool();$/;"	p	class:CSharedConditionVariablePool	access:private	signature:()
+CSharedConditionVariablePool_H	CSharedConditionVariablePool.h	2;"	d
 CSharedMemory	CSharedMemory.h	/^	CSharedMemory(const CSharedMemory &);$/;"	p	class:CSharedMemory	access:private	signature:(const CSharedMemory &)
 CSharedMemory	CSharedMemory.h	/^	explicit CSharedMemory(const char * pstrFileName, size_t nSize = 0);$/;"	p	class:CSharedMemory	access:public	signature:(const char * pstrFileName, size_t nSize = 0)
 CSharedMemory	CSharedMemory.h	/^class CSharedMemory$/;"	c
@@ -220,6 +279,31 @@ CSharedMemory::m_pSharedMemory	CSharedMemory.h	/^	void * m_pSharedMemory;$/;"	m	
 CSharedMemory::operator =	CSharedMemory.h	/^	CSharedMemory & operator=(const CSharedMemory &);$/;"	p	class:CSharedMemory	access:private	signature:(const CSharedMemory &)
 CSharedMemory::~CSharedMemory	CSharedMemory.h	/^	virtual ~CSharedMemory();$/;"	p	class:CSharedMemory	access:public	signature:()
 CSharedMemory_H	CSharedMemory.h	4;"	d
+CSharedMutexPool	CSharedMutexPool.h	/^	CSharedMutexPool();$/;"	p	class:CSharedMutexPool	access:private	signature:()
+CSharedMutexPool	CSharedMutexPool.h	/^class CSharedMutexPool : public ISharedObjectPool$/;"	c	inherits:ISharedObjectPool
+CSharedMutexPool::CSharedMutexPool	CSharedMutexPool.h	/^	CSharedMutexPool();$/;"	p	class:CSharedMutexPool	access:private	signature:()
+CSharedMutexPool::DestroyASharedObject	CSharedMutexPool.h	/^	virtual CStatus DestroyASharedObject(SSharedObjectHead * pObject);$/;"	p	class:CSharedMutexPool	access:public	signature:(SSharedObjectHead * pObject)
+CSharedMutexPool::InitializeASharedObject	CSharedMutexPool.h	/^	virtual CStatus InitializeASharedObject(SSharedObjectHead * pObject);$/;"	p	class:CSharedMutexPool	access:public	signature:(SSharedObjectHead * pObject)
+CSharedMutexPool::~CSharedMutexPool	CSharedMutexPool.h	/^	virtual ~CSharedMutexPool();$/;"	p	class:CSharedMutexPool	access:private	signature:()
+CSharedMutexPoolManager	CSharedMutexPoolManager.h	/^	CSharedMutexPoolManager();$/;"	p	class:CSharedMutexPoolManager	access:private	signature:()
+CSharedMutexPoolManager	CSharedMutexPoolManager.h	/^	CSharedMutexPoolManager(const CSharedMutexPoolManager&);$/;"	p	class:CSharedMutexPoolManager	access:private	signature:(const CSharedMutexPoolManager&)
+CSharedMutexPoolManager	CSharedMutexPoolManager.h	/^class CSharedMutexPoolManager$/;"	c
+CSharedMutexPoolManager::CSharedMutexPoolManager	CSharedMutexPoolManager.h	/^	CSharedMutexPoolManager();$/;"	p	class:CSharedMutexPoolManager	access:private	signature:()
+CSharedMutexPoolManager::CSharedMutexPoolManager	CSharedMutexPoolManager.h	/^	CSharedMutexPoolManager(const CSharedMutexPoolManager&);$/;"	p	class:CSharedMutexPoolManager	access:private	signature:(const CSharedMutexPoolManager&)
+CSharedMutexPoolManager::Create	CSharedMutexPoolManager.h	/^	static CStatus Create();$/;"	p	class:CSharedMutexPoolManager	access:private	signature:()
+CSharedMutexPoolManager::Destroy	CSharedMutexPoolManager.h	/^	static CStatus Destroy();$/;"	p	class:CSharedMutexPoolManager	access:private	signature:()
+CSharedMutexPoolManager::Get	CSharedMutexPoolManager.h	/^	static pthread_mutex_t* Get(const char *pstrMutexName);$/;"	p	class:CSharedMutexPoolManager	access:public	signature:(const char *pstrMutexName)
+CSharedMutexPoolManager::GetASharedMutex	CSharedMutexPoolManager.h	/^	pthread_mutex_t *GetASharedMutex(const char *pstrMutexName);$/;"	p	class:CSharedMutexPoolManager	access:public	signature:(const char *pstrMutexName)
+CSharedMutexPoolManager::GetInstance	CSharedMutexPoolManager.h	/^	static CSharedMutexPoolManager * GetInstance();$/;"	p	class:CSharedMutexPoolManager	access:public	signature:()
+CSharedMutexPoolManager::Release	CSharedMutexPoolManager.h	/^	static CStatus Release(const char *pstrMutexName);$/;"	p	class:CSharedMutexPoolManager	access:public	signature:(const char *pstrMutexName)
+CSharedMutexPoolManager::ReleaseASharedMutex	CSharedMutexPoolManager.h	/^	CStatus ReleaseASharedMutex(const char *pstrMutexName);$/;"	p	class:CSharedMutexPoolManager	access:public	signature:(const char *pstrMutexName)
+CSharedMutexPoolManager::m_MutexForSharedMutex	CSharedMutexPoolManager.h	/^	static pthread_mutex_t m_MutexForSharedMutex;$/;"	m	class:CSharedMutexPoolManager	access:private
+CSharedMutexPoolManager::m_pShMutexPool	CSharedMutexPoolManager.h	/^	CSharedMutexPool *m_pShMutexPool;$/;"	m	class:CSharedMutexPoolManager	access:private
+CSharedMutexPoolManager::m_pShMutexPoolMgr	CSharedMutexPoolManager.h	/^	static CSharedMutexPoolManager *m_pShMutexPoolMgr;$/;"	m	class:CSharedMutexPoolManager	access:private
+CSharedMutexPoolManager::operator =	CSharedMutexPoolManager.h	/^	CSharedMutexPoolManager& operator=(const CSharedMutexPoolManager&);$/;"	p	class:CSharedMutexPoolManager	access:private	signature:(const CSharedMutexPoolManager&)
+CSharedMutexPoolManager::~CSharedMutexPoolManager	CSharedMutexPoolManager.h	/^	virtual ~CSharedMutexPoolManager();$/;"	p	class:CSharedMutexPoolManager	access:private	signature:()
+CSharedMutexPoolManager_H	CSharedMutexPoolManager.h	4;"	d
+CSharedMutex_H	CSharedMutexPool.h	4;"	d
 CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode)
 CStatus	CStatus.h	/^	CStatus(int iReturnCode, int iErrorCode, const char * msg);$/;"	p	class:CStatus	access:public	signature:(int iReturnCode, int iErrorCode, const char * msg)
 CStatus	CStatus.h	/^ 	CStatus(const CStatus & sta);$/;"	p	class:CStatus	access:public	signature:(const CStatus & sta)
@@ -310,21 +394,38 @@ CUsrDefMsgQueue::m_pQueueSpace	CUsrDefMsgQueue.h	/^	CMessage ** m_pQueueSpace;$/
 CUsrDefMsgQueue::~CUsrDefMsgQueue	CUsrDefMsgQueue.h	/^	virtual ~CUsrDefMsgQueue();$/;"	p	class:CUsrDefMsgQueue	access:public	signature:()
 CallBackFunctionOfMsgObserver	CMsgLoopManager.h	/^typedef CStatus (CMsgObserver:: *CallBackFunctionOfMsgObserver)(CMessage *);$/;"	t
 CloseFileDescriptor	CProcess.h	/^	CStatus CloseFileDescriptor(); 	$/;"	p	class:CProcess	access:private	signature:()
+Create	CSharedCondVarManager.h	/^	static CStatus Create();$/;"	p	class:CSharedCondVarManager	access:private	signature:()
+Create	CSharedMutexPoolManager.h	/^	static CStatus Create();$/;"	p	class:CSharedMutexPoolManager	access:private	signature:()
 DeleteSharedMemory	CSharedMemory.h	/^	CStatus DeleteSharedMemory();$/;"	p	class:CSharedMemory	access:private	signature:()
 Destroy	CLibExecInitializer.h	/^	static CStatus Destroy();$/;"	p	class:CLibExecInitializer	access:public	signature:()
+Destroy	CSharedCondVarManager.h	/^	static CStatus Destroy();$/;"	p	class:CSharedCondVarManager	access:private	signature:()
+Destroy	CSharedMutexPoolManager.h	/^	static CStatus Destroy();$/;"	p	class:CSharedMutexPoolManager	access:private	signature:()
+Destroy	ISharedObjectPool.h	/^	CStatus Destroy();$/;"	p	class:ISharedObjectPool	access:public	signature:()
 Destroy	ISharedObjects.h	/^	CStatus Destroy();$/;"	p	class:ISharedObjects	access:public	signature:()
+DestroyASharedObject	CSharedMutexPool.h	/^	virtual CStatus DestroyASharedObject(SSharedObjectHead * pObject);$/;"	p	class:CSharedMutexPool	access:public	signature:(SSharedObjectHead * pObject)
+DestroyASharedObject	ISharedObjectPool.h	/^	virtual CStatus DestroyASharedObject(SSharedObjectHead * pObject) = 0;$/;"	p	class:ISharedObjectPool	access:public	signature:(SSharedObjectHead * pObject)
+DestroySharedObject	CSharedConditionVariablePool.h	/^	virtual CStatus DestroySharedObject(SSharedObjectHead *pObject);$/;"	p	class:CSharedConditionVariablePool	access:public	signature:(SSharedObjectHead *pObject)
 DestroySharedObjectItem	ISharedObjects.h	/^	virtual CStatus DestroySharedObjectItem(SSharedObjectHead * pObject) = 0;$/;"	p	class:ISharedObjects	access:public	signature:(SSharedObjectHead * pObject)
 DispatchMessage	CMsgLoopManager.h	/^	virtual CStatus DispatchMessage(CMessage * pMsg);$/;"	p	class:CMsgLoopManager	access:protected	signature:(CMessage * pMsg)
 EnlargeQueue	CUsrDefMsgQueue.h	/^	CStatus EnlargeQueue();$/;"	p	class:CUsrDefMsgQueue	access:private	signature:()
 EnterMessageLoop	CMsgLoopManager.h	/^	virtual CStatus EnterMessageLoop(void * pContext);$/;"	p	class:CMsgLoopManager	access:public	signature:(void * pContext)
+Get	CSharedCondVarManager.h	/^	static pthread_cond_t* Get(const char *pstrCondName);$/;"	p	class:CSharedCondVarManager	access:public	signature:(const char *pstrCondName)
+Get	CSharedMutexPoolManager.h	/^	static pthread_mutex_t* Get(const char *pstrMutexName);$/;"	p	class:CSharedMutexPoolManager	access:public	signature:(const char *pstrMutexName)
+GetASharedMutex	CSharedMutexPoolManager.h	/^	pthread_mutex_t *GetASharedMutex(const char *pstrMutexName);$/;"	p	class:CSharedMutexPoolManager	access:public	signature:(const char *pstrMutexName)
+GetASharedObject	ISharedObjectPool.h	/^	void * GetASharedObject(const char * pstrSharedObjectName);  $/;"	p	class:ISharedObjectPool	access:public	signature:(const char * pstrSharedObjectName)
 GetAddress	CSharedMemory.h	/^	void * GetAddress();$/;"	p	class:CSharedMemory	access:public	signature:()
 GetCommunicationObject	CCommunicationNameServer.h	/^	ICommunicationObject * GetCommunicationObject(const char * strCommObjName);$/;"	p	class:CCommunicationNameServer	access:public	signature:(const char * strCommObjName)
 GetErrorMsg	CStatus.h	/^	char * GetErrorMsg();$/;"	p	class:CStatus	access:public	signature:()
 GetInstance	CCommunicationNameServer.h	/^	static CCommunicationNameServer * GetInstance();$/;"	p	class:CCommunicationNameServer	access:public	signature:()
+GetInstance	CSharedCondVarManager.h	/^	static CSharedCondVarManager* GetInstance();$/;"	p	class:CSharedCondVarManager	access:public	signature:()
+GetInstance	CSharedMutexPoolManager.h	/^	static CSharedMutexPoolManager * GetInstance();$/;"	p	class:CSharedMutexPoolManager	access:public	signature:()
 GetMessage	CUsrDefMsgQueue.h	/^	CMessage * GetMessage();$/;"	p	class:CUsrDefMsgQueue	access:public	signature:()
 GetMutexInterface	CMutex.h	/^	CMutexInterface * GetMutexInterface();$/;"	p	class:CMutex	access:public	signature:()
-GetMutexPointer	CMutexByPThread.h	/^	pthread_mutex_t * GetMutexPointer();$/;"	p	class:CMutexByPThread	access:public	signature:()
+GetMutexPointer	CMutexByPThread.cpp	/^pthread_mutex_t *CLMutexByPThread::GetMutexPointer()$/;"	f	class:CLMutexByPThread	signature:()
+GetMutexPointer	CMutexByPThread.h	/^	virtual pthread_mutex_t * GetMutexPointer();$/;"	p	class:CMutexByPThread	access:public	signature:()
+GetMutexPointer	CMutexBySharedPThread.h	/^	virtual pthread_mutex_t *GetMutexPointer();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
 GetRefCount	CSharedMemory.h	/^	int GetRefCount();$/;"	p	class:CSharedMemory	access:public	signature:()
+GetSharedCond	CSharedCondVarManager.h	/^	pthread_cond_t *GetSharedCond(const char *pstrCondName);$/;"	p	class:CSharedCondVarManager	access:public	signature:(const char *pstrCondName)
 GetSharedObject	ISharedObjects.h	/^	void * GetSharedObject(const char * pstrSharedObjectName);  $/;"	p	class:ISharedObjects	access:public	signature:(const char * pstrSharedObjectName)
 ICOMMUNICATIONOBJECT_H	ICommunicationObject.h	4;"	d
 ICommunicationObject	ICommunicationObject.h	/^	ICommunicationObject();$/;"	p	class:ICommunicationObject	access:public	signature:()
@@ -336,7 +437,22 @@ IINITIALFINISHEDNOTIFIER_H	IInitFinishedNotifier.h	4;"	d
 IInitFinishedNotifier	IInitFinishedNotifier.h	/^class IInitFinishedNotifier$/;"	c
 IInitFinishedNotifier::IsInitialSuccess	IInitFinishedNotifier.h	/^	virtual bool IsInitialSuccess() = 0;$/;"	p	class:IInitFinishedNotifier	access:public	signature:()
 IInitFinishedNotifier::NotifyInitialFinished	IInitFinishedNotifier.h	/^	virtual CStatus NotifyInitialFinished(bool bIsSuccess) = 0;$/;"	p	class:IInitFinishedNotifier	access:public	signature:(bool bIsSuccess)
-INITIALIZED_SHARED_OBJECT	ISharedObjects.h	17;"	d
+INITIALIZED_SHARED_OBJECT	ISharedObjectPool.h	17;"	d
+INITIALIZED_SHARED_OBJECT	ISharedObjects.h	12;"	d
+ISharedObjectPool	ISharedObjectPool.h	/^	ISharedObjectPool();$/;"	p	class:ISharedObjectPool	access:public	signature:()
+ISharedObjectPool	ISharedObjectPool.h	/^class ISharedObjectPool$/;"	c
+ISharedObjectPool::Destroy	ISharedObjectPool.h	/^	CStatus Destroy();$/;"	p	class:ISharedObjectPool	access:public	signature:()
+ISharedObjectPool::DestroyASharedObject	ISharedObjectPool.h	/^	virtual CStatus DestroyASharedObject(SSharedObjectHead * pObject) = 0;$/;"	p	class:ISharedObjectPool	access:public	signature:(SSharedObjectHead * pObject)
+ISharedObjectPool::GetASharedObject	ISharedObjectPool.h	/^	void * GetASharedObject(const char * pstrSharedObjectName);  $/;"	p	class:ISharedObjectPool	access:public	signature:(const char * pstrSharedObjectName)
+ISharedObjectPool::ISharedObjectPool	ISharedObjectPool.h	/^	ISharedObjectPool();$/;"	p	class:ISharedObjectPool	access:public	signature:()
+ISharedObjectPool::Initialize	ISharedObjectPool.h	/^	CStatus Initialize();$/;"	p	class:ISharedObjectPool	access:public	signature:()
+ISharedObjectPool::InitializeASharedObject	ISharedObjectPool.h	/^	virtual CStatus InitializeASharedObject(SSharedObjectHead * pObject) = 0;$/;"	p	class:ISharedObjectPool	access:public	signature:(SSharedObjectHead * pObject)
+ISharedObjectPool::ReleaseASharedObject	ISharedObjectPool.h	/^	CStatus ReleaseASharedObject(const char * pstrSharedObjectName);$/;"	p	class:ISharedObjectPool	access:public	signature:(const char * pstrSharedObjectName)
+ISharedObjectPool::m_nItemSize	ISharedObjectPool.h	/^	unsigned int m_nItemSize;$/;"	m	class:ISharedObjectPool	access:protected
+ISharedObjectPool::m_pSharedMemory	ISharedObjectPool.h	/^	CSharedMemory * m_pSharedMemory;$/;"	m	class:ISharedObjectPool	access:protected
+ISharedObjectPool::m_pSharedObjects	ISharedObjectPool.h	/^	SSharedObjectHead * m_pSharedObjects;$/;"	m	class:ISharedObjectPool	access:protected
+ISharedObjectPool::m_strSharedSpaceName	ISharedObjectPool.h	/^	string m_strSharedSpaceName;$/;"	m	class:ISharedObjectPool	access:protected
+ISharedObjectPool::~ISharedObjectPool	ISharedObjectPool.h	/^	virtual ~ISharedObjectPool();$/;"	p	class:ISharedObjectPool	access:public	signature:()
 ISharedObjects	ISharedObjects.h	/^	ISharedObjects();$/;"	p	class:ISharedObjects	access:public	signature:()
 ISharedObjects	ISharedObjects.h	/^class ISharedObjects$/;"	c
 ISharedObjects::Destroy	ISharedObjects.h	/^	CStatus Destroy();$/;"	p	class:ISharedObjects	access:public	signature:()
@@ -351,6 +467,7 @@ ISharedObjects::m_pSharedMemory	ISharedObjects.h	/^	CSharedMemory * m_pSharedMem
 ISharedObjects::m_pSharedObjects	ISharedObjects.h	/^	SSharedObjectHead * m_pSharedObjects;$/;"	m	class:ISharedObjects	access:protected
 ISharedObjects::m_strSharedSpaceName	ISharedObjects.h	/^	string m_strSharedSpaceName;$/;"	m	class:ISharedObjects	access:protected
 ISharedObjects::~ISharedObjects	ISharedObjects.h	/^	virtual ~ISharedObjects();$/;"	p	class:ISharedObjects	access:public	signature:()
+ISharedObjects_H	ISharedObjectPool.h	5;"	d
 ISharedObjects_H	ISharedObjects.h	5;"	d
 IUsrBizForExecObj	IUsrBizForExecObj.h	/^	IUsrBizForExecObj();$/;"	p	class:IUsrBizForExecObj	access:public	signature:()
 IUsrBizForExecObj	IUsrBizForExecObj.h	/^	IUsrBizForExecObj(const IUsrBizForExecObj &);$/;"	p	class:IUsrBizForExecObj	access:private	signature:(const IUsrBizForExecObj &)
@@ -364,30 +481,42 @@ Initialize	CLibExecInitializer.h	/^	static CStatus Initialize();$/;"	p	class:CLi
 Initialize	CMsgLoopManager.h	/^	virtual CStatus Initialize()=0;$/;"	p	class:CMsgLoopManager	access:protected	signature:()
 Initialize	CMsgLoopMgrUsingUsrDefQueue.h	/^	virtual CStatus Initialize();$/;"	p	class:CMsgLoopMgrUsingUsrDefQueue	access:public	signature:()
 Initialize	CMsgObserver.h	/^	virtual CStatus Initialize(CMsgLoopManager * pMsgLoopMgr,void * pContext) =0;$/;"	p	class:CMsgObserver	access:public	signature:(CMsgLoopManager * pMsgLoopMgr,void * pContext)
+Initialize	CMutexByPThread.cpp	/^CLStatus CLMutexByPThread::Initialize()$/;"	f	class:CLMutexByPThread	signature:()
 Initialize	CMutexByPThread.h	/^	virtual CStatus Initialize();$/;"	p	class:CMutexByPThread	access:public	signature:()
 Initialize	CMutexByRecordLocking.h	/^	virtual CStatus Initialize();$/;"	p	class:CMutexByRecordLocking	access:public	signature:()
 Initialize	CMutexByRecordLockingAndPThread.h	/^	virtual CStatus Initialize();$/;"	p	class:CMutexByRecordLockingAndPThread	access:public	signature:()
+Initialize	CMutexBySharedPThread.h	/^	virtual CStatus Initialize();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
 Initialize	CMutexInterface.h	/^	virtual CStatus Initialize() = 0;$/;"	p	class:CMutexInterface	access:public	signature:()
+Initialize	ISharedObjectPool.h	/^	CStatus Initialize();$/;"	p	class:ISharedObjectPool	access:public	signature:()
 Initialize	ISharedObjects.h	/^	CStatus Initialize();$/;"	p	class:ISharedObjects	access:public	signature:()
+InitializeASharedObject	CSharedMutexPool.h	/^	virtual CStatus InitializeASharedObject(SSharedObjectHead * pObject);$/;"	p	class:CSharedMutexPool	access:public	signature:(SSharedObjectHead * pObject)
+InitializeASharedObject	ISharedObjectPool.h	/^	virtual CStatus InitializeASharedObject(SSharedObjectHead * pObject) = 0;$/;"	p	class:ISharedObjectPool	access:public	signature:(SSharedObjectHead * pObject)
 InitializeMemberVars	CStatus.h	/^	void InitializeMemberVars(int iReturnCode, int iErrorCode, const char * pErrorMsg);$/;"	p	class:CStatus	access:private	signature:(int iReturnCode, int iErrorCode, const char * pErrorMsg)
+InitializeSharedObject	CSharedConditionVariablePool.h	/^	virtual CStatus InitializeSharedObject(SSharedObjectHead *pObject);$/;"	p	class:CSharedConditionVariablePool	access:public	signature:(SSharedObjectHead *pObject)
 InitializeSharedObjectItem	ISharedObjects.h	/^	virtual CStatus InitializeSharedObjectItem(SSharedObjectHead * pObject) = 0;$/;"	p	class:ISharedObjects	access:public	signature:(SSharedObjectHead * pObject)
 IsEmpty	CUsrDefMsgQueue.h	/^	bool IsEmpty();$/;"	p	class:CUsrDefMsgQueue	access:public	signature:()
 IsFull	CUsrDefMsgQueue.h	/^ 	bool IsFull();$/;"	p	class:CUsrDefMsgQueue	access:public	signature:()
 IsInitialSuccess	CThreadInitFinishedNotifier.h	/^	virtual bool IsInitialSuccess();$/;"	p	class:CThreadInitFinishedNotifier	access:public	signature:()
 IsInitialSuccess	IInitFinishedNotifier.h	/^	virtual bool IsInitialSuccess() = 0;$/;"	p	class:IInitFinishedNotifier	access:public	signature:()
 IsSuccess	CStatus.h	/^	bool IsSuccess();$/;"	p	class:CStatus	access:public	signature:()
-LENGTH_OF_SHARED_OBJECT_NAME	ISharedObjects.h	14;"	d
+LENGTH_OF_SHARED_OBJECT_NAME	ISharedObjectPool.h	14;"	d
+LENGTH_OF_SHARED_OBJECT_NAME	ISharedObjects.h	9;"	d
+LIBHEADFILEALLINONE_H	LibHeadFileAllInOne.h	4;"	d
 Lock	CMutex.h	/^	CStatus Lock();$/;"	p	class:CMutex	access:public	signature:()
+Lock	CMutexByPThread.cpp	/^CLStatus CLMutexByPThread::Lock()$/;"	f	class:CLMutexByPThread	signature:()
 Lock	CMutexByPThread.h	/^	virtual CStatus Lock();$/;"	p	class:CMutexByPThread	access:public	signature:()
 Lock	CMutexByRecordLocking.h	/^	virtual CStatus Lock();$/;"	p	class:CMutexByRecordLocking	access:public	signature:()
 Lock	CMutexByRecordLockingAndPThread.h	/^	virtual CStatus Lock();$/;"	p	class:CMutexByRecordLockingAndPThread	access:public	signature:()
+Lock	CMutexBySharedPThread.h	/^	virtual CStatus Lock();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
 Lock	CMutexInterface.h	/^	virtual CStatus Lock() = 0;$/;"	p	class:CMutexInterface	access:public	signature:()
-MAGIC_NUMBER_FOR_SHARED_OBJECT	ISharedObjects.h	21;"	d
+MAGIC_NUMBER_FOR_SHARED_OBJECT	ISharedObjectPool.h	21;"	d
+MAGIC_NUMBER_FOR_SHARED_OBJECT	ISharedObjects.h	16;"	d
 MESSAGEIDTABLE_H	MessageIDTable.h	3;"	d
 MUTEX_USE_RECORD_LOCK	CMutex.h	9;"	d
 MUTEX_USE_RECORD_LOCK_AND_PTHREAD	CMutex.h	10;"	d
 MUTEX_USE_SHARED_PTHREAD	CMutex.h	11;"	d
-NUMBER_OF_SHARED_OBJECT	ISharedObjects.h	20;"	d
+NUMBER_OF_SHARED_OBJECT	ISharedObjectPool.h	20;"	d
+NUMBER_OF_SHARED_OBJECT	ISharedObjects.h	15;"	d
 NotifyInitialFinished	CThreadInitFinishedNotifier.h	/^	virtual CStatus NotifyInitialFinished(bool bIsSuccess);$/;"	p	class:CThreadInitFinishedNotifier	access:public	signature:(bool bIsSuccess)
 NotifyInitialFinished	IInitFinishedNotifier.h	/^	virtual CStatus NotifyInitialFinished(bool bIsSuccess) = 0;$/;"	p	class:IInitFinishedNotifier	access:public	signature:(bool bIsSuccess)
 Pop	CUsrDefMsgQueue.h	/^	CMessage * Pop();$/;"	p	class:CUsrDefMsgQueue	access:private	signature:()
@@ -396,10 +525,16 @@ PostMessage	ICommunicationObject.h	/^	virtual CStatus PostMessage(CMessage * pMs
 Push	CUsrDefMsgQueue.h	/^	CStatus Push(CMessage * pMsg);$/;"	p	class:CUsrDefMsgQueue	access:private	signature:(CMessage * pMsg)
 PushMessage	CUsrDefMsgQueue.h	/^	CStatus PushMessage(CMessage * pMsg);$/;"	p	class:CUsrDefMsgQueue	access:public	signature:(CMessage * pMsg)
 QUIT_MESSAGE_LOOP	MessageIDTable.h	7;"	d
+RefCount	ISharedObjectPool.h	/^	int RefCount;$/;"	m	struct:SSharedObjectHead	access:public
 RefCount	ISharedObjects.h	/^	int RefCount;$/;"	m	struct:SSharedObjectHead	access:public
 Register	CCommunicationNameServer.h	/^	CStatus Register(const char * strCommObjName,ICommunicationObject * pCommObj);$/;"	p	class:CCommunicationNameServer	access:public	signature:(const char * strCommObjName,ICommunicationObject * pCommObj)
 Register	CMsgLoopManager.h	/^	virtual CStatus Register(unsigned int iMsgTypeID,CallBackFunctionOfMsgObserver pFunction);$/;"	p	class:CMsgLoopManager	access:public	signature:(unsigned int iMsgTypeID,CallBackFunctionOfMsgObserver pFunction)
+Release	CSharedCondVarManager.h	/^	static CStatus Release(const char *pstrCondName);$/;"	p	class:CSharedCondVarManager	access:public	signature:(const char *pstrCondName)
+Release	CSharedMutexPoolManager.h	/^	static CStatus Release(const char *pstrMutexName);$/;"	p	class:CSharedMutexPoolManager	access:public	signature:(const char *pstrMutexName)
+ReleaseASharedMutex	CSharedMutexPoolManager.h	/^	CStatus ReleaseASharedMutex(const char *pstrMutexName);$/;"	p	class:CSharedMutexPoolManager	access:public	signature:(const char *pstrMutexName)
+ReleaseASharedObject	ISharedObjectPool.h	/^	CStatus ReleaseASharedObject(const char * pstrSharedObjectName);$/;"	p	class:ISharedObjectPool	access:public	signature:(const char * pstrSharedObjectName)
 ReleaseCommunicationObject	CCommunicationNameServer.h	/^	CStatus ReleaseCommunicationObject(const char * strCommObjName);$/;"	p	class:CCommunicationNameServer	access:public	signature:(const char * strCommObjName)
+ReleaseSharedCond	CSharedCondVarManager.h	/^	CStatus ReleaseSharedCond(const char *pstrCondName);$/;"	p	class:CSharedCondVarManager	access:public	signature:(const char *pstrCondName)
 ReleaseSharedObject	ISharedObjects.h	/^	CStatus ReleaseSharedObject(const char * pstrSharedObjectName);$/;"	p	class:ISharedObjects	access:public	signature:(const char * pstrSharedObjectName)
 Run	CExecutiveObject.h	/^	virtual CStatus Run(void * pContext) = 0;$/;"	p	class:CExecutiveObject	access:public	signature:(void * pContext)
 Run	CProcess.h	/^	virtual CStatus Run(void * pContext);$/;"	p	class:CProcess	access:public	signature:(void * pContext)
@@ -412,26 +547,42 @@ RunClientBusiness	CUsrBizUsingMsgLoop.h	/^	virtual CStatus RunClientBusiness(voi
 RunClientBusiness	IUsrBizForExecObj.h	/^	virtual CStatus RunClientBusiness(void * pContext) = 0;$/;"	p	class:IUsrBizForExecObj	access:public	signature:(void * pContext)
 SCommunicationPtrCount	CCommunicationNameServer.h	/^}SCommunicationPtrCount;$/;"	t	typeref:struct:__anon1
 SInitialParameter	CThreadUsingMsgLoop.h	/^}SInitialParameter;$/;"	t	typeref:struct:__anon2
+SSharedConditionVariableItem	CSharedConditionVariablePool.h	/^struct SSharedConditionVariableItem$/;"	s
+SSharedConditionVariableItem::cond	CSharedConditionVariablePool.h	/^	pthread_cond_t cond;$/;"	m	struct:SSharedConditionVariableItem	access:public
+SSharedConditionVariableItem::head	CSharedConditionVariablePool.h	/^	SLSharedObjectHead head;$/;"	m	struct:SSharedConditionVariableItem	access:public
+SSharedMutexItem	CSharedMutexPool.h	/^struct SSharedMutexItem$/;"	s
+SSharedMutexItem::head	CSharedMutexPool.h	/^	SSharedObjectHead head;$/;"	m	struct:SSharedMutexItem	access:public
+SSharedMutexItem::mutex	CSharedMutexPool.h	/^	pthread_mutex_t mutex;$/;"	m	struct:SSharedMutexItem	access:public
+SSharedObjectHead	ISharedObjectPool.h	/^struct SSharedObjectHead$/;"	s
 SSharedObjectHead	ISharedObjects.h	/^struct SSharedObjectHead$/;"	s
+SSharedObjectHead::RefCount	ISharedObjectPool.h	/^	int RefCount;$/;"	m	struct:SSharedObjectHead	access:public
 SSharedObjectHead::RefCount	ISharedObjects.h	/^	int RefCount;$/;"	m	struct:SSharedObjectHead	access:public
+SSharedObjectHead::Status	ISharedObjectPool.h	/^	int Status;$/;"	m	struct:SSharedObjectHead	access:public
 SSharedObjectHead::Status	ISharedObjects.h	/^	int Status;$/;"	m	struct:SSharedObjectHead	access:public
+SSharedObjectHead::strSharedObjectName	ISharedObjectPool.h	/^	char strSharedObjectName[];$/;"	m	struct:SSharedObjectHead	access:public
 SSharedObjectHead::strSharedObjectName	ISharedObjects.h	/^	char strSharedObjectName[];$/;"	m	struct:SSharedObjectHead	access:public
 SendMessage	CCommunicationNameServer.h	/^	static CStatus SendMessage(const char * strCommObjName, CMessage * pMessage);$/;"	p	class:CCommunicationNameServer	access:public	signature:(const char * strCommObjName, CMessage * pMessage)
 Set	CEvent.h	/^	CStatus Set();$/;"	p	class:CEvent	access:public	signature:()
 SetWorkDirectory	CUsrBizForProcess.h	/^	CStatus SetWorkDirectory(char * pstrArgv0);$/;"	p	class:CUsrBizForProcess	access:private	signature:(char * pstrArgv0)
 StartFunctionOfThread	CThread.h	/^	static void * StartFunctionOfThread(void * pContext);$/;"	p	class:CThread	access:private	signature:(void * pContext)
+Status	ISharedObjectPool.h	/^	int Status;$/;"	m	struct:SSharedObjectHead	access:public
 Status	ISharedObjects.h	/^	int Status;$/;"	m	struct:SSharedObjectHead	access:public
-UNINITIALIZED_SHARED_OBJECT	ISharedObjects.h	16;"	d
+UNINITIALIZED_SHARED_OBJECT	ISharedObjectPool.h	16;"	d
+UNINITIALIZED_SHARED_OBJECT	ISharedObjects.h	11;"	d
 Uninitialize	CMsgLoopManager.h	/^	virtual CStatus Uninitialize()=0;$/;"	p	class:CMsgLoopManager	access:protected	signature:()
 Uninitialize	CMsgLoopMgrUsingUsrDefQueue.h	/^	virtual CStatus Uninitialize();$/;"	p	class:CMsgLoopMgrUsingUsrDefQueue	access:public	signature:()
+Uninitialize	CMutexByPThread.cpp	/^CLStatus CLMutexByPThread::Uninitialize()$/;"	f	class:CLMutexByPThread	signature:()
 Uninitialize	CMutexByPThread.h	/^	virtual CStatus Uninitialize();$/;"	p	class:CMutexByPThread	access:public	signature:()
 Uninitialize	CMutexByRecordLocking.h	/^	virtual CStatus Uninitialize();$/;"	p	class:CMutexByRecordLocking	access:public	signature:()
 Uninitialize	CMutexByRecordLockingAndPThread.h	/^	virtual CStatus Uninitialize();$/;"	p	class:CMutexByRecordLockingAndPThread	access:public	signature:()
+Uninitialize	CMutexBySharedPThread.h	/^	virtual CStatus Uninitialize();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
 Uninitialize	CMutexInterface.h	/^	virtual CStatus Uninitialize() = 0;$/;"	p	class:CMutexInterface	access:public	signature:()
 Unlock	CMutex.h	/^	CStatus Unlock();$/;"	p	class:CMutex	access:public	signature:()
+Unlock	CMutexByPThread.cpp	/^CLStatus CLMutexByPThread::Unlock()$/;"	f	class:CLMutexByPThread	signature:()
 Unlock	CMutexByPThread.h	/^	virtual CStatus Unlock();$/;"	p	class:CMutexByPThread	access:public	signature:()
 Unlock	CMutexByRecordLocking.h	/^	virtual CStatus Unlock();$/;"	p	class:CMutexByRecordLocking	access:public	signature:()
 Unlock	CMutexByRecordLockingAndPThread.h	/^	virtual CStatus Unlock();$/;"	p	class:CMutexByRecordLockingAndPThread	access:public	signature:()
+Unlock	CMutexBySharedPThread.h	/^	virtual CStatus Unlock();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
 Unlock	CMutexInterface.h	/^	virtual CStatus Unlock() = 0;$/;"	p	class:CMutexInterface	access:public	signature:()
 UseAsRecordCondVar	CEvent.h	/^	CStatus UseAsRecordCondVar(bool b);$/;"	p	class:CEvent	access:public	signature:(bool b)
 Wait	CConditionVariable.h	/^	CStatus Wait(CMutex * pMutex);$/;"	p	class:CConditionVariable	access:public	signature:(CMutex * pMutex)
@@ -448,8 +599,10 @@ __anon1::iConnectionCount	CCommunicationNameServer.h	/^	unsigned int iConnection
 __anon1::pCommObj	CCommunicationNameServer.h	/^	ICommunicationObject * pCommObj;$/;"	m	struct:__anon1	access:public
 __anon2::pContext	CThreadUsingMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon2	access:public
 __anon2::pNotifier	CThreadUsingMsgLoop.h	/^ 	CThreadInitFinishedNotifier *  pNotifier;$/;"	m	struct:__anon2	access:public
+cond	CSharedConditionVariablePool.h	/^	pthread_cond_t cond;$/;"	m	struct:SSharedConditionVariableItem	access:public
+head	CSharedConditionVariablePool.h	/^	SLSharedObjectHead head;$/;"	m	struct:SSharedConditionVariableItem	access:public
+head	CSharedMutexPool.h	/^	SSharedObjectHead head;$/;"	m	struct:SSharedMutexItem	access:public
 iConnectionCount	CCommunicationNameServer.h	/^	unsigned int iConnectionCount;$/;"	m	struct:__anon1	access:public
-m_Cond	CConditionVariable.h	/^	pthread_cond_t m_Cond;$/;"	m	class:CConditionVariable	access:private
 m_Cond	CEvent.h	/^	CConditionVariable m_Cond;$/;"	m	class:CEvent	access:private
 m_Event	CUsrDefMsgQueue.h	/^	CEvent m_Event;$/;"	m	class:CUsrDefMsgQueue	access:private
 m_EventForWaitingForNewThread	CThread.h	/^	CEvent m_EventForWaitingForNewThread;$/;"	m	class:CThread	access:private
@@ -462,6 +615,7 @@ m_Mutex	CUsrDefMsgQueue.h	/^	CMutex m_Mutex;$/;"	m	class:CUsrDefMsgQueue	access:
 m_MutexForCreatingInstance	CCommunicationNameServer.h	/^	static CMutex  m_MutexForCreatingInstance;$/;"	m	class:CCommunicationNameServer	access:private
 m_MutexForInitializer	CLibExecInitializer.h	/^	static pthread_mutex_t m_MutexForInitializer;$/;"	m	class:CLibExecInitializer	access:private
 m_MutexForNameTable	CCommunicationNameServer.h	/^	CMutex m_MutexForNameTable;$/;"	m	class:CCommunicationNameServer	access:private
+m_MutexForSharedMutex	CSharedMutexPoolManager.h	/^	static pthread_mutex_t m_MutexForSharedMutex;$/;"	m	class:CSharedMutexPoolManager	access:private
 m_NameTable	CCommunicationNameServer.h	/^	std::map<std::string,SCommunicationPtrCount *> m_NameTable;$/;"	m	class:CCommunicationNameServer	access:private
 m_ProcessID	CProcess.h	/^	pid_t m_ProcessID;$/;"	m	class:CProcess	access:private
 m_ProcessMutex	CMutexByRecordLockingAndPThread.h	/^	CMutex m_ProcessMutex;$/;"	m	class:CMutexByRecordLockingAndPThread	access:private
@@ -473,6 +627,7 @@ m_bExecSuccess	CProcess.h	/^	bool m_bExecSuccess;$/;"	m	class:CProcess	access:pr
 m_bInitialized	CLibExecInitializer.h	/^	static bool m_bInitialized;$/;"	m	class:CLibExecInitializer	access:private
 m_bIsRecordCondVar	CEvent.h	/^	bool m_bIsRecordCondVar;$/;"	m	class:CEvent	access:private
 m_bIsSucess	CThreadInitFinishedNotifier.h	/^	bool m_bIsSucess;$/;"	m	class:CThreadInitFinishedNotifier	access:private
+m_bNeedDestroy	CConditionVariable.h	/^	bool m_bNeedDestroy;$/;"	m	class:CConditionVariable	access:private
 m_bNeedDestroy	CMutexByPThread.h	/^	bool m_bNeedDestroy;$/;"	m	class:CMutexByPThread	access:private
 m_bProcessCreated	CProcess.h	/^	bool m_bProcessCreated;$/;"	m	class:CProcess	access:private
 m_bThreadCreated	CThread.h	/^	bool m_bThreadCreated;$/;"	m	class:CThread	access:private
@@ -489,7 +644,9 @@ m_iQueueTail	CUsrDefMsgQueue.h	/^	int m_iQueueTail;$/;"	m	class:CUsrDefMsgQueue	
 m_iReturnCode	CStatus.h	/^	int m_iReturnCode;$/;"	m	class:CStatus	access:private
 m_iTotalRoom	CUsrDefMsgQueue.h	/^	int m_iTotalRoom;$/;"	m	class:CUsrDefMsgQueue	access:private
 m_lMsgID	CMessage.h	/^	unsigned long m_lMsgID;$/;"	m	class:CMessage	access:protected
+m_nItemSize	ISharedObjectPool.h	/^	unsigned int m_nItemSize;$/;"	m	class:ISharedObjectPool	access:protected
 m_nItemSize	ISharedObjects.h	/^	unsigned int m_nItemSize;$/;"	m	class:ISharedObjects	access:protected
+m_pConditionVariable	CConditionVariable.h	/^	pthread_cond_t * m_pConditionVariable;$/;"	m	class:CConditionVariable	access:private
 m_pContext	CThread.h	/^	void * m_pContext;$/;"	m	class:CThread	access:private
 m_pErrorMsg	CStatus.h	/^	char * m_pErrorMsg;$/;"	m	class:CStatus	access:private
 m_pEvent	CThreadInitFinishedNotifier.h	/^	CEvent * m_pEvent;$/;"	m	class:CThreadInitFinishedNotifier	access:private
@@ -499,29 +656,45 @@ m_pMsgQueue	CCommunicationByMsgQueue.h	/^	CUsrDefMsgQueue * m_pMsgQueue;$/;"	m	c
 m_pMutex	CEnterCriticalSection.h	/^	CMutex * m_pMutex;$/;"	m	class:CEnterCriticalSection	access:private
 m_pMutex	CMutex.h	/^	CMutexInterface * m_pMutex;$/;"	m	class:CMutex	access:private
 m_pMutex	CMutexByPThread.h	/^	pthread_mutex_t * m_pMutex;$/;"	m	class:CMutexByPThread	access:private
+m_pMutex	CMutexBySharedPThread.h	/^	pthread_mutex_t *m_pMutex;$/;"	m	class:CMutexBySharedPThread	access:private
 m_pNameServer	CCommunicationNameServer.h	/^	static CCommunicationNameServer * m_pNameServer; 	$/;"	m	class:CCommunicationNameServer	access:private
 m_pQueue	CMsgLoopMgrUsingUsrDefQueue.h	/^	CUsrDefMsgQueue * m_pQueue;$/;"	m	class:CMsgLoopMgrUsingUsrDefQueue	access:private
 m_pQueueSpace	CUsrDefMsgQueue.h	/^	CMessage ** m_pQueueSpace;$/;"	m	class:CUsrDefMsgQueue	access:private
+m_pShCondVarMgr	CSharedCondVarManager.h	/^	static CSharedCondVarManager *m_pShCondVarMgr;$/;"	m	class:CSharedCondVarManager	access:private
+m_pShCondVarPool	CSharedCondVarManager.h	/^	CSharedConditionVariablePool *m_pShCondVarPool;$/;"	m	class:CSharedCondVarManager	access:private
+m_pShMutexPool	CSharedMutexPoolManager.h	/^	CSharedMutexPool *m_pShMutexPool;$/;"	m	class:CSharedMutexPoolManager	access:private
+m_pShMutexPoolMgr	CSharedMutexPoolManager.h	/^	static CSharedMutexPoolManager *m_pShMutexPoolMgr;$/;"	m	class:CSharedMutexPoolManager	access:private
 m_pSharedMemory	CSharedMemory.h	/^	void * m_pSharedMemory;$/;"	m	class:CSharedMemory	access:private
+m_pSharedMemory	ISharedObjectPool.h	/^	CSharedMemory * m_pSharedMemory;$/;"	m	class:ISharedObjectPool	access:protected
 m_pSharedMemory	ISharedObjects.h	/^	CSharedMemory * m_pSharedMemory;$/;"	m	class:ISharedObjects	access:protected
+m_pSharedObjects	ISharedObjectPool.h	/^	SSharedObjectHead * m_pSharedObjects;$/;"	m	class:ISharedObjectPool	access:protected
 m_pSharedObjects	ISharedObjects.h	/^	SSharedObjectHead * m_pSharedObjects;$/;"	m	class:ISharedObjects	access:protected
 m_pThread	CThreadUsingMsgLoop.h	/^	CThread * m_pThread;$/;"	m	class:CThreadUsingMsgLoop	access:private
 m_pUsrBiz	CUseMsgLoopWithoutThread.h	/^	IUsrBizForExecObj * m_pUsrBiz;$/;"	m	class:CUseMsgLoopWithoutThread	access:private
 m_pUsrBizForExecObj	CExecutiveObject.h	/^	IUsrBizForExecObj * m_pUsrBizForExecObj;$/;"	m	class:CExecutiveObject	access:protected
+m_strCondName	CConditionVariable.h	/^	string m_strCondName;$/;"	m	class:CConditionVariable	access:private
 m_strFileName	CMutexByRecordLocking.h	/^	string m_strFileName;$/;"	m	class:CMutexByRecordLocking	access:private
+m_strMutexName	CMutexBySharedPThread.h	/^	string m_strMutexName;$/;"	m	class:CMutexBySharedPThread	access:private
+m_strSharedSpaceName	ISharedObjectPool.h	/^	string m_strSharedSpaceName;$/;"	m	class:ISharedObjectPool	access:protected
 m_strSharedSpaceName	ISharedObjects.h	/^	string m_strSharedSpaceName;$/;"	m	class:ISharedObjects	access:protected
 m_strThreadName	CMsgLoopMgrUsingUsrDefQueue.h	/^	std::string m_strThreadName;$/;"	m	class:CMsgLoopMgrUsingUsrDefQueue	access:private
+mutex	CSharedMutexPool.h	/^	pthread_mutex_t mutex;$/;"	m	struct:SSharedMutexItem	access:public
 operator =	CLibExecInitializer.h	/^	CLibExecInitializer& operator=(const CLibExecInitializer &);$/;"	p	class:CLibExecInitializer	access:private	signature:(const CLibExecInitializer &)
 operator =	CMessage.h	/^	CMessage & operator=(const CMessage & cm);$/;"	p	class:CMessage	access:public	signature:(const CMessage & cm)
 operator =	CMutexByPThread.h	/^	CMutexByPThread & operator=(const CMutexByPThread &);$/;"	p	class:CMutexByPThread	access:private	signature:(const CMutexByPThread &)
 operator =	CMutexByRecordLocking.h	/^	CMutexByRecordLocking & operator=(const CMutexByRecordLocking &);$/;"	p	class:CMutexByRecordLocking	access:private	signature:(const CMutexByRecordLocking &)
 operator =	CMutexByRecordLockingAndPThread.h	/^	CMutexByRecordLockingAndPThread & operator =(const CMutexByRecordLockingAndPThread &);$/;"	p	class:CMutexByRecordLockingAndPThread	access:private	signature:(const CMutexByRecordLockingAndPThread &)
+operator =	CMutexBySharedPThread.h	/^	CMutexBySharedPThread& operator=(const CMutexBySharedPThread&);$/;"	p	class:CMutexBySharedPThread	access:private	signature:(const CMutexBySharedPThread&)
 operator =	CMutexInterface.h	/^	CMutexInterface & operator=(const CMutexInterface &);$/;"	p	class:CMutexInterface	access:private	signature:(const CMutexInterface &)
+operator =	CSharedCondVarManager.h	/^	CSharedCondVarManager& operator=(const CSharedCondVarManager&);$/;"	p	class:CSharedCondVarManager	access:private	signature:(const CSharedCondVarManager&)
+operator =	CSharedConditionVariablePool.h	/^	CSharedConditionVariablePool& operator=(const CSharedConditionVariablePool&);$/;"	p	class:CSharedConditionVariablePool	access:private	signature:(const CSharedConditionVariablePool&)
 operator =	CSharedMemory.h	/^	CSharedMemory & operator=(const CSharedMemory &);$/;"	p	class:CSharedMemory	access:private	signature:(const CSharedMemory &)
+operator =	CSharedMutexPoolManager.h	/^	CSharedMutexPoolManager& operator=(const CSharedMutexPoolManager&);$/;"	p	class:CSharedMutexPoolManager	access:private	signature:(const CSharedMutexPoolManager&)
 operator =	IUsrBizForExecObj.h	/^	IUsrBizForExecObj & operator = (const IUsrBizForExecObj &);$/;"	p	class:IUsrBizForExecObj	access:private	signature:(const IUsrBizForExecObj &)
 pCommObj	CCommunicationNameServer.h	/^	ICommunicationObject * pCommObj;$/;"	m	struct:__anon1	access:public
 pContext	CThreadUsingMsgLoop.h	/^	void * pContext;$/;"	m	struct:__anon2	access:public
 pNotifier	CThreadUsingMsgLoop.h	/^ 	CThreadInitFinishedNotifier *  pNotifier;$/;"	m	struct:__anon2	access:public
+strSharedObjectName	ISharedObjectPool.h	/^	char strSharedObjectName[];$/;"	m	struct:SSharedObjectHead	access:public
 strSharedObjectName	ISharedObjects.h	/^	char strSharedObjectName[];$/;"	m	struct:SSharedObjectHead	access:public
 ~CCommunicationByMsgQueue	CCommunicationByMsgQueue.h	/^	virtual ~CCommunicationByMsgQueue();$/;"	p	class:CCommunicationByMsgQueue	access:public	signature:()
 ~CCommunicationNameServer	CCommunicationNameServer.h	/^	~CCommunicationNameServer();$/;"	p	class:CCommunicationNameServer	access:private	signature:()
@@ -529,6 +702,7 @@ strSharedObjectName	ISharedObjects.h	/^	char strSharedObjectName[];$/;"	m	struct
 ~CEnterCriticalSection	CEnterCriticalSection.h	/^	virtual ~CEnterCriticalSection();$/;"	p	class:CEnterCriticalSection	access:public	signature:()
 ~CEvent	CEvent.h	/^	~CEvent();$/;"	p	class:CEvent	access:public	signature:()
 ~CExecutiveObject	CExecutiveObject.h	/^	virtual ~CExecutiveObject();$/;"	p	class:CExecutiveObject	access:public	signature:()
+~CLMutexByPThread	CMutexByPThread.cpp	/^CLMutexByPThread::~CLMutexByPThread()$/;"	f	class:CLMutexByPThread	signature:()
 ~CLibExecInitializer	CLibExecInitializer.h	/^	~CLibExecInitializer();$/;"	p	class:CLibExecInitializer	access:private	signature:()
 ~CMessage	CMessage.h	/^	virtual ~CMessage();$/;"	p	class:CMessage	access:public	signature:()
 ~CMsgLoopManager	CMsgLoopManager.h	/^	virtual ~CMsgLoopManager();$/;"	p	class:CMsgLoopManager	access:public	signature:()
@@ -537,9 +711,14 @@ strSharedObjectName	ISharedObjects.h	/^	char strSharedObjectName[];$/;"	m	struct
 ~CMutex	CMutex.h	/^	virtual ~CMutex();$/;"	p	class:CMutex	access:public	signature:()
 ~CMutexByPThread	CMutexByPThread.h	/^	virtual ~CMutexByPThread();$/;"	p	class:CMutexByPThread	access:public	signature:()
 ~CMutexByRecordLocking	CMutexByRecordLocking.h	/^	virtual ~CMutexByRecordLocking();$/;"	p	class:CMutexByRecordLocking	access:public	signature:()
+~CMutexBySharedPThread	CMutexBySharedPThread.h	/^	virtual ~CMutexBySharedPThread();$/;"	p	class:CMutexBySharedPThread	access:public	signature:()
 ~CMutexInterface	CMutexInterface.h	/^	virtual ~CMutexInterface();$/;"	p	class:CMutexInterface	access:public	signature:()
 ~CProcess	CProcess.h	/^	~CProcess();$/;"	p	class:CProcess	access:public	signature:()
+~CSharedCondVarManager	CSharedCondVarManager.h	/^	virtual ~CSharedCondVarManager();$/;"	p	class:CSharedCondVarManager	access:private	signature:()
+~CSharedConditionVariablePool	CSharedConditionVariablePool.h	/^	virtual ~CSharedConditionVariablePool();$/;"	p	class:CSharedConditionVariablePool	access:private	signature:()
 ~CSharedMemory	CSharedMemory.h	/^	virtual ~CSharedMemory();$/;"	p	class:CSharedMemory	access:public	signature:()
+~CSharedMutexPool	CSharedMutexPool.h	/^	virtual ~CSharedMutexPool();$/;"	p	class:CSharedMutexPool	access:private	signature:()
+~CSharedMutexPoolManager	CSharedMutexPoolManager.h	/^	virtual ~CSharedMutexPoolManager();$/;"	p	class:CSharedMutexPoolManager	access:private	signature:()
 ~CStatus	CStatus.h	/^	virtual ~CStatus();$/;"	p	class:CStatus	access:public	signature:()
 ~CThread	CThread.h	/^	virtual ~CThread();$/;"	p	class:CThread	access:public	signature:()
 ~CThreadInitFinishedNotifier	CThreadInitFinishedNotifier.h	/^	virtual ~CThreadInitFinishedNotifier();$/;"	p	class:CThreadInitFinishedNotifier	access:public	signature:()
@@ -549,5 +728,6 @@ strSharedObjectName	ISharedObjects.h	/^	char strSharedObjectName[];$/;"	m	struct
 ~CUsrBizUsingMsgLoop	CUsrBizUsingMsgLoop.h	/^	virtual ~CUsrBizUsingMsgLoop();$/;"	p	class:CUsrBizUsingMsgLoop	access:public	signature:()
 ~CUsrDefMsgQueue	CUsrDefMsgQueue.h	/^	virtual ~CUsrDefMsgQueue();$/;"	p	class:CUsrDefMsgQueue	access:public	signature:()
 ~ICommunicationObject	ICommunicationObject.h	/^	virtual ~ICommunicationObject();$/;"	p	class:ICommunicationObject	access:public	signature:()
+~ISharedObjectPool	ISharedObjectPool.h	/^	virtual ~ISharedObjectPool();$/;"	p	class:ISharedObjectPool	access:public	signature:()
 ~ISharedObjects	ISharedObjects.h	/^	virtual ~ISharedObjects();$/;"	p	class:ISharedObjects	access:public	signature:()
 ~IUsrBizForExecObj	IUsrBizForExecObj.h	/^	virtual ~IUsrBizForExecObj();$/;"	p	class:IUsrBizForExecObj	access:public	signature:()

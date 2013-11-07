@@ -61,7 +61,7 @@ CStatus ISharedObjectPool ::Initialize()
 		//如果头部地址的开始4个字节为0表示该数据头还没被初始化过
         if(pItem->Status == UNINITIALIZED_SHARED_OBJECT)
         {
-        	if(InitializeSharedObjectItem(pItem).IsSuccess())
+        	if(InitializeASharedObject(pItem).IsSuccess())
             {
               	pItem->Status = INITIALIZED_SHARED_OBJECT;
                 pItem->RefCount = 0;
@@ -84,7 +84,7 @@ CStatus ISharedObjectPool::Destroy()
         return CStatus(0, 0);
 }
 
-void *ISharedObjectPool :: GetSharedObjectItem(const char *pstrSharedObjectName)
+void *ISharedObjectPool :: GetASharedObject(const char *pstrSharedObjectName)
 {
 	int empty_index = -1;
     bool bfind_empty = false;
@@ -136,7 +136,7 @@ void *ISharedObjectPool :: GetSharedObjectItem(const char *pstrSharedObjectName)
     }
 }
 
-CStatus ISharedObjectPool::ReleaseSharedObject(const char *pstrSharedObjectName)
+CStatus ISharedObjectPool::ReleaseASharedObject(const char *pstrSharedObjectName)
 {
 	for(int i = 0; i < NUMBER_OF_SHARED_OBJECT; i++)
     {
@@ -150,12 +150,12 @@ CStatus ISharedObjectPool::ReleaseSharedObject(const char *pstrSharedObjectName)
 
                 if(pItem->RefCount == 0)
                 {
-                	DestroySharedObjectItem(pItem);
+                	DestroyASharedObject(pItem);
 
                     pItem->Status = UNINITIALIZED_SHARED_OBJECT;
                     memset(pItem->strSharedObjectName, 0, LENGTH_OF_SHARED_OBJECT_NAME);
 
-                    if(InitializeSharedObjectItem(pItem).IsSuccess())
+                    if(InitializeASharedObject(pItem).IsSuccess())
                     {
                             pItem->Status = INITIALIZED_SHARED_OBJECT;
                     }

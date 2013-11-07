@@ -48,13 +48,13 @@ public:
 	CStatus Initialize();
 	CStatus Destroy();
 
-	void * GetSharedObjectItem(const char * pstrSharedObjectName);  
-	CStatus ReleaseSharedObject(const char * pstrSharedObjectName);
+	void * GetASharedObject(const char * pstrSharedObjectName);  
+	CStatus ReleaseASharedObject(const char * pstrSharedObjectName);
 
 	//共享池中的每一个共享对象针对不同类型的共享对象可能都还要做不同的初始化和销毁
 	//工作，所以再提供两个虚函数给派生类，来实现具体的初始化和销毁
-	virtual CStatus InitializeSharedObjectItem(SSharedObjectHead * pObject) = 0;
-	virtual CStatus DestroySharedObjectItem(SSharedObjectHead * pObject) = 0;
+	virtual CStatus InitializeASharedObject(SSharedObjectHead * pObject) = 0;
+	virtual CStatus DestroyASharedObject(SSharedObjectHead * pObject) = 0;
 
 protected:
 	//指向共享池的首地址处 	

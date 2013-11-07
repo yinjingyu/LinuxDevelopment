@@ -16,13 +16,14 @@
  */
 
 #include "LibHeadFileAllInOne.h"
+#include "CUsrBizForProcess.h"
 
 using namespace std;
 
 
 int main()
 {
-	CExecutiveObject * p = new CProcess(new CUsrBizForProcess,true);
+	CExecutiveObject * p = new CProcess(new CUsrBizForProcess(),true);
 	if(!p->Run((void *)"./src/test/a.out").IsSuccess())
 	{
 		cout << "in main ,p->run failed"<<endl;

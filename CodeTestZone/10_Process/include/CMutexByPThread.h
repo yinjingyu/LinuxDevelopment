@@ -6,8 +6,9 @@
 
 #include <pthread.h>
 
+class CMutexUsingPThread;
 
-class CMutexByPThread : public CMutexInterface
+class CMutexByPThread : public CMutexUsingPThread
 {
 public:
 	CMutexByPThread();
@@ -22,7 +23,7 @@ public:
 
 	//返回指向pthread_mutex_t的指针供外部使用
 	//eg：在CConditionVariable里需要使用该指针
-	pthread_mutex_t * GetMutexPointer();
+	virtual pthread_mutex_t * GetMutexPointer();
 
 private:
 	CMutexByPThread(const CMutexByPThread &);

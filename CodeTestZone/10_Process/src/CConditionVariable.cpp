@@ -18,9 +18,12 @@
 
 #include "CConditionVariable.h"
 #include "CMutex.h"
+#include "IMutexUsingPThread.h"
 
 CConditionVariable::CConditionVariable()
 {
+	m_pConditionVariable = new pthread_cond_t;
+	m_bNeedDestroy = true;
 	int r = pthread_cond_init(&m_Cond,0);
 	if(0 != r)
 	{
@@ -28,12 +31,47 @@ CConditionVariable::CConditionVariable()
 	}
 }
 
+CConditionVariable::CConditionVariable(pthread_cond_t * pCond)
+{
+	if(pCond == 0)
+	{
+		cout << "In CConditionVariable::constructor,pCond is 0" << endl;
+		throw "";
+	}
+
+	m_pConditionVariable = pCond;
+	m_bNeedDestroy = false;
+}
+
+CConditionVariable::CConditionVariable(const char * pstrCondName)
+{
+	if(pstrCondName == 0 || strlen(pstrCondName) == 0)
+	
+		cout << "In CConditionVariable::Contrcutor,pstrCondName is 0"
+		throw "";
+	}
+	
+	m_strCondName = pstrCondName;	
+	m_bNeedDestroy = false;
+	m_pConditionVariable = CSharedCondVarManager::Get(pstrCondName);
+}
+
 CConditionVariable::~CConditionVariable()
 {
-	int r = pthread_cond_destroy(&m_Cond);
-	if(0 != r)
+	if(m_bNeedDestroy)
 	{
-		throw CStatus(-1,0,"int CConditionVariable of CConditionVariable : destroy CConditionVariable failed");
+		int r = pthread_cond_destroy(&m_Cond);
+	 	if(0 != r)
+	 	{
+	 		throw CStatus(-1,0,"int CConditionVariable of CConditionVariable : destroy CConditionVariable failed");
+	 	}
+	}
+
+	CStatus s = CSharedCondVarManager::Release(m_strCondName.c_str());
+	if(!s.IsSuccess())
+	{
+		cout << "In CConditionVariable::~CConditionVariable, CSharedCondVarManager::Release failed" << endl;
+		throw "";
 	}
 }
 
@@ -41,10 +79,20 @@ CStatus CConditionVariable::Wait(CMutex * pMutex)
 {
 	if(NULL == pMutex)
 	{
-		throw CStatus(-1,0,"in wait of CConditionVariable: paremeter is bad!");
+		return CStatus(-1,0,"in wait of CConditionVariable: paremeter is bad!");
 	}
 	
- 	int r = pthread_cond_wait(&m_Cond, &(pMutex->m_Mutex));
+	CMutexInterface * pInterface = pMutex->GetMutexInterface();
+	IMutexUsingPThread * p = dynamic_cast<IMutexUsingPThread *>pInterface;
+	
+	if( p == 0 )
+	{
+		cout << "In CConditionVariable::Wait , pMutex can not be changed to IMutexUsingPThread" <<endl;
+		return CStatus(-1,0);
+	}
+
+	
+	int r= pthread_cond_wait(&m_Cond,p->GetMutexPointer());
 	if( 0 !=  r)
 	{
 		return CStatus(-1,0,"in wait of CConditionVariable : wait failed");
@@ -73,25 +121,4 @@ CStatus CConditionVariable::WakeupAll()
 
 	return CStatus(0,0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

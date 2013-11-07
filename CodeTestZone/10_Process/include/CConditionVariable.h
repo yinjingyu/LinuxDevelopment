@@ -11,12 +11,22 @@
 class CConditionVariable
 {
 	private:
-	//Linux库提供的条件变量    
-	pthread_cond_t m_Cond;
+
+	pthread_cond_t * m_pConditionVariable;
+	
+	bool m_bNeedDestroy;
+
+	string m_strCondName;
 
 	public:
 
 	CConditionVariable();
+
+	//条件变量由外界传入	
+	CConditionVariable(pthrad_cond_t * pCond);
+
+	CConditionVariable(const char * pstrCondName);
+
 	virtual ~CConditionVariable();
 
 	//调用wait操作时，使用的互斥量必须由外界传入
