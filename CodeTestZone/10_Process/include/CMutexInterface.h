@@ -4,8 +4,7 @@
 #ifndef CMUTEXINTERFACE_H
 #define CMUTEXINTERFACE_H
 
-#include "LibHeadFileAllInOne.h"
-
+#include "CStatus.h"
 class CMutexInterface
 {
 public:

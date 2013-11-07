@@ -1,10 +1,11 @@
-
-
-
-#ifndef CMUTEXBYPTHREAD_H
+#ifndef CMUTEXBYPTHREAD_H 
 #define CMUTEXBYPTHREAD_H
 
-#include "LibHeadFileAllInOne.h"
+#include "CStatus.h"
+#include "CMutexInterface.h"
+
+#include <pthread.h>
+
 
 class CMutexByPThread : public CMutexInterface
 {

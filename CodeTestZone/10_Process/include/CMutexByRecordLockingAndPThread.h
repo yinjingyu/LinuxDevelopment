@@ -3,8 +3,9 @@
 #ifndef CMutexByRecordLockingAndPThread_H
 #define CMutexByRecordLockingAndPThread_H
 
-#include "LibHeadFileAllInOne.h"
-
+#include "CStatus.h"
+#include "CMutexInterface.h"
+#include "CMutex.h"
 
 /*
  * =====================================================================================
@@ -16,7 +17,7 @@ class CMutexByRecordLockingAndPThread : public CMutexInterface
 {
 public:
 	CMutexByRecordLockingAndPThread(const char * pstrFileName);
-	CMutexByRecordLockingAndPThread(const char * pstrFileName, pthread_mutex_t);
+	CMutexByRecordLockingAndPThread(const char * pstrFileName, pthread_mutex_t *pMutex);
 
 	virtual CStatus Initialize();
 	virtual CStatus Uninitialize();

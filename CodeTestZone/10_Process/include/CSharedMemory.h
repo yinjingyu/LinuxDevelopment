@@ -3,7 +3,8 @@
 #ifndef CSharedMemory_H
 #define CSharedMemory_H
 
-#include "LibHeadFileAllInOne.h"
+#include "CStatus.h"
+#include "CMutex.h"
 
 class CSharedMemory
 {
@@ -35,6 +36,6 @@ private:
 
 	//互斥的创建和销毁 “共享存储”
 	CMutex m_Mutex;
-}
+};
 
 #endif

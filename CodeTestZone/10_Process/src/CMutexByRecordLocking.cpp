@@ -16,7 +16,19 @@
  * =====================================================================================
  */
 
-#include "LibHeadFileAllInOne.h"
+#include <string>
+#include <sys/file.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <iostream>
+#include <string.h>
+
+#include "CMutexByRecordLocking.h"
+#include "CStatus.h"
+
+using namespace std;
 
 //记录锁存放的位置
 #define FILE_PATH_FOR_RECORD_LOCKING "/tmp/"

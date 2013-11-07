@@ -2,6 +2,12 @@
 #ifndef CMUTEXBYRECORDLOCKING_H
 #define CMUTEXBYRECORDLOCKING_H
 
+#include "CMutexInterface.h"
+#include "CStatus.h"
+
+#include <string>
+using namespace std;
+
 class CMutexByRecordLocking : public CMutexInterface
 {
 public:

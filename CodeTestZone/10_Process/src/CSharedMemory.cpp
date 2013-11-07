@@ -15,8 +15,21 @@
  * =====================================================================================
  */
 
-#include "LibHeadFileAllInOne.h"
-#include "../include/CSharedMemory.h"
+#include <string>
+#include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/ipc.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <sys/shm.h>
+#include <iostream>
+
+#include "CSharedMemory.h"
+#include "CStatus.h"
+#include "CEnterCriticalSection.h"
+
+using namespace std;
 
 #define ID_FOR_KEY 32
 #define FILE_PATH_FOR_SHARED_MEMORY "/tmp/"

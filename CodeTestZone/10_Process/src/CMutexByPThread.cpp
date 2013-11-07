@@ -16,8 +16,14 @@
  * =====================================================================================
  */
 
-#include "LibHeadFileAllInOne.h"
+#include <pthread.h>
+#include <iostream>
 
+
+#include "CStatus.h"
+#include "CMutexByPThread.h"
+
+using namespace std;
 
 /* 
  * ===  FUNCTION  ======================================================================

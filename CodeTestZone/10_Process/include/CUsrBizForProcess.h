@@ -3,6 +3,7 @@
 #ifndef CUSRBIZFORPROCESS_H
 #define CUSRBIZFORPROCESS_H
 
+#include "CStatus.h"
 #include "IUsrBizForExecObj.h"
 
 class CUsrBizForProcess : public IUsrBizForExecObj

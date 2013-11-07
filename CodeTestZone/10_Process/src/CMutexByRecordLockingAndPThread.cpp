@@ -15,8 +15,13 @@
  *
  * =====================================================================================
  */
+#include <iostream>
+#include <pthread.h>
 
-#include "LibHeadFileAllInOne.h"
+#include "CMutexByRecordLockingAndPThread.h"
+#include "CStatus.h"
+
+using namespace std;
 
 //让类内部自己new pthread_mutex_t
 CMutexByRecordLockingAndPThread :: CMutexByRecordLockingAndPThread(const char * pstrFileName) :

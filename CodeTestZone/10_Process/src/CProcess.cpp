@@ -16,7 +16,19 @@
  * =====================================================================================
  */
 
-#include "LibHeadFileAllInOne.h"
+#include <sys/types.h>
+#include <wait.h>
+#include <unistd.h>
+#include <dirent.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <syscall.h>
+
+#include "CProcess.h"
+#include "IUsrBizForExecObj.h"
+#include "CExecutiveObject.h"
 
 using namespace std;
 

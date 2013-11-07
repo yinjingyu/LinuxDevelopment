@@ -16,8 +16,7 @@
  * =====================================================================================
  */
 
-#include "LibHeadFileAllInOne.h"
-
+#include "CMutexInterface.h"
 
 CMutexInterface:: CMutexInterface()
 {

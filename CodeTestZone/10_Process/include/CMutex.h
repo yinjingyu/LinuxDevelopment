@@ -4,6 +4,12 @@
 
 #include <pthread.h>
 #include "CStatus.h"
+#include "CMutexInterface.h"
+
+#define MUTEX_USE_RECORD_LOCK 0
+#define MUTEX_USE_RECORD_LOCK_AND_PTHREAD 1
+#define MUTEX_USE_SHARED_PTHREAD 2
+
 class CMutex
 {
 public:

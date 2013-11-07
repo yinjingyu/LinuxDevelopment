@@ -1,7 +1,6 @@
 /*
  * =====================================================================================
- *
- *       Filename:  CMutex.cpp
+  *       Filename:  CMutex.cpp
  *
  *    Description:  
  *
@@ -15,12 +14,18 @@
  *
  * =====================================================================================
  */
-#include "LibHeadFileAllInOne.h"
 
-#define MUTEX_USE_RECORD_LOCK 0
-#define MUTEX_USE_RECORD_LOCK_AND_PTHREAD 1
-#define MUTEX_USE_SHARED_PTHREAD 2
+#include "CMutex.h"
+#include "CStatus.h"
+#include "CMutexByPThread.h"
+#include "CMutexByRecordLocking.h"
+#include "CMutexByRecordLockingAndPThread.h"
+#include "CMutexBySharedPThread.h"
 
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 CMutex::CMutex()
 {
