@@ -4,7 +4,11 @@
 #ifndef ISharedObjects_H
 #define ISharedObjects_H
 
-#include "LibHeadFileAllInOne.h"
+#include "CSharedMemory.h"
+#include "CStatus.h"
+#include <string>
+
+using namespace std;
 
 #define LENGTH_OF_SHARED_OBJECT_NAME 256
 

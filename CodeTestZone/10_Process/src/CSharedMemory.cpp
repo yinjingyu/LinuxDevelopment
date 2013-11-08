@@ -67,7 +67,7 @@ CSharedMemory :: CSharedMemory(const char * pstrFileName, size_t nSize) : m_Mute
 	try
 	{
 		//防止获取共享时，又会有其他进程删除共享存储
-		CEnterCriticalSection(&m_Mutex);
+		CEnterCriticalSection cs(&m_Mutex);
 
 		//调用API获取共享存储
 		m_SharedMemoryID = shmget(key, nSize, IPC_CREAT);
@@ -87,11 +87,15 @@ CSharedMemory :: CSharedMemory(const char * pstrFileName, size_t nSize) : m_Mute
 			throw "";
 		}
 	}
+	catch(...)
+	{
+		cout << "error in CSharedMemory::constructor,catch error in try" << endl;
+	}
 }
 
 CSharedMemory :: ~CSharedMemory()
 {
-	CEnterCriticalSection(&m_Mutex);
+	CEnterCriticalSection cs(&m_Mutex);
 
 	//解除进程地址空间和共享存储之间的映射
 	//PS.但没有删除共享存储

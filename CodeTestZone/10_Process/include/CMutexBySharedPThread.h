@@ -5,12 +5,13 @@
 #include <string>
 #include "CMutexInterface.h"
 #include "CStatus.h"
+#include "IMutexUsingPThread.h"
 
 using namespace std;
 
-class CMutexUsingPThread;
+//class CMutexUsingPThread;
 
-class CMutexBySharedPThread : public CMutexUsingPThread
+class CMutexBySharedPThread : public IMutexUsingPThread
 {
 public:
 	CMutexBySharedPThread(const char *pstrMutexName);

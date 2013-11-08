@@ -7,6 +7,9 @@
 #include "CStatus.h"
 #include "CMutex.h"
 #include <pthread.h>
+#include <string>
+
+using namespace std;
 
 class CConditionVariable
 {
@@ -23,7 +26,7 @@ class CConditionVariable
 	CConditionVariable();
 
 	//条件变量由外界传入	
-	CConditionVariable(pthrad_cond_t * pCond);
+	CConditionVariable(pthread_cond_t * pCond);
 
 	CConditionVariable(const char * pstrCondName);
 

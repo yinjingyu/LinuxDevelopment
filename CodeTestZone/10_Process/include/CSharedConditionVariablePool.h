@@ -6,7 +6,7 @@
 
 struct SSharedConditionVariableItem
 {
-	SLSharedObjectHead head;
+	SSharedObjectHead head;
 	pthread_cond_t cond;
 };
 

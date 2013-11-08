@@ -22,6 +22,7 @@
 #include "CMutexByRecordLockingAndPThread.h"
 #include "CMutexBySharedPThread.h"
 
+#include <string.h>
 #include <string>
 #include <iostream>
 

@@ -2,6 +2,12 @@
 
 
 #include "CSharedConditionVariablePool.h"
+#include <pthread.h>
+#include "CStatus.h"
+
+#include <iostream>
+
+using namespace std;
 
 #define SHARED_SPACE_FOR_SHARED_CONDITION_VARIABLE_ALLOCATOR "shared_space_for_shared_condition_variable_allocator"
 

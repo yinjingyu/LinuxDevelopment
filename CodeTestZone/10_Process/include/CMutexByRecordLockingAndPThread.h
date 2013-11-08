@@ -19,6 +19,8 @@ public:
 	CMutexByRecordLockingAndPThread(const char * pstrFileName);
 	CMutexByRecordLockingAndPThread(const char * pstrFileName, pthread_mutex_t *pMutex);
 
+
+	~CMutexByRecordLockingAndPThread();
 	virtual CStatus Initialize();
 	virtual CStatus Uninitialize();
 

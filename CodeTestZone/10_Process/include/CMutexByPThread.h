@@ -2,13 +2,11 @@
 #define CMUTEXBYPTHREAD_H
 
 #include "CStatus.h"
-#include "CMutexInterface.h"
 
 #include <pthread.h>
+#include "IMutexUsingPThread.h"
 
-class CMutexUsingPThread;
-
-class CMutexByPThread : public CMutexUsingPThread
+class CMutexByPThread : public IMutexUsingPThread
 {
 public:
 	CMutexByPThread();

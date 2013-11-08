@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  CMutexInterface.cpp
+ *       Filename:  IMutexUsingPThread.cpp
  *
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  2013年11月07日 01时39分08秒
+ *        Created:  2013年11月08日 09时07分40秒
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,15 +16,14 @@
  * =====================================================================================
  */
 
-#include "CMutexInterface.h"
+#include "IMutexUsingPThread.h"
 
-CMutexInterface :: CMutexInterface()
+IMutexUsingPThread :: IMutexUsingPThread()
+{
+	 	
+}
+
+IMutexUsingPThread :: ~IMutexUsingPThread()
 {
 
 }
-
-CMutexInterface::~CMutexInterface()
-{
-
-}
-

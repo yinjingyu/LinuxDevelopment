@@ -19,12 +19,18 @@
 #include "CConditionVariable.h"
 #include "CMutex.h"
 #include "IMutexUsingPThread.h"
+#include "CStatus.h"
+
+#include <string.h>
+#include <iostream>
+
+using namespace std;
 
 CConditionVariable::CConditionVariable()
 {
 	m_pConditionVariable = new pthread_cond_t;
 	m_bNeedDestroy = true;
-	int r = pthread_cond_init(&m_Cond,0);
+	int r = pthread_cond_init(m_pConditionVariable,0);
 	if(0 != r)
 	{
 		throw CStatus(-1,0,"in CConditionVariable of CConditionVariable : init conditionvariable failed!");
@@ -47,11 +53,11 @@ CConditionVariable::CConditionVariable(const char * pstrCondName)
 {
 	if(pstrCondName == 0 || strlen(pstrCondName) == 0)
 	
-		cout << "In CConditionVariable::Contrcutor,pstrCondName is 0"
+		cout << "In CConditionVariable::Contrcutor,pstrCondName is 0"<<endl;
 		throw "";
 	}
-	
-	m_strCondName = pstrCondName;	
+
+	m_strCondName = pstrCondName;
 	m_bNeedDestroy = false;
 	m_pConditionVariable = CSharedCondVarManager::Get(pstrCondName);
 }
@@ -60,7 +66,7 @@ CConditionVariable::~CConditionVariable()
 {
 	if(m_bNeedDestroy)
 	{
-		int r = pthread_cond_destroy(&m_Cond);
+		int r = pthread_cond_destroy(m_pConditionVariable);
 	 	if(0 != r)
 	 	{
 	 		throw CStatus(-1,0,"int CConditionVariable of CConditionVariable : destroy CConditionVariable failed");
@@ -92,7 +98,7 @@ CStatus CConditionVariable::Wait(CMutex * pMutex)
 	}
 
 	
-	int r= pthread_cond_wait(&m_Cond,p->GetMutexPointer());
+	int r= pthread_cond_wait(m_pConditionVariable,p->GetMutexPointer());
 	if( 0 !=  r)
 	{
 		return CStatus(-1,0,"in wait of CConditionVariable : wait failed");

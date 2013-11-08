@@ -1,7 +1,6 @@
 #include <string.h>
 #include "CMutexBySharedPThread.h"
-#include "CLSharedMutexAllocator.h"
-#include "CLLogger.h"
+#include "CSharedMutexPoolManager.h"
 
 #include <iostream>
 
@@ -22,9 +21,9 @@ CMutexBySharedPThread::CMutexBySharedPThread(const char *pstrMutexName)
 	}
 }
 
-CMutexBySharedPThread::~CLMutexBySharedPThread()
+CMutexBySharedPThread::~CMutexBySharedPThread()
 {
-	if(!CLSharedMutexAllocator::Release(m_strMutexName.c_str()).IsSuccess())
+	if(!CSharedMutexPoolManager::Release(m_strMutexName.c_str()).IsSuccess())
 	{
 		cout << "In CMutexBySharedPThread::~CLMutexBySharedPThread(), Release error"<<endl;
 		throw "In CMutexBySharedPThread::~CLMutexBySharedPThread(), Release error";
