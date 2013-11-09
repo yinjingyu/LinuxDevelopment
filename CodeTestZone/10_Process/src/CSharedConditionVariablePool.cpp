@@ -21,7 +21,7 @@ CSharedConditionVariablePool::~CSharedConditionVariablePool()
 {
 }
 
-CStatus CSharedConditionVariablePool::InitializeSharedObject(SSharedObjectHead *pObject)
+CStatus CSharedConditionVariablePool::InitializeASharedObject(SSharedObjectHead *pObject)
 {
 	SSharedConditionVariableItem *pCondItem = (SSharedConditionVariableItem *)pObject;
 
@@ -63,7 +63,7 @@ CStatus CSharedConditionVariablePool::InitializeSharedObject(SSharedObjectHead *
 	return CStatus(0, 0);
 }
 
-CStatus CSharedConditionVariablePool::DestroySharedObject(SSharedObjectHead *pObject)
+CStatus CSharedConditionVariablePool::DestroyASharedObject(SSharedObjectHead *pObject)
 {
 	SSharedConditionVariableItem *pCondItem = (SSharedConditionVariableItem *)pObject;
 

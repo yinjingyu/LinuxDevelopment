@@ -1,5 +1,4 @@
 
-
 #ifndef CCOMMUNICATIONNAMESERVER_H
 #define CCOMMUNICATIONNAMESERVER_H
 
@@ -34,6 +33,8 @@ class CCommunicationNameServer
 	//用于控制多线程中互斥的访问名字服务表
 	CMutex m_MutexForNameTable;
 
+	static pthread_mutex_t m_Mutex;
+
 	public:
 	//获取名字服务的实例
 	static CCommunicationNameServer * GetInstance();
@@ -45,6 +46,9 @@ class CCommunicationNameServer
 	CStatus ReleaseCommunicationObject(const char * strCommObjName);
 
 	static CStatus SendMessage(const char * strCommObjName, CMessage * pMessage);
+	
+	static CStatus Create();
+	static CStatus Destroy();
 };
 
 

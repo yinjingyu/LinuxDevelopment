@@ -2,7 +2,7 @@
 #define CSharedConditionVariablePool_H
 
 #include <pthread.h>
-#include "ISharedObjects.h"
+#include "ISharedObjectPool.h"
 
 struct SSharedConditionVariableItem
 {
@@ -10,13 +10,13 @@ struct SSharedConditionVariableItem
 	pthread_cond_t cond;
 };
 
-class CSharedConditionVariablePool : public ISharedObjects
+class CSharedConditionVariablePool : public ISharedObjectPool
 {
 public:
-	virtual CStatus InitializeSharedObject(SSharedObjectHead *pObject);
-	virtual CStatus DestroySharedObject(SSharedObjectHead *pObject);
+	virtual CStatus InitializeASharedObject(SSharedObjectHead *pObject);
+	virtual CStatus DestroyASharedObject(SSharedObjectHead *pObject);
 
-	friend  class CSharedConditionVariableManager;
+	friend  class CSharedCondVarManager;
 private:
 	CSharedConditionVariablePool();
 	virtual ~CSharedConditionVariablePool();

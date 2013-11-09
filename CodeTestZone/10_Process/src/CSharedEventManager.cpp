@@ -121,7 +121,7 @@ SEventInfo *CSharedEventManager::GetASharedEventInfo(const char *pstrEventName)
 		return 0;
 	}
 
-	return (SEventInfo *)m_pShEventPool->GetASharedObjetc(pstrEventName);
+	return (SEventInfo *)m_pShEventPool->GetASharedObject(pstrEventName);
 }
 
 CStatus CSharedEventManager::ReleaseAEventInfo(const char *pstrEventName)

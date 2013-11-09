@@ -14,8 +14,8 @@ public:
 	static SEventInfo* Get(const char *pstrEventName);
 	static CStatus Release(const char *pstrEventName);
 
-	SEventInfo *GetSharedEventInfo(const char *pstrEventName);
-	CStatus ReleaseEventInfo(const char *pstrEventName);
+	SEventInfo *GetASharedEventInfo(const char *pstrEventName);
+	CStatus ReleaseAEventInfo(const char *pstrEventName);
 
 	friend class CLibExecutiveInitializer;
 

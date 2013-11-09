@@ -12,7 +12,7 @@ CSharedEventPool::~CSharedEventPool()
 {
 }
 
-CStatus CSharedEventPool::InitializeSharedObject(SSharedObjectHead *pObject)
+CStatus CSharedEventPool::InitializeASharedObject(SSharedObjectHead *pObject)
 {
 	SSharedEventItem *pEventItem = (SSharedEventItem *)pObject;
 
@@ -23,7 +23,7 @@ CStatus CSharedEventPool::InitializeSharedObject(SSharedObjectHead *pObject)
 	return CStatus(0, 0);
 }
 
-CStatus CSharedEventPool::DestroySharedObject(SLSharedObjectHead *pObject)
+CStatus CSharedEventPool::DestroyASharedObject(SSharedObjectHead *pObject)
 {
 	SSharedEventItem *pEventItem = (SSharedEventItem *)pObject;
 	

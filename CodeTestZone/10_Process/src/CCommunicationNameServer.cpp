@@ -25,6 +25,8 @@
 CMutex CCommunicationNameServer::m_MutexForCreatingInstance;
 CCommunicationNameServer * CCommunicationNameServer::m_pNameServer = 0;
 
+pthread_mutex_t CCommunicationNameServer::m_Mutex = PTHREAD_MUTEX_INITIALIZER; 
+
 CCommunicationNameServer:: 	CCommunicationNameServer()
 {
 
@@ -37,23 +39,34 @@ CCommunicationNameServer::~CCommunicationNameServer()
 
 CCommunicationNameServer * CCommunicationNameServer:: GetInstance()
 {
-	try
-	{
-		CEnterCriticalSection cs(&m_MutexForCreatingInstance);
- 	 	if(m_pNameServer == 0)
- 		{
- 			m_pNameServer = new CCommunicationNameServer;
- 		}
-	}
-	catch(...)
-	{
-		std::cout <<"in GetInstance of CCommunicationNameServer:catch exception when new CCommunicationNameServer"<<std::endl;	
-		throw CStatus(-1,0);
- 	}
-
 	return m_pNameServer;
 }
 
+CStatus CCommunicationNameServer::Create()
+{
+		
+	CMutex mutex(&m_Mutex);
+	CEnterCriticalSection cs(&mutex);
+
+	if(m_pNameServer == 0)
+	{
+		m_pNameServer = new CCommunicationNameServer;
+	}
+
+	return CStatus(0,0);
+}
+
+CStatus CCommunicationNameServer::Destroy()
+{
+	CMutex mutex(&m_Mutex);
+	CEnterCriticalSection cs(&mutex);
+
+	delete m_pNameServer;
+
+	m_pNameServer = 0;
+
+	return CStatus(0,0);
+}
 
 CStatus CCommunicationNameServer:: Register(const char * strCommObjName, ICommunicationObject * pCommObj)
 {

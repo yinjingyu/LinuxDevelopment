@@ -131,7 +131,10 @@ CStatus CMutex::Unlock()
 	return m_pMutex->Unlock();
 }
 
-
+CMutexInterface * CMutex :: GetMutexInterface()
+{
+	return m_pMutex;
+}
 
 
 

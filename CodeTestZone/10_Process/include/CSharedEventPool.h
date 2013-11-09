@@ -1,7 +1,7 @@
 #ifndef CSharedEventPool_H
 #define CSharedEventPool_H
 
-#include "CSharedObjectPool.h"
+#include "ISharedObjectPool.h"
 #include "CStatus.h"
 
 struct SEventInfo
@@ -17,11 +17,11 @@ struct SSharedEventItem
 	SEventInfo EventInfo;
 };
 
-class CSharedEventPool : public CSharedObjectPool
+class CSharedEventPool : public ISharedObjectPool
 {
 public:
-	virtual CStatus InitializeSharedObject(SLSharedObjectHead *pObject);
-	virtual CStatus DestroySharedObject(SLSharedObjectHead *pObject);
+	virtual CStatus InitializeASharedObject(SSharedObjectHead *pObject);
+	virtual CStatus DestroyASharedObject(SSharedObjectHead *pObject);
 
 	friend  class CSharedEventManager;
 

@@ -24,7 +24,7 @@
 #define QUEUE_AUTO_INCREMENT_SIZE 10
 #define QUEUE_INITIAL_SIZE 20
 
-CUsrDefMsgQueue::CUsrDefMsgQueue()
+CUsrDefMsgQueue::CUsrDefMsgQueue():m_Event(true)
 {
 	m_pQueueSpace = new CMessage * [QUEUE_INITIAL_SIZE];
 	m_iQueueTail = 0;
@@ -33,7 +33,7 @@ CUsrDefMsgQueue::CUsrDefMsgQueue()
 	m_iTotalRoom = QUEUE_INITIAL_SIZE;
 
 	//设置事件作为记录型条件变量来使用	
-	m_Event.UseAsRecordCondVar(true);
+//	m_Event.UseAsRecordCondVar(true);
 }
 
 CUsrDefMsgQueue::~CUsrDefMsgQueue()

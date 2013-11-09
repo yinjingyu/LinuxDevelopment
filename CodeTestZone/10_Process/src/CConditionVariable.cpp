@@ -17,14 +17,15 @@
  */
 
 #include "CConditionVariable.h"
-#include "CMutex.h"
 #include "IMutexUsingPThread.h"
 #include "CStatus.h"
-
+#include "CSharedCondVarManager.h"
 #include <string.h>
 #include <iostream>
 
 using namespace std;
+
+class CMutex;
 
 CConditionVariable::CConditionVariable()
 {
@@ -51,8 +52,8 @@ CConditionVariable::CConditionVariable(pthread_cond_t * pCond)
 
 CConditionVariable::CConditionVariable(const char * pstrCondName)
 {
-	if(pstrCondName == 0 || strlen(pstrCondName) == 0)
-	
+	if((pstrCondName == 0) || (strlen(pstrCondName) == 0))
+	{
 		cout << "In CConditionVariable::Contrcutor,pstrCondName is 0"<<endl;
 		throw "";
 	}
@@ -89,7 +90,7 @@ CStatus CConditionVariable::Wait(CMutex * pMutex)
 	}
 	
 	CMutexInterface * pInterface = pMutex->GetMutexInterface();
-	IMutexUsingPThread * p = dynamic_cast<IMutexUsingPThread *>pInterface;
+	IMutexUsingPThread * p = dynamic_cast<IMutexUsingPThread *>(pInterface);
 	
 	if( p == 0 )
 	{
@@ -109,7 +110,7 @@ CStatus CConditionVariable::Wait(CMutex * pMutex)
 
 CStatus CConditionVariable::Wakeup()
 {
-	int r = pthread_cond_signal(&m_Cond);
+	int r = pthread_cond_signal(m_pConditionVariable);
 	if(0 != r)
 	{
 		return CStatus(-1,0,"in Wakeup of CConditionVariable : wait failed");
@@ -119,7 +120,7 @@ CStatus CConditionVariable::Wakeup()
 
 CStatus CConditionVariable::WakeupAll()
 {
-	int r = pthread_cond_broadcast(&m_Cond);
+	int r = pthread_cond_broadcast(m_pConditionVariable);
 	if(0 != r)
 	{
 		return CStatus(-1,0,"in Wakeup of CConditionVariable : wakeup failed");
